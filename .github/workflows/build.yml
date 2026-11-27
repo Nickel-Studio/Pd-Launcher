@@ -100,7 +100,15 @@ jobs:
         if: runner.os == 'Linux'
         shell: bash
         run: |
-          sudo apt-get update
+          # 镜像预置的第三方源（如 packages.microsoft.com）可能 403/未签名，导致 apt-get update 整体失败；本项目不需要它们。
+          for source in /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources; do
+            [ -f "$source" ] || continue
+            if grep -qE 'packages\.microsoft\.com|packages\.microsoft\.com/ubuntu' "$source"; then
+              echo "Removing broken third-party apt source: $source"
+              sudo rm -f "$source"
+            fi
+          done
+          sudo apt-get update -o Acquire::Retries=3
           sudo apt-get install -y --no-install-recommends \
             build-essential cmake ninja-build pkg-config perl gnupg curl ca-certificates \
             libfontconfig1-dev libfreetype-dev libx11-dev libx11-xcb-dev \
