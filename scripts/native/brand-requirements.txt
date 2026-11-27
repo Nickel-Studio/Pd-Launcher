@@ -1,5 +1,5 @@
 # Tool-only dependencies; these are not the native release dependency inventory.
-Pillow==11.3.0
+Pillow==13.0.0
 fonttools[woff]==4.60.1
 PySide6-Essentials==6.8.3
 jsonschema==4.25.1
