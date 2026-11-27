@@ -1,0 +1,77 @@
+Palladium native source inputs - NOT a final Corresponding Source or relink acceptance statement.
+Repository: https://github.com/Nickel-Studio/Pd-Launcher
+Inspected canonical code checkpoint: 782bd3b2a6b900b045f98e98d408b00bfe49fb23
+Dependency pin checkpoint: a812a8d7d1d69c14321116b2c35fb430233103ef
+Dependency lock SHA256: b974a9bcd5b9f6fab32ffbf248ccd23ab9938ff731a91c9aff2c162d70dd136d
+Official QtImageFormats source-only checkpoint: 288fd5c45910df7b8f05fe575f55a0c9c34d827b
+The exact pinned library source archives are listed below; no new QtBase download was performed.
+These locations/hashes document received source, not a written offer or replacement for complete source delivery.
+Final build source_set_sha256, executable-bound application objects/resources, build/link maps and
+response files plus actual replacement-library relink instructions/results must be supplied by the builder.
+No arbitrary UI-selected executable is trusted by these notices.
+
+qtbase 6.8.3
+  original source URL: https://download.qt.io/archive/qt/6.8/6.8.3/submodules/qtbase-everywhere-src-6.8.3.tar.xz
+  recorded archive: .snow/native-tools/downloads/qtbase-everywhere-src-6.8.3.tar.xz
+  archive bytes: 48426536
+  archive SHA256: 56001b905601bb9023d399f3ba780d7fa940f3e4861e496a7c490331f49e0b80
+qtsvg 6.8.3
+  original source URL: https://download.qt.io/archive/qt/6.8/6.8.3/submodules/qtsvg-everywhere-src-6.8.3.tar.xz
+  recorded archive: .snow/native-tools/downloads/qtsvg-everywhere-src-6.8.3.tar.xz
+  archive bytes: 2009072
+  archive SHA256: 35eb516460f00f264eb504baa253432384351cf23fb9980a5857190e8deef438
+qtimageformats 6.8.3
+  original source URL: https://download.qt.io/archive/qt/6.8/6.8.3/submodules/qtimageformats-everywhere-src-6.8.3.tar.xz
+  recorded archive: docs/native/licenses/qtimageformats-source-only/qtimageformats-everywhere-src-6.8.3.tar.xz
+  archive bytes: 2035140
+  archive SHA256: 049bfb99845e4801672aca07c3c4fc4c140f932a3a33faa899419579e33ef1c8
+curl 8.23.0
+  original source URL: https://curl.se/download/curl-8.23.0.tar.xz
+  recorded archive: .snow/native-tools/downloads/curl-8.23.0.tar.xz
+  archive bytes: 2990916
+  archive SHA256: 8dadd7d2536a314f982ad05a651b713f426bf7d02cc2c76cffb9796f2218e6c5
+libarchive 3.8.9
+  original source URL: https://www.libarchive.org/downloads/libarchive-3.8.9.tar.xz
+  recorded archive: .snow/native-tools/downloads/libarchive-3.8.9.tar.xz
+  archive bytes: 6617696
+  archive SHA256: 888c934f9d95648ecb9163dc8e23ab80a476ecb81a8f1154704a227b5b676dde
+zlib 1.3.1
+  original source URL: https://zlib.net/fossils/zlib-1.3.1.tar.gz
+  recorded archive: .snow/native-tools/downloads/zlib-1.3.1.tar.gz
+  archive bytes: 1512791
+  archive SHA256: 9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23
+xz 5.8.1
+  original source URL: https://github.com/tukaani-project/xz/releases/download/v5.8.1/xz-5.8.1.tar.xz
+  recorded archive: .snow/native-tools/downloads/xz-5.8.1.tar.xz
+  archive bytes: 1461872
+  archive SHA256: 0b54f79df85912504de0b14aec7971e3f964491af1812d83447005807513cd9e
+zstd 1.5.7
+  original source URL: https://github.com/meta/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz
+  recorded archive: .snow/native-tools/downloads/zstd-1.5.7.tar.gz
+  archive bytes: 2434947
+  archive SHA256: eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7ee09e6fa3
+bzip2 1.0.8
+  original source URL: https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
+  recorded archive: .snow/native-tools/downloads/bzip2-1.0.8.tar.gz
+  archive bytes: 810029
+  archive SHA256: ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269
+json 3.11.3
+  original source URL: https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz
+  recorded archive: .snow/native-tools/downloads/json.tar.xz
+  archive bytes: 110988
+  archive SHA256: d6c65aca6b1ed68e7a182f4757257b107ae403032760ed6ef121c9d55e81757d
+gumbo 0.10.1
+  original source URL: https://codeload.github.com/google/gumbo-parser/tar.gz/refs/tags/v0.10.1
+  recorded archive: .snow/native-tools/downloads/gumbo-0.10.1.tar.gz
+  archive bytes: 2119285
+  archive SHA256: 28463053d44a5dfbc4b77bcf49c8cee119338ffa636cc17fc3378421d714efad
+tomlplusplus 3.4.0
+  original source URL: https://codeload.github.com/marzer/tomlplusplus/tar.gz/refs/tags/v3.4.0
+  recorded archive: .snow/native-tools/downloads/tomlplusplus-3.4.0.tar.gz
+  archive bytes: 1294731
+  archive SHA256: 8517f65938a4faae9ccf8ebb36631a38c1cadfb5efa85d9a72e15b9e97d25155
+yaml 0.2.5
+  original source URL: https://pyyaml.org/download/libyaml/yaml-0.2.5.tar.gz
+  recorded archive: .snow/native-tools/downloads/yaml-0.2.5.tar.gz
+  archive bytes: 609454
+  archive SHA256: c642ae9b75fee120b2d96c712538bd2cf283228d2337df2cf2988e3c02678ef4

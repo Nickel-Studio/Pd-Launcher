@@ -1,0 +1,529 @@
+{
+  "schemaVersion": 1,
+  "contract": "Palladium/Pd naming with unchanged Nickel schema-1 data",
+  "baselineCommit": "07029c02974b6be904d9e7a5eb95eb11f3a73e2a",
+  "historyPolicy": {
+    "rootReadme": "README.md",
+    "newProductReadme": "native/README.md",
+    "nativeMetadata": "native/metadata.json",
+    "preserve": "Legacy ZIPs, historical Nickel/Ni/NoWheRE sources and art, and frozen evidence are read-only. The root README documents the current Pd product; new Pd text belongs in the root README and native docs.",
+    "staticCoverage": "Only root README content is pinned here with LF-normalized SHA-256. This tool does not inspect or accept legacy ZIPs or original user artwork."
+  },
+  "product": {
+    "displayName": "Palladium",
+    "shortName": "Pd",
+    "chineseName": "\u94af",
+    "recommendedExecutable": "pd-launcher",
+    "dataNamespace": "studio.nickel.launcher"
+  },
+  "rules": [
+    {
+      "id": "compat.application-id",
+      "category": "compatibility",
+      "owner": "foundation",
+      "path": "native/core/config/paths.hpp",
+      "kind": "cpp_constant",
+      "name": "application_identifier",
+      "expected": "studio.nickel.launcher"
+    },
+    {
+      "id": "compat.data-directory",
+      "category": "compatibility",
+      "owner": "foundation",
+      "path": "native/core/config/paths.hpp",
+      "kind": "cpp_constant",
+      "name": "data_directory_name",
+      "expected": "Nickel"
+    },
+    {
+      "id": "compat.game-directory",
+      "category": "compatibility",
+      "owner": "foundation",
+      "path": "native/core/config/paths.hpp",
+      "kind": "cpp_constant",
+      "name": "game_directory_name",
+      "expected": ".minecraft"
+    },
+    {
+      "id": "compat.portable-marker",
+      "category": "compatibility",
+      "owner": "foundation",
+      "path": "native/core/config/paths.hpp",
+      "kind": "cpp_constant",
+      "name": "portable_manifest_name",
+      "expected": "nickel.portable.json"
+    },
+    {
+      "id": "compat.metadata-id",
+      "category": "compatibility",
+      "owner": "build-resume",
+      "path": "native/metadata.json",
+      "kind": "json_equals",
+      "key": "applicationId",
+      "expected": "studio.nickel.launcher"
+    },
+    {
+      "id": "compat.pack-marker",
+      "category": "compatibility",
+      "owner": "instances",
+      "path": "native/core/packs/packs.hpp",
+      "kind": "cpp_constant",
+      "name": "portable_manifest_file",
+      "expected": "nickel.portable.json"
+    },
+    {
+      "id": "compat.pack-format",
+      "category": "compatibility",
+      "owner": "instances",
+      "path": "native/core/packs/packs.hpp",
+      "kind": "cpp_constant",
+      "name": "portable_format",
+      "expected": "nickel-portable"
+    },
+    {
+      "id": "compat.profile-file",
+      "category": "compatibility",
+      "owner": "instances",
+      "path": "native/core/instances/instances.hpp",
+      "kind": "cpp_constant",
+      "name": "profile_file",
+      "expected": "nickel.profile.json"
+    },
+    {
+      "id": "compat.settings-file",
+      "category": "compatibility",
+      "owner": "instances",
+      "path": "native/core/instances/instances.hpp",
+      "kind": "cpp_constant",
+      "name": "settings_file",
+      "expected": "nickel.settings.json"
+    },
+    {
+      "id": "compat.pending-file",
+      "category": "compatibility",
+      "owner": "instances",
+      "path": "native/core/instances/instances.hpp",
+      "kind": "cpp_constant",
+      "name": "pending_file",
+      "expected": ".nickel-pack.pending"
+    },
+    {
+      "id": "compat.skin-folder",
+      "category": "compatibility",
+      "owner": "identity",
+      "path": "native/core/media/offline_skin.hpp",
+      "kind": "cpp_constant",
+      "name": "offline_skin_pack_folder",
+      "expected": "Nickel-offline-skin"
+    },
+    {
+      "id": "compat.skin-options-id",
+      "category": "compatibility",
+      "owner": "identity",
+      "path": "native/core/media/offline_skin.hpp",
+      "kind": "cpp_constant",
+      "name": "offline_skin_pack_id",
+      "expected": "file/Nickel-offline-skin"
+    },
+    {
+      "id": "compat.skin-ownership",
+      "category": "compatibility",
+      "owner": "identity",
+      "path": "native/core/media/offline_skin.hpp",
+      "kind": "cpp_constant",
+      "name": "offline_skin_owner_content",
+      "expected": "Nickel offline skin pack v1\n"
+    },
+    {
+      "id": "compat.config-lock",
+      "category": "compatibility",
+      "owner": "foundation",
+      "path": "native/core/config/repository.cpp",
+      "kind": "cpp_constant",
+      "name": "lock_name",
+      "expected": ".nickel-config.lock"
+    },
+    {
+      "id": "compat.config-journal",
+      "category": "compatibility",
+      "owner": "foundation",
+      "path": "native/core/config/repository.cpp",
+      "kind": "cpp_constant",
+      "name": "journal_prefix",
+      "expected": ".nickel-transaction-"
+    },
+    {
+      "id": "compat.config-stage",
+      "category": "compatibility",
+      "owner": "foundation",
+      "path": "native/core/config/repository.cpp",
+      "kind": "cpp_constant",
+      "name": "stage_prefix",
+      "expected": ".nickel-stage-"
+    },
+    {
+      "id": "compat.portable-schema",
+      "category": "compatibility",
+      "owner": "foundation",
+      "path": "native/core/config/paths.cpp",
+      "kind": "source_contains",
+      "tokens": [
+        "*schema != 1",
+        "\"nickel-portable\"",
+        "\"Nickel/pack.mrpack\"",
+        "\"Nickel/personalization.json\"",
+        "\"dataDirectory\"",
+        "\"gameDirectory\"",
+        "\"packageId\"",
+        "\"launcher\"",
+        "\"path\"",
+        "\"os\"",
+        "\"arch\"",
+        "\"Nickel.exe\"",
+        "\"Nickel-launcher\""
+      ]
+    },
+    {
+      "id": "compat.portable-entry-coordination",
+      "category": "compatibility",
+      "owner": "foundation+instances",
+      "path": "native/core/packs/portable.cpp",
+      "kind": "portable_entries",
+      "parserPath": "native/core/config/paths.cpp"
+    },
+    {
+      "id": "compat.pack-extensions",
+      "category": "compatibility",
+      "owner": "instances",
+      "path": "native/core/instances/instances.cpp",
+      "kind": "source_contains",
+      "tokens": [
+        "\"nickelProfile\"",
+        "\"nickelCustom\"",
+        "\"nickelPack\"",
+        "\"nickel.\""
+      ]
+    },
+    {
+      "id": "compat.export-exclusions",
+      "category": "compatibility",
+      "owner": "instances",
+      "path": "native/core/packs/policy.cpp",
+      "kind": "source_contains",
+      "tokens": [
+        "root.starts_with(\"nickel.\")",
+        "root.starts_with(\".nickel\")",
+        "part.starts_with(\"nickel.\")"
+      ]
+    },
+    {
+      "id": "compat.export-flags",
+      "category": "compatibility",
+      "owner": "instances",
+      "path": "native/core/packs/export.cpp",
+      "kind": "source_contains",
+      "tokens": ["\"includeLauncher\"", "\"includePersonalization\""]
+    },
+    {
+      "id": "compat.cli-flags",
+      "category": "compatibility",
+      "owner": "instances",
+      "path": "native/core/instances/startup.cpp",
+      "kind": "source_contains",
+      "tokens": ["\"--launch-instance\"", "\"--game-root\""]
+    },
+    {
+      "id": "compat.offline-uuid",
+      "category": "compatibility",
+      "owner": "identity",
+      "path": "native/core/accounts/accounts.cpp",
+      "kind": "source_contains",
+      "tokens": ["\"OfflinePlayer:\""]
+    },
+    {
+      "id": "compat.website-theme-key",
+      "category": "compatibility",
+      "owner": "delivery-docs",
+      "path": "website/main.js",
+      "kind": "source_contains",
+      "tokens": ["\"nickel.website.theme\""]
+    },
+    {
+      "id": "compat.functional-qrc-prefix",
+      "category": "compatibility",
+      "owner": "brand-release",
+      "path": "native/assets/brand/functional-resources.qrc",
+      "kind": "source_contains",
+      "tokens": [
+        "prefix=\"/nickel/functional\"",
+        "alias=\"icons/optifabric.png\"",
+        "../../../src/assets/blocks/OptiFabric.png",
+        "../../../src/assets/mod-placeholder.png"
+      ]
+    },
+    {
+      "id": "compat.functional-baseline",
+      "category": "compatibility",
+      "owner": "brand-release",
+      "path": "tests/brand/functional-icons.sha256",
+      "kind": "normalized_sha256",
+      "expected": "585116fbc8852f10c649d64aabd74a19ea44b33b1c994ed703ed6bfbbabdbb8d"
+    },
+    {
+      "id": "compat.functional-map",
+      "category": "compatibility",
+      "owner": "brand-release",
+      "path": "native/tests/brand/functional-map.json",
+      "kind": "normalized_sha256",
+      "expected": "94c1d5e7f4e1ff33058d99e53c206e38c79e5bee2e0714979adbf50070e86d2f"
+    },
+    {
+      "id": "compat.initial-request",
+      "category": "compatibility",
+      "owner": "delivery-docs",
+      "path": "docs/cpp-rewrite-plan.md",
+      "kind": "verbatim",
+      "expected": "11b3ce5ca7972a50a1df353a332a46ac0e1f53855f28832b9a8c9a4d25412036"
+    },
+    {
+      "id": "compat.theme-key",
+      "category": "compatibility",
+      "owner": "ui-resume",
+      "path": "native/ui/Theme.cpp",
+      "kind": "source_contains",
+      "tokens": ["{Accent::Nickel, \"nickel\","]
+    },
+    {
+      "id": "display.metadata",
+      "category": "display",
+      "owner": "build-resume",
+      "path": "native/metadata.json",
+      "kind": "json_equals",
+      "key": "displayName",
+      "expected": "Palladium"
+    },
+    {
+      "id": "output.metadata-name",
+      "category": "output",
+      "owner": "build-resume",
+      "path": "native/metadata.json",
+      "kind": "json_equals",
+      "key": "name",
+      "expected": "pd-launcher"
+    },
+    {
+      "id": "output.executable-name",
+      "category": "output",
+      "owner": "build-resume",
+      "path": "native/metadata.json",
+      "kind": "json_equals",
+      "key": "executableName",
+      "expected": "pd-launcher"
+    },
+    {
+      "id": "display.entry-errors",
+      "category": "display",
+      "owner": "build-resume",
+      "path": "native/app/main.cpp",
+      "kind": "source_forbids",
+      "patterns": ["\"Nickel could not"]
+    },
+    {
+      "id": "display.about",
+      "category": "display",
+      "owner": "ui-resume",
+      "path": "native/ui/MorePage.cpp",
+      "kind": "source_forbids",
+      "patterns": ["\"Nickel\"", "\"Nickel "]
+    },
+    {
+      "id": "display.window",
+      "category": "display",
+      "owner": "ui-resume",
+      "path": "native/ui/MainWindow.cpp",
+      "kind": "source_forbids",
+      "patterns": ["setWindowTitle\\s*\\(\\s*\"Nickel\""]
+    },
+    {
+      "id": "display.header",
+      "category": "display",
+      "owner": "ui-resume",
+      "path": "native/ui/TitleBar.cpp",
+      "kind": "source_forbids",
+      "patterns": ["\"Nickel\""]
+    },
+    {
+      "id": "display.onboarding",
+      "category": "display",
+      "owner": "ui-resume",
+      "path": "native/ui/StartupGate.cpp",
+      "kind": "source_forbids",
+      "patterns": ["\"[^\"\n]*\\bNickel\\b"]
+    },
+    {
+      "id": "output.download-report-name",
+      "category": "output",
+      "owner": "ui-resume",
+      "path": "native/ui/DownloadPage.cpp",
+      "kind": "source_forbids",
+      "patterns": ["\"Nickel-error"]
+    },
+    {
+      "id": "output.launch-report-name",
+      "category": "output",
+      "owner": "ui-resume",
+      "path": "native/ui/LaunchError.cpp",
+      "kind": "source_forbids",
+      "patterns": ["\"Nickel-error"]
+    },
+    {
+      "id": "display.theme-label-only",
+      "category": "display",
+      "owner": "ui-resume",
+      "path": "native/ui/Theme.cpp",
+      "kind": "source_forbids",
+      "patterns": ["\"\u954d\u5149\""]
+    },
+    {
+      "id": "output.safe-report-title",
+      "category": "output",
+      "owner": "instances",
+      "path": "native/core/diagnostics/diagnostics.cpp",
+      "kind": "source_forbids",
+      "patterns": ["\"Nickel safe diagnostic report"]
+    },
+    {
+      "id": "output.report-product",
+      "category": "output",
+      "owner": "instances",
+      "path": "native/core/diagnostics/report_export.cpp",
+      "kind": "source_forbids",
+      "patterns": [
+        "\\{\\s*\"product\"\\s*,\\s*\"Nickel\"",
+        "\"Nickel diagnostic excerpts",
+        "\"Nickel complete error report"
+      ]
+    },
+    {
+      "id": "display.portable-readme",
+      "category": "display",
+      "owner": "instances",
+      "path": "native/core/packs/portable.cpp",
+      "kind": "source_forbids",
+      "patterns": ["\"Nickel portable pack"]
+    },
+    {
+      "id": "display.skin-description",
+      "category": "display",
+      "owner": "identity",
+      "path": "native/core/media/offline_skin.cpp",
+      "kind": "source_forbids",
+      "patterns": ["\\{\\s*\"description\"\\s*,\\s*\"Nickel "]
+    },
+    {
+      "id": "output.minecraft-brand",
+      "category": "output",
+      "owner": "minecraft-resume",
+      "path": "native/core/minecraft/launch_plan.cpp",
+      "kind": "source_forbids",
+      "patterns": ["\\{\\s*\"launcher_name\"\\s*,\\s*\"Nickel\""]
+    },
+    {
+      "id": "output.optifine-brand",
+      "category": "output",
+      "owner": "minecraft-resume",
+      "path": "native/core/minecraft/loader.cpp",
+      "kind": "source_forbids",
+      "patterns": ["-Dminecraft\\.launcher\\.brand=Nickel"]
+    },
+    {
+      "id": "output.provider-user-agent",
+      "category": "output",
+      "owner": "community",
+      "path": "native/core/resources/network.cpp",
+      "kind": "source_forbids",
+      "patterns": ["\"Nickel/"]
+    },
+    {
+      "id": "output.document-user-agent",
+      "category": "output",
+      "owner": "community",
+      "path": "native/core/documents/body.cpp",
+      "kind": "source_forbids",
+      "patterns": ["\"Nickel/"]
+    },
+    {
+      "id": "display.art-product",
+      "category": "display",
+      "owner": "brand-release",
+      "path": "native/assets/brand/asset-manifest.json",
+      "kind": "json_equals",
+      "key": "product",
+      "expected": "Palladium"
+    },
+    {
+      "id": "display.art-short-name",
+      "category": "display",
+      "owner": "brand-release",
+      "path": "native/assets/brand/asset-manifest.json",
+      "kind": "json_equals",
+      "key": "shortName",
+      "expected": "Pd"
+    },
+    {
+      "id": "output.ci-artifact",
+      "category": "output",
+      "owner": "build-resume",
+      "path": ".github/workflows/native.yml",
+      "kind": "source_forbids",
+      "patterns": [
+        "native-candidate/ni-launcher",
+        "name: Nickel-(?:build-candidate|failed-build-evidence)"
+      ]
+    },
+    {
+      "id": "display.native-readme",
+      "category": "display",
+      "owner": "delivery-docs",
+      "path": "native/README.md",
+      "kind": "source_forbids",
+      "patterns": ["^# Nickel"]
+    },
+    {
+      "id": "output.preserve-root-readme",
+      "category": "output",
+      "owner": "historical-oracle",
+      "path": "README.md",
+      "kind": "normalized_sha256",
+      "expected": "04e91109a827e97ae3abc27e00818e4a35e49308031a0d7898407cd1a4ed16d2"
+    },
+    {
+      "id": "display.website",
+      "category": "display",
+      "owner": "delivery-docs",
+      "path": "website/index.html",
+      "kind": "source_forbids",
+      "patterns": [
+        "<title>Nickel",
+        "content=\"Nickel",
+        "<span>Nickel",
+        "aria-label=\"(?:\u56de\u5230 )?Nickel",
+        "<strong>Ni</strong>",
+        "<span>NICKEL</span>",
+        "Ni / 28"
+      ]
+    },
+    {
+      "id": "display.website-404",
+      "category": "display",
+      "owner": "delivery-docs",
+      "path": "website/404.html",
+      "kind": "source_forbids",
+      "patterns": [
+        "<title>[^<]*Nickel",
+        "Ni / 28",
+        "\u56de\u5230 Nickel \u9996\u9875"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+cmake_minimum_required(VERSION 3.24)
+
+if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+    project(nickel_app_launch_actions_tests LANGUAGES CXX)
+    set(CMAKE_CXX_STANDARD 20)
+    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+    set(CMAKE_CXX_EXTENSIONS OFF)
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+    if(MSVC)
+        add_compile_options(/EHsc /Zc:__cplusplus)
+    endif()
+    enable_testing()
+    get_filename_component(_launch_tree "${CMAKE_CURRENT_SOURCE_DIR}/../../.." ABSOLUTE)
+    set(NICKEL_SHARED_NATIVE_ROOT "${_launch_tree}/.snow/native-shared/native" CACHE PATH "Actual owner source mirror")
+    if(NOT EXISTS "${NICKEL_SHARED_NATIVE_ROOT}/core/diagnostics/report_export.cpp")
+        message(FATAL_ERROR "Supply actual owner sources before running launch lifecycle tests")
+    endif()
+    find_package(nlohmann_json 3.11.3 CONFIG REQUIRED)
+    add_subdirectory("${NICKEL_SHARED_NATIVE_ROOT}/core/common" "${CMAKE_BINARY_DIR}/common")
+    add_subdirectory("${NICKEL_SHARED_NATIVE_ROOT}/core/config" "${CMAKE_BINARY_DIR}/foundation")
+    add_subdirectory("${NICKEL_SHARED_NATIVE_ROOT}/core/network" "${CMAKE_BINARY_DIR}/transport")
+    set(NICKEL_MINECRAFT_REQUIRE_NATIVE_SERVICES ON)
+    add_subdirectory("${NICKEL_SHARED_NATIVE_ROOT}/core/minecraft" "${CMAKE_BINARY_DIR}/minecraft")
+    add_subdirectory("${NICKEL_SHARED_NATIVE_ROOT}/core/instances" "${CMAKE_BINARY_DIR}/instances")
+    add_subdirectory("${NICKEL_SHARED_NATIVE_ROOT}/core/resources" "${CMAKE_BINARY_DIR}/community")
+elseif(NOT TARGET nickel_foundation OR NOT TARGET nickel_minecraft OR NOT TARGET nickel_instances
+       OR NOT TARGET nickel_transport)
+    message(FATAL_ERROR "Launch tests require the actual foundation, Minecraft, instances and transport/task targets")
+endif()
+
+add_executable(nickel_app_launch_controlled_game controlled_game.cpp)
+add_executable(nickel_app_launch_process_lifecycle process_lifecycle.cpp)
+target_link_libraries(nickel_app_launch_process_lifecycle PRIVATE
+    nickel_foundation nickel_minecraft nickel_instances nickel_transport)
+set(_launch_targets nickel_app_launch_controlled_game nickel_app_launch_process_lifecycle)
+
+option(NICKEL_LAUNCH_REQUIRE_APP_PIPELINE "Require production AppServices launch integration" OFF)
+if(TARGET Nickel::AppServices)
+    add_executable(nickel_app_launch_application_pipeline application_pipeline.cpp)
+    target_link_libraries(nickel_app_launch_application_pipeline PRIVATE Nickel::AppServices)
+    list(APPEND _launch_targets nickel_app_launch_application_pipeline)
+    add_test(NAME native_app_launch_application_pipeline COMMAND nickel_app_launch_application_pipeline
+        "$<TARGET_FILE:nickel_app_launch_controlled_game>" "${CMAKE_CURRENT_BINARY_DIR}/application-fixtures")
+    add_test(NAME native_app_launch_held_pipe COMMAND nickel_app_launch_application_pipeline
+        "$<TARGET_FILE:nickel_app_launch_controlled_game>" "${CMAKE_CURRENT_BINARY_DIR}/application-fixtures" "--case=held-pipe")
+    add_test(NAME native_app_launch_consent COMMAND nickel_app_launch_application_pipeline
+        "$<TARGET_FILE:nickel_app_launch_controlled_game>" "${CMAKE_CURRENT_BINARY_DIR}/application-fixtures" "--case=consent")
+    add_test(NAME native_app_launch_quick_exit COMMAND nickel_app_launch_application_pipeline
+        "$<TARGET_FILE:nickel_app_launch_controlled_game>" "${CMAKE_CURRENT_BINARY_DIR}/application-fixtures" "--case=quick-exit")
+    add_test(NAME native_app_launch_prepare_cancel COMMAND nickel_app_launch_application_pipeline
+        "$<TARGET_FILE:nickel_app_launch_controlled_game>" "${CMAKE_CURRENT_BINARY_DIR}/application-fixtures" "--case=prepare-cancel")
+    set_tests_properties(native_app_launch_application_pipeline PROPERTIES TIMEOUT 180)
+    set_tests_properties(native_app_launch_held_pipe PROPERTIES TIMEOUT 60)
+    set_tests_properties(native_app_launch_consent native_app_launch_quick_exit native_app_launch_prepare_cancel PROPERTIES TIMEOUT 90)
+    set_tests_properties(native_app_launch_application_pipeline native_app_launch_held_pipe
+        native_app_launch_consent native_app_launch_quick_exit native_app_launch_prepare_cancel PROPERTIES RUN_SERIAL TRUE)
+elseif(NICKEL_LAUNCH_REQUIRE_APP_PIPELINE)
+    message(FATAL_ERROR "Production launch pipeline requires Nickel::AppServices; a domain-only test is not its replacement")
+else()
+    message(STATUS "Domain lifecycle coverage only: production AppServices pipeline is not linked in this configuration")
+endif()
+
+foreach(_launch_target IN LISTS _launch_targets)
+    target_compile_features(${_launch_target} PRIVATE cxx_std_20)
+    if(MSVC)
+        target_compile_options(${_launch_target} PRIVATE /W4 /permissive- /utf-8 /EHsc /Zc:__cplusplus)
+    else()
+        target_compile_options(${_launch_target} PRIVATE -Wall -Wextra -Wpedantic)
+    endif()
+endforeach()
+add_test(NAME native_app_launch_process_lifecycle COMMAND nickel_app_launch_process_lifecycle
+    "$<TARGET_FILE:nickel_app_launch_controlled_game>" "${CMAKE_CURRENT_BINARY_DIR}/controlled-fixtures")
+set_tests_properties(native_app_launch_process_lifecycle PROPERTIES TIMEOUT 120)

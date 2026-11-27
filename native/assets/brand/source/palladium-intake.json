@@ -1,0 +1,2779 @@
+{
+  "schemaVersion": 1,
+  "kind": "palladium-user-source-inventory-read-only",
+  "sourceRoot": "D:\\workon\\Pd-Launcher\\.snow\\Palladium-assets",
+  "sourceRootAuthorizedByUserViaLead": true,
+  "files": [
+    {
+      "path": "banners/palladium-element-dark.png",
+      "bytes": 61207,
+      "sha256": "9ba120d72eeaa6d6e96f155a48ebe5a495f798ecd82c7af78d74f5ba4334dac1",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1800,
+      "height": 520,
+      "rgbaSha256": "6bf0d857b22139d845c159ebf3bb6bfc552b74454f0dfe8e301eb6d557187460",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        520
+      ]
+    },
+    {
+      "path": "banners/palladium-element-light.png",
+      "bytes": 62691,
+      "sha256": "58aad3c1162e812569c48e5183e2d69ee3da3188d1c0cee04f51b7e8dd1ce627",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1800,
+      "height": 520,
+      "rgbaSha256": "4c09f4dc780828bc91a11ff230ddafb324d69c5b290d3568f3a8a098fc4e7fc8",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        520
+      ]
+    },
+    {
+      "path": "banners/palladium-launcher-hero-dark.png",
+      "bytes": 80942,
+      "sha256": "5383cf70672bbe28a15bf4048cd74b478ef7ca61a0f29582ce8ee1ea67bfe5b1",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1800,
+      "height": 600,
+      "rgbaSha256": "f5766204e5621253b787a074fe7c414f7810887a3a7c772b640c7c9ddbdb87a1",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        600
+      ]
+    },
+    {
+      "path": "banners/palladium-launcher-hero-light.png",
+      "bytes": 82416,
+      "sha256": "e027b91fe01b9233c1dc2ee8481b2ab5fa042659e446fc6cc378c057ecee1a7f",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1800,
+      "height": 600,
+      "rgbaSha256": "e380e9f40a1933ee9e1090977eea5ed111e7a1d39ebee37b0ad3787f4bc9f3c3",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        600
+      ]
+    },
+    {
+      "path": "banners/pd-ba-bilingual-dark.png",
+      "bytes": 79056,
+      "sha256": "b48eba019ac06af5f59ee24a563a60594e440bc4b8957246a79d4922d43b1a05",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1800,
+      "height": 600,
+      "rgbaSha256": "e225650222cd48680acab2c5a3529f8fc032cfb49a8116f3cf40e4587981d320",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        600
+      ]
+    },
+    {
+      "path": "banners/pd-ba-bilingual-light.png",
+      "bytes": 79818,
+      "sha256": "b07e4692bb23b381c56f6900d360b124d0d98c2d7577a624d2a269e446fdf94c",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1800,
+      "height": 600,
+      "rgbaSha256": "0b1cf88615cec93e1b2b06a15dd2ed6df7ff75ea9868e1415786d4b6f85f1f51",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        600
+      ]
+    },
+    {
+      "path": "banners/pd-launcher-compact-dark.png",
+      "bytes": 47295,
+      "sha256": "fc867355f503bb79a655e1a55f52b39e9c12c5f151a55f63758013b83b047d33",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1800,
+      "height": 360,
+      "rgbaSha256": "6974d13637b50ce669490a39bc1f84655b10e750f50bf3be11e53e9f1e2ad185",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        360
+      ]
+    },
+    {
+      "path": "banners/pd-launcher-compact-light.png",
+      "bytes": 48077,
+      "sha256": "c349a15477610deb1b92a0b86ebff74e0da5e41544e8bd4dc5c252e994f0133e",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1800,
+      "height": 360,
+      "rgbaSha256": "cf7b8c0963084197874f7bcb450c3a5e12999375201908aadcbb719e966f8f5b",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        360
+      ]
+    },
+    {
+      "path": "banners-preview.png",
+      "bytes": 283356,
+      "sha256": "8ce07aea7cfbf171053f38dd0ad0785a8d65e28ce3fa4dfc6a121cc536cf3370",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1600,
+      "height": 1380,
+      "rgbaSha256": "fa1cd115bd7a8d540a7828648eb493512a5ff233d172ff2c2120c9766cede9cd",
+      "alphaBounds": [
+        0,
+        0,
+        1600,
+        1380
+      ]
+    },
+    {
+      "path": "blocks/Beta.png",
+      "bytes": 9532,
+      "sha256": "e1403becbf5a8bf99f1a50c9629c5f2e77f536f96e8e367e20cde4763c39d403",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 300,
+      "height": 300,
+      "rgbaSha256": "0de0d5f8dbab3da0a9fc9cc12c2e2f7c18c1dd9a557b2248af4dd9e07de089ef",
+      "alphaBounds": [
+        16,
+        2,
+        284,
+        298
+      ]
+    },
+    {
+      "path": "blocks/EarlyAlpha.png",
+      "bytes": 10168,
+      "sha256": "af8b023a7a7818e28046a1bd34004e1320ec0782e030319000052f447699d4ed",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 300,
+      "height": 300,
+      "rgbaSha256": "7886d633c30e99ee59727838e9dd9c6e76ae20c663fdcf6687e82af92f4d172d",
+      "alphaBounds": [
+        16,
+        2,
+        284,
+        298
+      ]
+    },
+    {
+      "path": "blocks/Other.png",
+      "bytes": 8254,
+      "sha256": "c264581e9e84a7127988a705e8b9b27161e3c3e1c07862047ab18bb5b4294799",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 300,
+      "height": 300,
+      "rgbaSha256": "fcac1d161f38a576e42f90fd2527ff82537a6c45de39c62d69251c5a51b62222",
+      "alphaBounds": [
+        16,
+        2,
+        284,
+        298
+      ]
+    },
+    {
+      "path": "blocks/Release.png",
+      "bytes": 9503,
+      "sha256": "ff327b92d547982c51e0f717e95fc9462c0097ba16c750235e97da647bb69b6b",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 300,
+      "height": 300,
+      "rgbaSha256": "c86650fe458e710149b626ce860798c1c8e0b626816c3c1f97d1fc56401547be",
+      "alphaBounds": [
+        16,
+        2,
+        284,
+        298
+      ]
+    },
+    {
+      "path": "blocks/sizes/128/Beta.png",
+      "bytes": 10461,
+      "sha256": "ba697af7e83f947e6270799720dd032b0f6e23d46f6cc81aa381442330618577",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 128,
+      "height": 128,
+      "rgbaSha256": "a8be304838e2dd9ed477cec514e4949b17373bd6f08a851004a1dbec5e594d34",
+      "alphaBounds": [
+        4,
+        0,
+        124,
+        128
+      ]
+    },
+    {
+      "path": "blocks/sizes/128/EarlyAlpha.png",
+      "bytes": 10142,
+      "sha256": "435efefbcc2cd6380c84300f1443b3e4ae5d0325f2af43cc4a4de3811fe1a77c",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 128,
+      "height": 128,
+      "rgbaSha256": "682d6071ed4932b06d1cdddebdfc9b83c8554783898bbd69b072e9bff6b2ce0a",
+      "alphaBounds": [
+        4,
+        0,
+        124,
+        128
+      ]
+    },
+    {
+      "path": "blocks/sizes/128/Other.png",
+      "bytes": 9197,
+      "sha256": "6a9aa514fd9b6edd33b4605cfbc15336dcc138022443d9ecce739c49713214db",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 128,
+      "height": 128,
+      "rgbaSha256": "b6fbe2d49d23b2401ee031987d356bb927dd7bfc411e1877f231e1e3aead14fc",
+      "alphaBounds": [
+        4,
+        0,
+        124,
+        128
+      ]
+    },
+    {
+      "path": "blocks/sizes/128/Release.png",
+      "bytes": 10978,
+      "sha256": "08b8865d247dcb1b8c688e02f6af6cb65817b618ebba3004bd40ead646bf0310",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 128,
+      "height": 128,
+      "rgbaSha256": "2293a2e3990f72f10d52b0661bd4d870d3075c3fcd15a9c15e73ab766382a76c",
+      "alphaBounds": [
+        4,
+        0,
+        124,
+        128
+      ]
+    },
+    {
+      "path": "blocks/sizes/16/Beta.png",
+      "bytes": 860,
+      "sha256": "41fe35f541d011711bcf872450f5189ba435c8929599e97ee79e28e9a0f39b9f",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 16,
+      "height": 16,
+      "rgbaSha256": "3bfda74479daa74999ad8786499febb65972dcd3a36fcbf0a81433107286f565",
+      "alphaBounds": [
+        0,
+        0,
+        16,
+        16
+      ]
+    },
+    {
+      "path": "blocks/sizes/16/EarlyAlpha.png",
+      "bytes": 826,
+      "sha256": "0cf1b5a3059757c170bcfab742fb6d2555b65e36d76f85569eccc24f57f04d0c",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 16,
+      "height": 16,
+      "rgbaSha256": "d835dcc24b952eec138173543e4e2b755b25d2658ee496c1e6757f460f500419",
+      "alphaBounds": [
+        0,
+        0,
+        16,
+        16
+      ]
+    },
+    {
+      "path": "blocks/sizes/16/Other.png",
+      "bytes": 873,
+      "sha256": "786e37dfb7d3cfea982dc48c83bac8204fd94ba1dc8933e65bd9bd5357477c77",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 16,
+      "height": 16,
+      "rgbaSha256": "df48563b13b8d1934cdbebcbefce5a988c3e2a5f8f427ea63ecb4d7dccaae79a",
+      "alphaBounds": [
+        0,
+        0,
+        16,
+        16
+      ]
+    },
+    {
+      "path": "blocks/sizes/16/Release.png",
+      "bytes": 892,
+      "sha256": "173c1a58c9734d72888585b391e2b99cc9e00d258c5832cb61e928f6bb53068a",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 16,
+      "height": 16,
+      "rgbaSha256": "d9105224a863078664096457ab98e32cd7a481d542cb4f5237e1aa5e89f72f0c",
+      "alphaBounds": [
+        0,
+        0,
+        16,
+        16
+      ]
+    },
+    {
+      "path": "blocks/sizes/20/Beta.png",
+      "bytes": 1194,
+      "sha256": "283ac71fd3bb5e764506420d13a75598ef74f48ad5fb5f15b057d36055b10176",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 20,
+      "height": 20,
+      "rgbaSha256": "ba07271f518fb75b5e2742f8f131ac6436febcc7f3c62ceeeaf346d2c649ead4",
+      "alphaBounds": [
+        0,
+        0,
+        20,
+        20
+      ]
+    },
+    {
+      "path": "blocks/sizes/20/EarlyAlpha.png",
+      "bytes": 1154,
+      "sha256": "4d29a74aab8623425c62500fef22aad6f09b43a75f831bffb742d5e9cae88ea4",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 20,
+      "height": 20,
+      "rgbaSha256": "8f82e5323b3a210f9b12bb0353f04ba817d2366244369629137aa19fe2c5ae03",
+      "alphaBounds": [
+        0,
+        0,
+        20,
+        20
+      ]
+    },
+    {
+      "path": "blocks/sizes/20/Other.png",
+      "bytes": 1190,
+      "sha256": "7bb2e9f924e5e3a420e75adf19e7459589a0583973fef2e9851b2804cb21fe39",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 20,
+      "height": 20,
+      "rgbaSha256": "5e71f8ac2202ba0ed891529f3306f5c24b86f3959ca8a2299b312be600817819",
+      "alphaBounds": [
+        0,
+        0,
+        20,
+        20
+      ]
+    },
+    {
+      "path": "blocks/sizes/20/Release.png",
+      "bytes": 1247,
+      "sha256": "03f225085600689e6463effab47c40bfdf81c6749722df019620cea61d43753f",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 20,
+      "height": 20,
+      "rgbaSha256": "56abf5fdde35a3def78324f841b495599bd104d44cb60b3c6c208615ed16329b",
+      "alphaBounds": [
+        0,
+        0,
+        20,
+        20
+      ]
+    },
+    {
+      "path": "blocks/sizes/24/Beta.png",
+      "bytes": 1492,
+      "sha256": "21aff579381e1d406678e0346a19739de601f4b1ad680e792c6511a5e474dc35",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 24,
+      "height": 24,
+      "rgbaSha256": "4dd24c7b9d66677d41fa252bac7065696c53652b2a0636e0dea63398e61d3e1c",
+      "alphaBounds": [
+        0,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "path": "blocks/sizes/24/EarlyAlpha.png",
+      "bytes": 1452,
+      "sha256": "b288033a116f69c48897adac9366680a44354ac8df17133abead2ab57a647041",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 24,
+      "height": 24,
+      "rgbaSha256": "10c85477a57f162a0622c7a5fec3921a1e51cd0c7e579396a39b24d7f27780d2",
+      "alphaBounds": [
+        0,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "path": "blocks/sizes/24/Other.png",
+      "bytes": 1440,
+      "sha256": "cc5064ce43449a680bea76463a5830ca9b2383d53a958de1220546b499d72402",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 24,
+      "height": 24,
+      "rgbaSha256": "f01fe87d85f9f11f4ced531080fb0404fe3e81167d327b830460c6f094be3981",
+      "alphaBounds": [
+        0,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "path": "blocks/sizes/24/Release.png",
+      "bytes": 1513,
+      "sha256": "8e89fb1be62e5a889ab5b73e3d68de3bfce6d8ee738c3f3bb02858fffa8b9a26",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 24,
+      "height": 24,
+      "rgbaSha256": "b6dbafb58489e86c702e0e39d20bc988dc620632f0076226dfc18613546b0315",
+      "alphaBounds": [
+        0,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "path": "blocks/sizes/256/Beta.png",
+      "bytes": 30810,
+      "sha256": "691e016d629d786c124fb03099785fca71385bca907c4379f282739a220cba0c",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "8e27bda820d774c68d60e0531eec196265b1314d5a4659ebf5311d859dbf95c7",
+      "alphaBounds": [
+        11,
+        0,
+        245,
+        256
+      ]
+    },
+    {
+      "path": "blocks/sizes/256/EarlyAlpha.png",
+      "bytes": 30335,
+      "sha256": "c74ecffd7f606df2de46da7cea37a482115c233e8c45190ecf524d89d0df2009",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "65f431c5dd19324c739acabee4b0052f196754c496423977f2e4ae1a65956c25",
+      "alphaBounds": [
+        11,
+        0,
+        245,
+        256
+      ]
+    },
+    {
+      "path": "blocks/sizes/256/Other.png",
+      "bytes": 29063,
+      "sha256": "df286a000fafc036baee259adef805a6206c1c14ad4a9cf2a8bb8387785a71be",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "968dfa2e720496c10261fd5a6aaacf200c965f218e9c853be7a4b3ab022b2490",
+      "alphaBounds": [
+        11,
+        0,
+        245,
+        256
+      ]
+    },
+    {
+      "path": "blocks/sizes/256/Release.png",
+      "bytes": 33231,
+      "sha256": "73ae0cedf81bb73b720e1a1644b2ffc5c8a652ff1d5037f65c74d8e0ebffda00",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "d8cc38f2771546ba1a60619939f2fd63d8d3b304d41fb5e1ecf6b048e95fa33b",
+      "alphaBounds": [
+        11,
+        0,
+        245,
+        256
+      ]
+    },
+    {
+      "path": "blocks/sizes/32/Beta.png",
+      "bytes": 2080,
+      "sha256": "e2f3badd92568b1a1046c7deb68d94c7270af9604d2ede1b141a53b210e5764b",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 32,
+      "height": 32,
+      "rgbaSha256": "487c0d2af685e160292a40a933f268dcacfca3b98038b70032bc749888db462c",
+      "alphaBounds": [
+        0,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "path": "blocks/sizes/32/EarlyAlpha.png",
+      "bytes": 2038,
+      "sha256": "e652bdf95ca4a5193511d30c84f283d7be4b7a2bc6fde1d6c0b54b7601013448",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 32,
+      "height": 32,
+      "rgbaSha256": "af15fd98f5a0c77ae1f304a76fa37287fa58280e6c2b15370cff28ee3065fd29",
+      "alphaBounds": [
+        0,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "path": "blocks/sizes/32/Other.png",
+      "bytes": 2062,
+      "sha256": "464956aee6b0281968a1571403e6ec200734e40873dc8310fef875639ce1efa6",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 32,
+      "height": 32,
+      "rgbaSha256": "bc79a3feda76a7df1d30aa4173b1b8781dee025c479c93c874b4fc27916dac0a",
+      "alphaBounds": [
+        0,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "path": "blocks/sizes/32/Release.png",
+      "bytes": 2163,
+      "sha256": "0d87e15b71843a49b05018d54cf0dfefb1d3e4ef4b529c41a13560a0dc31285d",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 32,
+      "height": 32,
+      "rgbaSha256": "1046c8665d7514fae034e1ce4c87d96af62eb620fa4a90989214540fd4162136",
+      "alphaBounds": [
+        0,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "path": "blocks/sizes/40/Beta.png",
+      "bytes": 2630,
+      "sha256": "22ca2f840713172b5118ee4a1679416a8fd6e4b6283a7e76a7b4b10e2f8e3d29",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 40,
+      "height": 40,
+      "rgbaSha256": "52beb7716c06ff32cd74cf60176dd8758c4b8552749b1ee6972594a37fe35caa",
+      "alphaBounds": [
+        0,
+        0,
+        40,
+        40
+      ]
+    },
+    {
+      "path": "blocks/sizes/40/EarlyAlpha.png",
+      "bytes": 2500,
+      "sha256": "74166b38c4a966186b5e034ef8fd5f65f4e72019e684b51161364150549d6fe1",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 40,
+      "height": 40,
+      "rgbaSha256": "194050e9f2c7fb7c0b687be726b258b4dc3d511f1ce2d1e50466cd7553988a29",
+      "alphaBounds": [
+        0,
+        0,
+        40,
+        40
+      ]
+    },
+    {
+      "path": "blocks/sizes/40/Other.png",
+      "bytes": 2512,
+      "sha256": "415f320cd0f3a28555cfecb9049e12bd7fe9e3b490c66f7614c0666c22e549f6",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 40,
+      "height": 40,
+      "rgbaSha256": "5800e597dd64eb25423cc3b8eb97ecf0b2886262c98959eb4afd5ed9dabe276a",
+      "alphaBounds": [
+        0,
+        0,
+        40,
+        40
+      ]
+    },
+    {
+      "path": "blocks/sizes/40/Release.png",
+      "bytes": 2667,
+      "sha256": "7c2b79d7be651f07400105c4bc750021832db9770855e56443c487b993ac58ee",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 40,
+      "height": 40,
+      "rgbaSha256": "c8fb8a9331c11472b6ba3533e68f733c77bc16f01910312a73d664d196f9add6",
+      "alphaBounds": [
+        0,
+        0,
+        40,
+        40
+      ]
+    },
+    {
+      "path": "blocks/sizes/48/Beta.png",
+      "bytes": 3286,
+      "sha256": "83a3acbb13135022a4e0a1f09535c299dd5990431067e0d62110b03ef77abaad",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 48,
+      "height": 48,
+      "rgbaSha256": "42f2c4cae7b96065c0e9248793efcc911090edede087c29b16e109f407bbecc9",
+      "alphaBounds": [
+        0,
+        0,
+        48,
+        48
+      ]
+    },
+    {
+      "path": "blocks/sizes/48/EarlyAlpha.png",
+      "bytes": 3169,
+      "sha256": "8eb2fba08d78413585093a677a411e337da512669d1381fee87b03907264b86d",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 48,
+      "height": 48,
+      "rgbaSha256": "b611b68a211d935565a06c257b032f54424b744073070c77d53681314dd037c6",
+      "alphaBounds": [
+        0,
+        0,
+        48,
+        48
+      ]
+    },
+    {
+      "path": "blocks/sizes/48/Other.png",
+      "bytes": 3136,
+      "sha256": "2476c97eebb5427c80d56c018b1f0dba90e3cffb4f0db8b701ae27e2072ca269",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 48,
+      "height": 48,
+      "rgbaSha256": "3f9806d967433a0a58b8fb333d9a96efb6da72098e209e35f05c6cdee45c2dcd",
+      "alphaBounds": [
+        0,
+        0,
+        48,
+        48
+      ]
+    },
+    {
+      "path": "blocks/sizes/48/Release.png",
+      "bytes": 3421,
+      "sha256": "46da4f8f81bea162e3ae96207d12444c8c3fcb8d2d04531e567b3dd7675fdbd6",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 48,
+      "height": 48,
+      "rgbaSha256": "876ba9b14e39e8fabf0a0e8b8448053c8148ba7ff6f2215b54ef5fba9f0014e5",
+      "alphaBounds": [
+        0,
+        0,
+        48,
+        48
+      ]
+    },
+    {
+      "path": "blocks/sizes/64/Beta.png",
+      "bytes": 4550,
+      "sha256": "111e94731fe78135565a5a67bf0624327f409931651ff6aa507c99bd8c242d93",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 64,
+      "height": 64,
+      "rgbaSha256": "a565c783ae567124e624d5f6e4f4828f0139f9f69473edc9fcbaf4c2f0ad6776",
+      "alphaBounds": [
+        1,
+        0,
+        63,
+        64
+      ]
+    },
+    {
+      "path": "blocks/sizes/64/EarlyAlpha.png",
+      "bytes": 4360,
+      "sha256": "30defc2e30d12b8dbdf387bf596fcba58beea1c9e9114db9f6a16f9ca4b19e67",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 64,
+      "height": 64,
+      "rgbaSha256": "921ccd90e4d5a1fd2f31cf12e9f7c848a9be7337ac21a5e1c507a50efe02a8a7",
+      "alphaBounds": [
+        1,
+        0,
+        63,
+        64
+      ]
+    },
+    {
+      "path": "blocks/sizes/64/Other.png",
+      "bytes": 4218,
+      "sha256": "6c79b3a574c5aa2f22ca0583b65003176282f5d6616425e517a134d041987285",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 64,
+      "height": 64,
+      "rgbaSha256": "9ebe7903df571af31ee2db8a63e563825f6c4a8298b05bd6a36f6d205d0fbe78",
+      "alphaBounds": [
+        1,
+        0,
+        63,
+        64
+      ]
+    },
+    {
+      "path": "blocks/sizes/64/Release.png",
+      "bytes": 4693,
+      "sha256": "58d65cb4503590cdb82be1ae43fa624fa384a631714ae992f80781c6e61a524d",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 64,
+      "height": 64,
+      "rgbaSha256": "fbc090d1f3bbdd9ea4e1357cd6d020f7b4ca7bea5d8aa0c75e73ea86db516fe5",
+      "alphaBounds": [
+        1,
+        0,
+        63,
+        64
+      ]
+    },
+    {
+      "path": "blocks-before-after.png",
+      "bytes": 173274,
+      "sha256": "9c5f8a158d437393d153e3e4abbbfaadc89728e800a34bef43270cbec2829cee",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1200,
+      "height": 736,
+      "rgbaSha256": "e2cb73e6a6234baebeac64d5b0954402c648eafd3f64054b0bb4f725da460935",
+      "alphaBounds": [
+        0,
+        0,
+        1200,
+        736
+      ]
+    },
+    {
+      "path": "blocks-preview.png",
+      "bytes": 75630,
+      "sha256": "c7ef3efa63a6b02f88cb81cb4b1b560dd856886bc0394b95999244e642337cfc",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1440,
+      "height": 840,
+      "rgbaSha256": "d4e9fc4a2e7c2045ca36b6cb438a5271ba3d6f8d1f61bd163df3c7204bff4003",
+      "alphaBounds": [
+        0,
+        0,
+        1440,
+        840
+      ]
+    },
+    {
+      "path": "blocks-reference-check.png",
+      "bytes": 75325,
+      "sha256": "129944c02327aaa37cdf0670e22958ba58e738f7f126f1f61bc7143b2eba6d0b",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1440,
+      "height": 550,
+      "rgbaSha256": "977292902a77a04bd47668411dbc8c77895ff75be4e7c40b1fa8b42d86c69e4c",
+      "alphaBounds": [
+        0,
+        0,
+        1440,
+        550
+      ]
+    },
+    {
+      "path": "blocks-small-size-check.png",
+      "bytes": 139749,
+      "sha256": "375ebe1f962aae1e86890b26956424d2e25fabbd6aad0e2d0d47d4056ec80e46",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1560,
+      "height": 1000,
+      "rgbaSha256": "3cd3f0c69658e11d550714f29b4c34a8147601deee11d70781f7f4c34c10a360",
+      "alphaBounds": [
+        0,
+        0,
+        1560,
+        1000
+      ]
+    },
+    {
+      "path": "logo/Palladium-light.ico",
+      "bytes": 23710,
+      "sha256": "6ef9a59ee6e4044a51be8c6c19380f477182a6739b8ce93b50a7fb0f0aa624d9",
+      "format": "ICO",
+      "mode": "RGBA",
+      "width": 256,
+      "height": 256,
+      "frameSizes": [
+        16,
+        20,
+        24,
+        32,
+        40,
+        48,
+        64,
+        128,
+        256
+      ]
+    },
+    {
+      "path": "logo/Palladium-light.png",
+      "bytes": 37658,
+      "sha256": "5ce14461d2e958f22e0c53545698a48d269f15489584dbdfd5574f5fac2604ee",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "46f1506a45df8a94d275289e3327ba7ad2f18d778c5e3f3dd61e2da2f82ac734",
+      "alphaBounds": [
+        0,
+        0,
+        1024,
+        1024
+      ]
+    },
+    {
+      "path": "logo/Palladium-mark-black.png",
+      "bytes": 12367,
+      "sha256": "cb2742ff0c544c37f6dfc4dfe4c7a364b5aad1c784ae7ddcd19e0fbb891fb062",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "ba3e2cb9c93c5f370611374ab55b4364db67b06c06649b94da6f4a012110272d",
+      "alphaBounds": [
+        159,
+        158,
+        865,
+        866
+      ]
+    },
+    {
+      "path": "logo/Palladium-mark-blue.png",
+      "bytes": 12827,
+      "sha256": "9f2ebe1abc9a61c2ead5ec5711bef7b2e02ad70a1e9c31de86a16afec894d9b4",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "469309c9906e2d8f13f97abc259e197928b426ad34191610c2c0bcc1f16d25db",
+      "alphaBounds": [
+        159,
+        158,
+        865,
+        866
+      ]
+    },
+    {
+      "path": "logo/Palladium-mark-silver.png",
+      "bytes": 12852,
+      "sha256": "68677584bc7bd9e284a76f7e32679c7a9169e5b986bf5def7381a4b904712583",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "e0d783ba865a2e27410dceebea637f8a9598f6af239a8e00955489a0b51c3a98",
+      "alphaBounds": [
+        159,
+        158,
+        865,
+        866
+      ]
+    },
+    {
+      "path": "logo/Palladium-mark-white.png",
+      "bytes": 12868,
+      "sha256": "66295ff708e10ce5c48bbf19b2b0b4e63acd410a1539224669fb5cd2087ef86d",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "51b4d2c09513b21e96947de5b4de8076eef5b753f5bf4e5ec03971743f2cd757",
+      "alphaBounds": [
+        159,
+        158,
+        865,
+        866
+      ]
+    },
+    {
+      "path": "logo/Palladium.ico",
+      "bytes": 22104,
+      "sha256": "0bc72f1e94240750b12787948adbf485a9bb51a55d38998b4cf7e5e47c0f66c7",
+      "format": "ICO",
+      "mode": "RGBA",
+      "width": 256,
+      "height": 256,
+      "frameSizes": [
+        16,
+        20,
+        24,
+        32,
+        40,
+        48,
+        64,
+        128,
+        256
+      ]
+    },
+    {
+      "path": "logo/Palladium.png",
+      "bytes": 33812,
+      "sha256": "8676c262aeb2ece6712126ec9ddcec725703bc1c6430950d082b47bfc03041b5",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "c78363e39aae163b19f97d56c9b565c7deb94f0ec9a75aed0ae8cd2044ac4cc3",
+      "alphaBounds": [
+        0,
+        0,
+        1024,
+        1024
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-128.png",
+      "bytes": 3852,
+      "sha256": "97da8a2884adc7aaa77ff0807397859cf713b8d96459374ae7fc083160a7f451",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 128,
+      "height": 128,
+      "rgbaSha256": "bae63e8e05fc478c6bfa71f8c15fc3105694bcdd27417687d99ac5147756d846",
+      "alphaBounds": [
+        0,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-16.png",
+      "bytes": 765,
+      "sha256": "451392dfb230d412197e409c292e2b77c03e5cc41f6ff0bb5eb9be17851d6c3b",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 16,
+      "height": 16,
+      "rgbaSha256": "15a6bd99430763e66222db8f917026aeddbfb3589a4bcbffc5d9073a2e4e9c2f",
+      "alphaBounds": [
+        0,
+        0,
+        16,
+        16
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-20.png",
+      "bytes": 935,
+      "sha256": "476957967bd64687ee39ad8bdeea844ad1b5621f3e91cc1224b7b49006b02df8",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 20,
+      "height": 20,
+      "rgbaSha256": "6478842f2fc76d471347c39e72e42abcea92dc9f18f039170fb6694720199235",
+      "alphaBounds": [
+        0,
+        0,
+        20,
+        20
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-24.png",
+      "bytes": 1161,
+      "sha256": "4cd2ed6a9e45e38395f307c93c953b0248453865ad2b11c5ba650301e1d707b1",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 24,
+      "height": 24,
+      "rgbaSha256": "fcb416c8bf6a067deb44404d374616acc2e88eb67ef39708f226b45a1a934a2e",
+      "alphaBounds": [
+        0,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-256.png",
+      "bytes": 8149,
+      "sha256": "3a98f96f87d340f186ced969e5a389865f7a3f1d3ed70dd2bdee1d71938b41b3",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "25d36e824af5e243f527544aeda4aafbfa07ebd29ce4ce6f60004d0b15473044",
+      "alphaBounds": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-32.png",
+      "bytes": 1349,
+      "sha256": "abd44344cf99921f22533695f9f8bbf23bf3036785406d2366a7bccbf7da409a",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 32,
+      "height": 32,
+      "rgbaSha256": "6c08d5e666ac59413163e9a3564fb0c2e1b6e25d3ca7459f86158fe7acb514f3",
+      "alphaBounds": [
+        0,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-40.png",
+      "bytes": 1856,
+      "sha256": "748b700ac0fcf47e9fae139c3f7a00657232a2beed3ca9aeee1debb007be0b74",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 40,
+      "height": 40,
+      "rgbaSha256": "6ed4d307af71b82e78eefe80fa98480d73c9a0f199e41139855b79f32b73b645",
+      "alphaBounds": [
+        0,
+        0,
+        40,
+        40
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-48.png",
+      "bytes": 2045,
+      "sha256": "a2e8a42af1dbd0997a266aebc530640cfa87a63783d08160bda6ce29e9ac8712",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 48,
+      "height": 48,
+      "rgbaSha256": "2b57bc1e30a4139e8257caeeabab11cb4ffb030f2bef4403ccf66b9b2a13e835",
+      "alphaBounds": [
+        0,
+        0,
+        48,
+        48
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-64.png",
+      "bytes": 2177,
+      "sha256": "6cff8a98e5867a4a187047f44426471c37b1b6016d6b648f0f914690529bab95",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 64,
+      "height": 64,
+      "rgbaSha256": "4e9e376a3f846f9ababf07b02a45a9a1b9d3b7832306ac2ed7cab937903cfb84",
+      "alphaBounds": [
+        0,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-light-128.png",
+      "bytes": 4212,
+      "sha256": "f3e37536c3cf87653618483a3b1291ba1d412e914979e2b1c78e584462597a36",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 128,
+      "height": 128,
+      "rgbaSha256": "7158b906f4792b05fd8fd975d48c8b47b6adb7c23a4c52e78c598b06ee23c539",
+      "alphaBounds": [
+        0,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-light-16.png",
+      "bytes": 756,
+      "sha256": "a843e6b3ed790bb4804a6852cc94b0da033b200205636c0aeadcdeb9af19e566",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 16,
+      "height": 16,
+      "rgbaSha256": "9197625f4b4dddeceac5698d7a8dcfdc1976902c8fbc4a1f3d658ea4a905b250",
+      "alphaBounds": [
+        0,
+        0,
+        16,
+        16
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-light-20.png",
+      "bytes": 964,
+      "sha256": "a5280560686ba3aa0b1339cc37b47bcf559a167cfcdeca74f58306207faad4f9",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 20,
+      "height": 20,
+      "rgbaSha256": "fd1314bd7c5a31a2614fab3d127addc0ae773bbbb530ab75d9ac20738bdfd91c",
+      "alphaBounds": [
+        0,
+        0,
+        20,
+        20
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-light-24.png",
+      "bytes": 1141,
+      "sha256": "242efecee0dcb7b0a01316ec50278644c6a049c705f288d8f8d8b809f1ed64cf",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 24,
+      "height": 24,
+      "rgbaSha256": "243db766c85c3074d9701a5a58b1a118273c42b35d1f2411784cb267213591c8",
+      "alphaBounds": [
+        0,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-light-256.png",
+      "bytes": 9010,
+      "sha256": "2b730ec549749dc8624b6fcb95e9e49fe1adbb5c6d2642abd084a80a1df9eb28",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "a6ad453c4deb19dd77919bd2a11ee105c2c1143dd15802110c25445044df16ea",
+      "alphaBounds": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-light-32.png",
+      "bytes": 1350,
+      "sha256": "7aa355366cb2a3d7b9872345cba2a01adaedc3536df66e5161fd5b2ab66187c2",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 32,
+      "height": 32,
+      "rgbaSha256": "d4a69075d209de184c5e692e13fca627d47a596f692619127b40ec3f36ae4043",
+      "alphaBounds": [
+        0,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-light-40.png",
+      "bytes": 1875,
+      "sha256": "cfc70e1defcc2a258175b5eda4acdb8710019dfb7cd61ef87a4916c92e5cda59",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 40,
+      "height": 40,
+      "rgbaSha256": "669cdaa349ab8a66cfe9ac91df36983779ff9d6395f3f3f586f8c3a18ead3b35",
+      "alphaBounds": [
+        0,
+        0,
+        40,
+        40
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-light-48.png",
+      "bytes": 2019,
+      "sha256": "9c5a6c7a53c90fc1e0b898bd0c0a038a70c62f753eacb8558a99de09ae2882b8",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 48,
+      "height": 48,
+      "rgbaSha256": "d88fef2f2a5bc8776e078266599b481c066b0da1c57a1181539a136dc49a475e",
+      "alphaBounds": [
+        0,
+        0,
+        48,
+        48
+      ]
+    },
+    {
+      "path": "logo/sizes/Palladium-light-64.png",
+      "bytes": 2350,
+      "sha256": "9af3d54593e0f0d2a03d54ccc33261757b3990ef56195bf5e7db2b1c07931243",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 64,
+      "height": 64,
+      "rgbaSha256": "8c7aa59a967a1a89f5abc44fb8e4b2bb8311454b2484cb76b0caaf98d7e9bbc8",
+      "alphaBounds": [
+        0,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "path": "logo/variants.png",
+      "bytes": 34226,
+      "sha256": "f7d547a6e7b618886c6416b81e4a1a9a995b4896e022240e5c8e8d416c01e136",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1600,
+      "height": 800,
+      "rgbaSha256": "9b237c23c052fd2b653cd58d276a2d93309b5bfb70f347f2461046eaa74f752f",
+      "alphaBounds": [
+        0,
+        0,
+        1600,
+        800
+      ]
+    },
+    {
+      "path": "preview.png",
+      "bytes": 221377,
+      "sha256": "daf7e1a86eb3ec6bfd41bed8f47ced1bedb4d82e632dda13c316e92c6f8c624f",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1800,
+      "height": 1220,
+      "rgbaSha256": "1c7b159f411757e572ad6667cde4a859db9d9f2948971a37eb09386ebd945cd5",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        1220
+      ]
+    },
+    {
+      "path": "previews/readme-900-375-dark.png",
+      "bytes": 248076,
+      "sha256": "f7f3090179220f45191026563e3123333d144713bc2500d671890d1cc0611ad8",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1440,
+      "height": 1540,
+      "rgbaSha256": "b4801d6fb082639bca52d011409f55c009065b7246d8f211f51f2183ac125dec",
+      "alphaBounds": [
+        0,
+        0,
+        1440,
+        1540
+      ]
+    },
+    {
+      "path": "previews/readme-900-375-light.png",
+      "bytes": 249110,
+      "sha256": "66955ceddf8bc8741e778abac78b99a08a0ae06ee9a2b77882948a165a6ac534",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1440,
+      "height": 1540,
+      "rgbaSha256": "29c5b6f7addd74a983e5e775feccd622f71614615f43a90c46d9fbc20d36b553",
+      "alphaBounds": [
+        0,
+        0,
+        1440,
+        1540
+      ]
+    },
+    {
+      "path": "README.md",
+      "bytes": 9856,
+      "sha256": "ae70f371778e58996fa30a97ceaeaa123488f5d765781bbd781902117e2be42d"
+    },
+    {
+      "path": "small-size-check.png",
+      "bytes": 128891,
+      "sha256": "2c1f6cc3a83d55ab10644b04b0a3d639c81d8b53671af4e8d38e95a513fa0e0f",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1600,
+      "height": 1000,
+      "rgbaSha256": "018eacb9c4cf5bfe20f557184000ec79e3916f1cdc2232ef0b162f01c06ed6ac",
+      "alphaBounds": [
+        0,
+        0,
+        1600,
+        1000
+      ]
+    },
+    {
+      "path": "verification.json",
+      "bytes": 2102,
+      "sha256": "7c32d65ef74a5e40dd109d241daefc294e174389aba236350e7e9340a6977595"
+    },
+    {
+      "path": "wordmarks/ba-black.png",
+      "bytes": 8390,
+      "sha256": "c86add4b681fc4eeb6788559c164ea0c177b3ec950fa3244bcebb3a7e54409d9",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "3835c3277988481c231c987eb5aa794dadd8fb3b2f5808f31e822b9b9aefc8e7",
+      "alphaBounds": [
+        460,
+        81,
+        816,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/ba-blue.png",
+      "bytes": 8773,
+      "sha256": "aaac7632c454904cb0f96859c0ece8ac70cda232dc8b5f08dccc05b2450e2092",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "2c73f12efcf435575596d78f3e55046ecd3c4d24f85a02e0ed1215cc4e4bb8bc",
+      "alphaBounds": [
+        460,
+        81,
+        816,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/ba-silver.png",
+      "bytes": 8769,
+      "sha256": "2aa6d5714a63e34c0c79a0adb0ef33c690bb1f0c3609bee5c64de9b09699e003",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "376db05e5135dac17f5e6e6185ce8fcca57762455c74342123d13d74c6a1bd30",
+      "alphaBounds": [
+        460,
+        81,
+        816,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/ba-white.png",
+      "bytes": 8750,
+      "sha256": "2fe65c4207efd8a9dbeaf71eea7d580c884521fe974e42e0ae6edd53b1f3c702",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "7b9721d33e924dd3ae68c18399fb5b251dfd1f770254f359e6e7fc77e1ab43fc",
+      "alphaBounds": [
+        460,
+        81,
+        816,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/palladium-black.png",
+      "bytes": 15536,
+      "sha256": "5f81736e641e8745efeb76d844c2b9ba997669174638067de8273983b3013a8b",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "7b1a568421f48c4dd7613622af4269c8f0bf00b21a7b9c7f52603cc52083d7a8",
+      "alphaBounds": [
+        158,
+        81,
+        1113,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/palladium-blue.png",
+      "bytes": 15893,
+      "sha256": "1a8121d6b1a2b503c2b9cc67d43abbcf2c70de47291ea54ee03fcb3aa3170aae",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "a45f2d30fecdc2ded322180248dd57680588ae28ecde03a37b260f280bfd7f57",
+      "alphaBounds": [
+        158,
+        81,
+        1113,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/palladium-launcher-black.png",
+      "bytes": 19549,
+      "sha256": "05b3d9a3ee9536ba0284fd5a9503a9f461afea45ee83b90ceb56c31fb5b9cbeb",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "0f331fe4e8fc80ed03a8288bcdefdf0ed820a3b7ea513958f11d62d99ecc6cac",
+      "alphaBounds": [
+        126,
+        81,
+        1152,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/palladium-launcher-blue.png",
+      "bytes": 20207,
+      "sha256": "fa800476f155f44065d4424eb1f33427d293838952bd579acf1ebbbbcbc804e0",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "763c34e5f873fd12dd3ae6afdcc745461d3bcb85ac3850317098faefea874595",
+      "alphaBounds": [
+        126,
+        81,
+        1152,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/palladium-launcher-silver.png",
+      "bytes": 20207,
+      "sha256": "5ed5188f3ab8c6762850ba60c6de51dae972fa156445377eb13464ff1b4844fd",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "b84ca99f7a5aee854acfbd2474f203d596529d910efc88640c5b5e04f736281d",
+      "alphaBounds": [
+        126,
+        81,
+        1152,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/palladium-launcher-white.png",
+      "bytes": 20187,
+      "sha256": "879746a0bd7b1c220d64b5f051962603d880f6a535d1f5d136f57a53bed69670",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "0ab24dfdcc24115dd93d2caba241bc6e916c65cfb39479343973ebc9c9dec170",
+      "alphaBounds": [
+        126,
+        81,
+        1152,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/palladium-silver.png",
+      "bytes": 15891,
+      "sha256": "9cbbdb404366676ac641e778c97662618904066a49d6645c52601ac7b930ba59",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "a59a2f0ff26230709275a6ff67cd0f523ab3176c9ba956a3f12262ae8f4be32e",
+      "alphaBounds": [
+        158,
+        81,
+        1113,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/palladium-white.png",
+      "bytes": 15876,
+      "sha256": "fe8142f18889c6e4049d466a2437c85d4f307bcaa63839ced8dc4a2255021846",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "8bc555e6ccc3ae803a0d4a037248e262d652f415d05a65ff25d7d806a2827795",
+      "alphaBounds": [
+        158,
+        81,
+        1113,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/pd-black.png",
+      "bytes": 8938,
+      "sha256": "56d014e896669b75ddf412ae3bb4426cc956013751ef92168db6c45ddb40866e",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "96d91e7af9c3d959b2a64ec5894a18d6b58668c482d85c6172eaf19eeb5fdb43",
+      "alphaBounds": [
+        433,
+        81,
+        838,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/pd-blue.png",
+      "bytes": 9238,
+      "sha256": "2673d73fa97c3055569bd3bc841a9a10b0dad0027979835a2008619a6f63621b",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "6b3cc470e92568f21b91ecda7cbaf507eced2599bff3221c7391be8e998793c1",
+      "alphaBounds": [
+        433,
+        81,
+        838,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/pd-launcher-black.png",
+      "bytes": 19854,
+      "sha256": "bfef68d7ec9da40f6fe3c17013f19d01deecbf51046d0feadbe67d6f1be48805",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "38a58d7f3f18c60e64b25b8a0fed549b9ec1ec88244807b6feaf3bd58efdf0c1",
+      "alphaBounds": [
+        125,
+        81,
+        1151,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/pd-launcher-blue.png",
+      "bytes": 20634,
+      "sha256": "d31f681a4567b95dcab0597f679d1c424dd80949812cb0252631d134a10df7b5",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "2f72bc0ab2baf019de54d0a5dd62518b766e5fd75cd01815413d2179915ecbd1",
+      "alphaBounds": [
+        125,
+        81,
+        1151,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/pd-launcher-silver.png",
+      "bytes": 20633,
+      "sha256": "19137e133909a2949977598de5f6ef0f47302c856af8f2d7cb1db68dc8900435",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "ad1a056922d3a6b6bc624ab12288b3338ff9a7e2ea604b9b82a4fccacaaeaf83",
+      "alphaBounds": [
+        125,
+        81,
+        1151,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/pd-launcher-white.png",
+      "bytes": 20618,
+      "sha256": "b05db75b5813326b19b4a87f278e9ebdb45ce1543de7a52fd64bb75e1a54f82d",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "bb43e05c8279fbe2d61de1c2ae971ae66687f48b70425030f5464bd0014e20dd",
+      "alphaBounds": [
+        125,
+        81,
+        1151,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/pd-silver.png",
+      "bytes": 9237,
+      "sha256": "8a78188db512972f5572476f59b8e4232e14090e2cb6f2c024ececa3d9f3fdb8",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "9cb1e872026864bcc8eef9da91236c6557134f1b963543033c605d9a120ba46e",
+      "alphaBounds": [
+        433,
+        81,
+        838,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks/pd-white.png",
+      "bytes": 9224,
+      "sha256": "08e1c49e6c676a8db2bf2fd9630da18e778cf3bb7f330a89ade99e13ae270752",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "81f1b0f7f829c3db4f663835674899cfbcd4c4d4e3c5286fb9be1d1fee5a96d6",
+      "alphaBounds": [
+        433,
+        81,
+        838,
+        239
+      ]
+    },
+    {
+      "path": "wordmarks-mono-preview.png",
+      "bytes": 175573,
+      "sha256": "2673384cca1ad7416bdada50d87b3dfa95557856b8d87bdbd1969ff33f7e499b",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1600,
+      "height": 1260,
+      "rgbaSha256": "51e2b238958897f452b951b08b14d671f96df6ac02aee21ce4e807e3e13adf9f",
+      "alphaBounds": [
+        0,
+        0,
+        1600,
+        1260
+      ]
+    },
+    {
+      "path": "wordmarks-preview.png",
+      "bytes": 185091,
+      "sha256": "f24b215d2f892a35f2593ff039de44935961017733a7e21e7ae25f259491653b",
+      "format": "PNG",
+      "mode": "RGB",
+      "width": 1600,
+      "height": 1260,
+      "rgbaSha256": "d9dbfadb5db12b9ec05c707ee59d5138031bcdf9b9a10e7fcba660873b16bced",
+      "alphaBounds": [
+        0,
+        0,
+        1600,
+        1260
+      ]
+    }
+  ],
+  "fileSetSha256": "8f5984ac40e68399ba50ee136449ee658f6ddf2a731c7e52e21bcec8757a7520",
+  "fileSetHashEncoding": "SHA256 of UTF-8 path-sorted files array, sort_keys=True, ensure_ascii=True, separators=(comma,colon)",
+  "fileCount": 108,
+  "pngCount": 104,
+  "icoCount": 2,
+  "selectedMappings": [
+    {
+      "sourcePath": "banners/palladium-element-dark.png",
+      "targetPath": "banners/palladium-element-dark.png",
+      "role": "brand-banner",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 61207,
+      "sha256": "9ba120d72eeaa6d6e96f155a48ebe5a495f798ecd82c7af78d74f5ba4334dac1",
+      "format": "PNG",
+      "width": 1800,
+      "height": 520,
+      "rgbaSha256": "6bf0d857b22139d845c159ebf3bb6bfc552b74454f0dfe8e301eb6d557187460",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        520
+      ]
+    },
+    {
+      "sourcePath": "banners/palladium-element-light.png",
+      "targetPath": "banners/palladium-element-light.png",
+      "role": "brand-banner",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 62691,
+      "sha256": "58aad3c1162e812569c48e5183e2d69ee3da3188d1c0cee04f51b7e8dd1ce627",
+      "format": "PNG",
+      "width": 1800,
+      "height": 520,
+      "rgbaSha256": "4c09f4dc780828bc91a11ff230ddafb324d69c5b290d3568f3a8a098fc4e7fc8",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        520
+      ]
+    },
+    {
+      "sourcePath": "banners/palladium-launcher-hero-dark.png",
+      "targetPath": "banners/palladium-launcher-hero-dark.png",
+      "role": "brand-banner",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 80942,
+      "sha256": "5383cf70672bbe28a15bf4048cd74b478ef7ca61a0f29582ce8ee1ea67bfe5b1",
+      "format": "PNG",
+      "width": 1800,
+      "height": 600,
+      "rgbaSha256": "f5766204e5621253b787a074fe7c414f7810887a3a7c772b640c7c9ddbdb87a1",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        600
+      ]
+    },
+    {
+      "sourcePath": "banners/palladium-launcher-hero-light.png",
+      "targetPath": "banners/palladium-launcher-hero-light.png",
+      "role": "brand-banner",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 82416,
+      "sha256": "e027b91fe01b9233c1dc2ee8481b2ab5fa042659e446fc6cc378c057ecee1a7f",
+      "format": "PNG",
+      "width": 1800,
+      "height": 600,
+      "rgbaSha256": "e380e9f40a1933ee9e1090977eea5ed111e7a1d39ebee37b0ad3787f4bc9f3c3",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        600
+      ]
+    },
+    {
+      "sourcePath": "banners/pd-ba-bilingual-dark.png",
+      "targetPath": "banners/pd-ba-bilingual-dark.png",
+      "role": "brand-banner",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 79056,
+      "sha256": "b48eba019ac06af5f59ee24a563a60594e440bc4b8957246a79d4922d43b1a05",
+      "format": "PNG",
+      "width": 1800,
+      "height": 600,
+      "rgbaSha256": "e225650222cd48680acab2c5a3529f8fc032cfb49a8116f3cf40e4587981d320",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        600
+      ]
+    },
+    {
+      "sourcePath": "banners/pd-ba-bilingual-light.png",
+      "targetPath": "banners/pd-ba-bilingual-light.png",
+      "role": "brand-banner",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 79818,
+      "sha256": "b07e4692bb23b381c56f6900d360b124d0d98c2d7577a624d2a269e446fdf94c",
+      "format": "PNG",
+      "width": 1800,
+      "height": 600,
+      "rgbaSha256": "0b1cf88615cec93e1b2b06a15dd2ed6df7ff75ea9868e1415786d4b6f85f1f51",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        600
+      ]
+    },
+    {
+      "sourcePath": "banners/pd-launcher-compact-dark.png",
+      "targetPath": "banners/pd-launcher-compact-dark.png",
+      "role": "brand-banner",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 47295,
+      "sha256": "fc867355f503bb79a655e1a55f52b39e9c12c5f151a55f63758013b83b047d33",
+      "format": "PNG",
+      "width": 1800,
+      "height": 360,
+      "rgbaSha256": "6974d13637b50ce669490a39bc1f84655b10e750f50bf3be11e53e9f1e2ad185",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        360
+      ]
+    },
+    {
+      "sourcePath": "banners/pd-launcher-compact-light.png",
+      "targetPath": "banners/pd-launcher-compact-light.png",
+      "role": "brand-banner",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 48077,
+      "sha256": "c349a15477610deb1b92a0b86ebff74e0da5e41544e8bd4dc5c252e994f0133e",
+      "format": "PNG",
+      "width": 1800,
+      "height": 360,
+      "rgbaSha256": "cf7b8c0963084197874f7bcb450c3a5e12999375201908aadcbb719e966f8f5b",
+      "alphaBounds": [
+        0,
+        0,
+        1800,
+        360
+      ]
+    },
+    {
+      "sourcePath": "logo/Palladium-light.png",
+      "targetPath": "icon-light.png",
+      "role": "application-icon",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 37658,
+      "sha256": "5ce14461d2e958f22e0c53545698a48d269f15489584dbdfd5574f5fac2604ee",
+      "format": "PNG",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "46f1506a45df8a94d275289e3327ba7ad2f18d778c5e3f3dd61e2da2f82ac734",
+      "alphaBounds": [
+        0,
+        0,
+        1024,
+        1024
+      ]
+    },
+    {
+      "sourcePath": "logo/Palladium.png",
+      "targetPath": "icon.png",
+      "role": "application-icon",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 33812,
+      "sha256": "8676c262aeb2ece6712126ec9ddcec725703bc1c6430950d082b47bfc03041b5",
+      "format": "PNG",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "c78363e39aae163b19f97d56c9b565c7deb94f0ec9a75aed0ae8cd2044ac4cc3",
+      "alphaBounds": [
+        0,
+        0,
+        1024,
+        1024
+      ]
+    },
+    {
+      "sourcePath": "logo/Palladium-mark-black.png",
+      "targetPath": "mark-black.png",
+      "role": "brand-mark",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 12367,
+      "sha256": "cb2742ff0c544c37f6dfc4dfe4c7a364b5aad1c784ae7ddcd19e0fbb891fb062",
+      "format": "PNG",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "ba3e2cb9c93c5f370611374ab55b4364db67b06c06649b94da6f4a012110272d",
+      "alphaBounds": [
+        159,
+        158,
+        865,
+        866
+      ]
+    },
+    {
+      "sourcePath": "logo/Palladium-mark-blue.png",
+      "targetPath": "mark-blue.png",
+      "role": "brand-mark",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 12827,
+      "sha256": "9f2ebe1abc9a61c2ead5ec5711bef7b2e02ad70a1e9c31de86a16afec894d9b4",
+      "format": "PNG",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "469309c9906e2d8f13f97abc259e197928b426ad34191610c2c0bcc1f16d25db",
+      "alphaBounds": [
+        159,
+        158,
+        865,
+        866
+      ]
+    },
+    {
+      "sourcePath": "logo/Palladium-mark-silver.png",
+      "targetPath": "mark-silver.png",
+      "role": "brand-mark",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 12852,
+      "sha256": "68677584bc7bd9e284a76f7e32679c7a9169e5b986bf5def7381a4b904712583",
+      "format": "PNG",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "e0d783ba865a2e27410dceebea637f8a9598f6af239a8e00955489a0b51c3a98",
+      "alphaBounds": [
+        159,
+        158,
+        865,
+        866
+      ]
+    },
+    {
+      "sourcePath": "logo/Palladium-mark-white.png",
+      "targetPath": "mark-white.png",
+      "role": "brand-mark",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 12868,
+      "sha256": "66295ff708e10ce5c48bbf19b2b0b4e63acd410a1539224669fb5cd2087ef86d",
+      "format": "PNG",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "51b4d2c09513b21e96947de5b4de8076eef5b753f5bf4e5ec03971743f2cd757",
+      "alphaBounds": [
+        159,
+        158,
+        865,
+        866
+      ]
+    },
+    {
+      "sourcePath": "logo/Palladium-light.ico",
+      "targetPath": "platform/app-light.ico",
+      "role": "windows-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 23710,
+      "sha256": "6ef9a59ee6e4044a51be8c6c19380f477182a6739b8ce93b50a7fb0f0aa624d9",
+      "format": "ICO",
+      "width": 256,
+      "height": 256,
+      "frameSizes": [
+        16,
+        20,
+        24,
+        32,
+        40,
+        48,
+        64,
+        128,
+        256
+      ]
+    },
+    {
+      "sourcePath": "logo/Palladium.ico",
+      "targetPath": "platform/app.ico",
+      "role": "windows-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 22104,
+      "sha256": "0bc72f1e94240750b12787948adbf485a9bb51a55d38998b4cf7e5e47c0f66c7",
+      "format": "ICO",
+      "width": 256,
+      "height": 256,
+      "frameSizes": [
+        16,
+        20,
+        24,
+        32,
+        40,
+        48,
+        64,
+        128,
+        256
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-128.png",
+      "targetPath": "platform/icon-128.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 3852,
+      "sha256": "97da8a2884adc7aaa77ff0807397859cf713b8d96459374ae7fc083160a7f451",
+      "format": "PNG",
+      "width": 128,
+      "height": 128,
+      "rgbaSha256": "bae63e8e05fc478c6bfa71f8c15fc3105694bcdd27417687d99ac5147756d846",
+      "alphaBounds": [
+        0,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-16.png",
+      "targetPath": "platform/icon-16.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 765,
+      "sha256": "451392dfb230d412197e409c292e2b77c03e5cc41f6ff0bb5eb9be17851d6c3b",
+      "format": "PNG",
+      "width": 16,
+      "height": 16,
+      "rgbaSha256": "15a6bd99430763e66222db8f917026aeddbfb3589a4bcbffc5d9073a2e4e9c2f",
+      "alphaBounds": [
+        0,
+        0,
+        16,
+        16
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-20.png",
+      "targetPath": "platform/icon-20.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 935,
+      "sha256": "476957967bd64687ee39ad8bdeea844ad1b5621f3e91cc1224b7b49006b02df8",
+      "format": "PNG",
+      "width": 20,
+      "height": 20,
+      "rgbaSha256": "6478842f2fc76d471347c39e72e42abcea92dc9f18f039170fb6694720199235",
+      "alphaBounds": [
+        0,
+        0,
+        20,
+        20
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-24.png",
+      "targetPath": "platform/icon-24.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 1161,
+      "sha256": "4cd2ed6a9e45e38395f307c93c953b0248453865ad2b11c5ba650301e1d707b1",
+      "format": "PNG",
+      "width": 24,
+      "height": 24,
+      "rgbaSha256": "fcb416c8bf6a067deb44404d374616acc2e88eb67ef39708f226b45a1a934a2e",
+      "alphaBounds": [
+        0,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-256.png",
+      "targetPath": "platform/icon-256.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 8149,
+      "sha256": "3a98f96f87d340f186ced969e5a389865f7a3f1d3ed70dd2bdee1d71938b41b3",
+      "format": "PNG",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "25d36e824af5e243f527544aeda4aafbfa07ebd29ce4ce6f60004d0b15473044",
+      "alphaBounds": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-32.png",
+      "targetPath": "platform/icon-32.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 1349,
+      "sha256": "abd44344cf99921f22533695f9f8bbf23bf3036785406d2366a7bccbf7da409a",
+      "format": "PNG",
+      "width": 32,
+      "height": 32,
+      "rgbaSha256": "6c08d5e666ac59413163e9a3564fb0c2e1b6e25d3ca7459f86158fe7acb514f3",
+      "alphaBounds": [
+        0,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-40.png",
+      "targetPath": "platform/icon-40.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 1856,
+      "sha256": "748b700ac0fcf47e9fae139c3f7a00657232a2beed3ca9aeee1debb007be0b74",
+      "format": "PNG",
+      "width": 40,
+      "height": 40,
+      "rgbaSha256": "6ed4d307af71b82e78eefe80fa98480d73c9a0f199e41139855b79f32b73b645",
+      "alphaBounds": [
+        0,
+        0,
+        40,
+        40
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-48.png",
+      "targetPath": "platform/icon-48.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 2045,
+      "sha256": "a2e8a42af1dbd0997a266aebc530640cfa87a63783d08160bda6ce29e9ac8712",
+      "format": "PNG",
+      "width": 48,
+      "height": 48,
+      "rgbaSha256": "2b57bc1e30a4139e8257caeeabab11cb4ffb030f2bef4403ccf66b9b2a13e835",
+      "alphaBounds": [
+        0,
+        0,
+        48,
+        48
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-64.png",
+      "targetPath": "platform/icon-64.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 2177,
+      "sha256": "6cff8a98e5867a4a187047f44426471c37b1b6016d6b648f0f914690529bab95",
+      "format": "PNG",
+      "width": 64,
+      "height": 64,
+      "rgbaSha256": "4e9e376a3f846f9ababf07b02a45a9a1b9d3b7832306ac2ed7cab937903cfb84",
+      "alphaBounds": [
+        0,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-light-128.png",
+      "targetPath": "platform/icon-light-128.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 4212,
+      "sha256": "f3e37536c3cf87653618483a3b1291ba1d412e914979e2b1c78e584462597a36",
+      "format": "PNG",
+      "width": 128,
+      "height": 128,
+      "rgbaSha256": "7158b906f4792b05fd8fd975d48c8b47b6adb7c23a4c52e78c598b06ee23c539",
+      "alphaBounds": [
+        0,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-light-16.png",
+      "targetPath": "platform/icon-light-16.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 756,
+      "sha256": "a843e6b3ed790bb4804a6852cc94b0da033b200205636c0aeadcdeb9af19e566",
+      "format": "PNG",
+      "width": 16,
+      "height": 16,
+      "rgbaSha256": "9197625f4b4dddeceac5698d7a8dcfdc1976902c8fbc4a1f3d658ea4a905b250",
+      "alphaBounds": [
+        0,
+        0,
+        16,
+        16
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-light-20.png",
+      "targetPath": "platform/icon-light-20.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 964,
+      "sha256": "a5280560686ba3aa0b1339cc37b47bcf559a167cfcdeca74f58306207faad4f9",
+      "format": "PNG",
+      "width": 20,
+      "height": 20,
+      "rgbaSha256": "fd1314bd7c5a31a2614fab3d127addc0ae773bbbb530ab75d9ac20738bdfd91c",
+      "alphaBounds": [
+        0,
+        0,
+        20,
+        20
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-light-24.png",
+      "targetPath": "platform/icon-light-24.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 1141,
+      "sha256": "242efecee0dcb7b0a01316ec50278644c6a049c705f288d8f8d8b809f1ed64cf",
+      "format": "PNG",
+      "width": 24,
+      "height": 24,
+      "rgbaSha256": "243db766c85c3074d9701a5a58b1a118273c42b35d1f2411784cb267213591c8",
+      "alphaBounds": [
+        0,
+        0,
+        24,
+        24
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-light-256.png",
+      "targetPath": "platform/icon-light-256.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 9010,
+      "sha256": "2b730ec549749dc8624b6fcb95e9e49fe1adbb5c6d2642abd084a80a1df9eb28",
+      "format": "PNG",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "a6ad453c4deb19dd77919bd2a11ee105c2c1143dd15802110c25445044df16ea",
+      "alphaBounds": [
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-light-32.png",
+      "targetPath": "platform/icon-light-32.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 1350,
+      "sha256": "7aa355366cb2a3d7b9872345cba2a01adaedc3536df66e5161fd5b2ab66187c2",
+      "format": "PNG",
+      "width": 32,
+      "height": 32,
+      "rgbaSha256": "d4a69075d209de184c5e692e13fca627d47a596f692619127b40ec3f36ae4043",
+      "alphaBounds": [
+        0,
+        0,
+        32,
+        32
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-light-40.png",
+      "targetPath": "platform/icon-light-40.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 1875,
+      "sha256": "cfc70e1defcc2a258175b5eda4acdb8710019dfb7cd61ef87a4916c92e5cda59",
+      "format": "PNG",
+      "width": 40,
+      "height": 40,
+      "rgbaSha256": "669cdaa349ab8a66cfe9ac91df36983779ff9d6395f3f3f586f8c3a18ead3b35",
+      "alphaBounds": [
+        0,
+        0,
+        40,
+        40
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-light-48.png",
+      "targetPath": "platform/icon-light-48.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 2019,
+      "sha256": "9c5a6c7a53c90fc1e0b898bd0c0a038a70c62f753eacb8558a99de09ae2882b8",
+      "format": "PNG",
+      "width": 48,
+      "height": 48,
+      "rgbaSha256": "d88fef2f2a5bc8776e078266599b481c066b0da1c57a1181539a136dc49a475e",
+      "alphaBounds": [
+        0,
+        0,
+        48,
+        48
+      ]
+    },
+    {
+      "sourcePath": "logo/sizes/Palladium-light-64.png",
+      "targetPath": "platform/icon-light-64.png",
+      "role": "platform-icon",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 2350,
+      "sha256": "9af3d54593e0f0d2a03d54ccc33261757b3990ef56195bf5e7db2b1c07931243",
+      "format": "PNG",
+      "width": 64,
+      "height": 64,
+      "rgbaSha256": "8c7aa59a967a1a89f5abc44fb8e4b2bb8311454b2484cb76b0caaf98d7e9bbc8",
+      "alphaBounds": [
+        0,
+        0,
+        64,
+        64
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/ba-black.png",
+      "targetPath": "wordmarks/ba-black.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 8390,
+      "sha256": "c86add4b681fc4eeb6788559c164ea0c177b3ec950fa3244bcebb3a7e54409d9",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "3835c3277988481c231c987eb5aa794dadd8fb3b2f5808f31e822b9b9aefc8e7",
+      "alphaBounds": [
+        460,
+        81,
+        816,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/ba-blue.png",
+      "targetPath": "wordmarks/ba-blue.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 8773,
+      "sha256": "aaac7632c454904cb0f96859c0ece8ac70cda232dc8b5f08dccc05b2450e2092",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "2c73f12efcf435575596d78f3e55046ecd3c4d24f85a02e0ed1215cc4e4bb8bc",
+      "alphaBounds": [
+        460,
+        81,
+        816,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/ba-silver.png",
+      "targetPath": "wordmarks/ba-silver.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 8769,
+      "sha256": "2aa6d5714a63e34c0c79a0adb0ef33c690bb1f0c3609bee5c64de9b09699e003",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "376db05e5135dac17f5e6e6185ce8fcca57762455c74342123d13d74c6a1bd30",
+      "alphaBounds": [
+        460,
+        81,
+        816,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/ba-white.png",
+      "targetPath": "wordmarks/ba-white.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 8750,
+      "sha256": "2fe65c4207efd8a9dbeaf71eea7d580c884521fe974e42e0ae6edd53b1f3c702",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "7b9721d33e924dd3ae68c18399fb5b251dfd1f770254f359e6e7fc77e1ab43fc",
+      "alphaBounds": [
+        460,
+        81,
+        816,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/palladium-black.png",
+      "targetPath": "wordmarks/palladium-black.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 15536,
+      "sha256": "5f81736e641e8745efeb76d844c2b9ba997669174638067de8273983b3013a8b",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "7b1a568421f48c4dd7613622af4269c8f0bf00b21a7b9c7f52603cc52083d7a8",
+      "alphaBounds": [
+        158,
+        81,
+        1113,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/palladium-blue.png",
+      "targetPath": "wordmarks/palladium-blue.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 15893,
+      "sha256": "1a8121d6b1a2b503c2b9cc67d43abbcf2c70de47291ea54ee03fcb3aa3170aae",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "a45f2d30fecdc2ded322180248dd57680588ae28ecde03a37b260f280bfd7f57",
+      "alphaBounds": [
+        158,
+        81,
+        1113,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/palladium-launcher-black.png",
+      "targetPath": "wordmarks/palladium-launcher-black.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 19549,
+      "sha256": "05b3d9a3ee9536ba0284fd5a9503a9f461afea45ee83b90ceb56c31fb5b9cbeb",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "0f331fe4e8fc80ed03a8288bcdefdf0ed820a3b7ea513958f11d62d99ecc6cac",
+      "alphaBounds": [
+        126,
+        81,
+        1152,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/palladium-launcher-blue.png",
+      "targetPath": "wordmarks/palladium-launcher-blue.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 20207,
+      "sha256": "fa800476f155f44065d4424eb1f33427d293838952bd579acf1ebbbbcbc804e0",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "763c34e5f873fd12dd3ae6afdcc745461d3bcb85ac3850317098faefea874595",
+      "alphaBounds": [
+        126,
+        81,
+        1152,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/palladium-launcher-silver.png",
+      "targetPath": "wordmarks/palladium-launcher-silver.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 20207,
+      "sha256": "5ed5188f3ab8c6762850ba60c6de51dae972fa156445377eb13464ff1b4844fd",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "b84ca99f7a5aee854acfbd2474f203d596529d910efc88640c5b5e04f736281d",
+      "alphaBounds": [
+        126,
+        81,
+        1152,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/palladium-launcher-white.png",
+      "targetPath": "wordmarks/palladium-launcher-white.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 20187,
+      "sha256": "879746a0bd7b1c220d64b5f051962603d880f6a535d1f5d136f57a53bed69670",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "0ab24dfdcc24115dd93d2caba241bc6e916c65cfb39479343973ebc9c9dec170",
+      "alphaBounds": [
+        126,
+        81,
+        1152,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/palladium-silver.png",
+      "targetPath": "wordmarks/palladium-silver.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 15891,
+      "sha256": "9cbbdb404366676ac641e778c97662618904066a49d6645c52601ac7b930ba59",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "a59a2f0ff26230709275a6ff67cd0f523ab3176c9ba956a3f12262ae8f4be32e",
+      "alphaBounds": [
+        158,
+        81,
+        1113,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/palladium-white.png",
+      "targetPath": "wordmarks/palladium-white.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 15876,
+      "sha256": "fe8142f18889c6e4049d466a2437c85d4f307bcaa63839ced8dc4a2255021846",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "8bc555e6ccc3ae803a0d4a037248e262d652f415d05a65ff25d7d806a2827795",
+      "alphaBounds": [
+        158,
+        81,
+        1113,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/pd-black.png",
+      "targetPath": "wordmarks/pd-black.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 8938,
+      "sha256": "56d014e896669b75ddf412ae3bb4426cc956013751ef92168db6c45ddb40866e",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "96d91e7af9c3d959b2a64ec5894a18d6b58668c482d85c6172eaf19eeb5fdb43",
+      "alphaBounds": [
+        433,
+        81,
+        838,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/pd-blue.png",
+      "targetPath": "wordmarks/pd-blue.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 9238,
+      "sha256": "2673d73fa97c3055569bd3bc841a9a10b0dad0027979835a2008619a6f63621b",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "6b3cc470e92568f21b91ecda7cbaf507eced2599bff3221c7391be8e998793c1",
+      "alphaBounds": [
+        433,
+        81,
+        838,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/pd-launcher-black.png",
+      "targetPath": "wordmarks/pd-launcher-black.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 19854,
+      "sha256": "bfef68d7ec9da40f6fe3c17013f19d01deecbf51046d0feadbe67d6f1be48805",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "38a58d7f3f18c60e64b25b8a0fed549b9ec1ec88244807b6feaf3bd58efdf0c1",
+      "alphaBounds": [
+        125,
+        81,
+        1151,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/pd-launcher-blue.png",
+      "targetPath": "wordmarks/pd-launcher-blue.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 20634,
+      "sha256": "d31f681a4567b95dcab0597f679d1c424dd80949812cb0252631d134a10df7b5",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "2f72bc0ab2baf019de54d0a5dd62518b766e5fd75cd01815413d2179915ecbd1",
+      "alphaBounds": [
+        125,
+        81,
+        1151,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/pd-launcher-silver.png",
+      "targetPath": "wordmarks/pd-launcher-silver.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 20633,
+      "sha256": "19137e133909a2949977598de5f6ef0f47302c856af8f2d7cb1db68dc8900435",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "ad1a056922d3a6b6bc624ab12288b3338ff9a7e2ea604b9b82a4fccacaaeaf83",
+      "alphaBounds": [
+        125,
+        81,
+        1151,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/pd-launcher-white.png",
+      "targetPath": "wordmarks/pd-launcher-white.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 20618,
+      "sha256": "b05db75b5813326b19b4a87f278e9ebdb45ce1543de7a52fd64bb75e1a54f82d",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "bb43e05c8279fbe2d61de1c2ae971ae66687f48b70425030f5464bd0014e20dd",
+      "alphaBounds": [
+        125,
+        81,
+        1151,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/pd-silver.png",
+      "targetPath": "wordmarks/pd-silver.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": false,
+      "license": "NOASSERTION",
+      "bytes": 9237,
+      "sha256": "8a78188db512972f5572476f59b8e4232e14090e2cb6f2c024ececa3d9f3fdb8",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "9cb1e872026864bcc8eef9da91236c6557134f1b963543033c605d9a120ba46e",
+      "alphaBounds": [
+        433,
+        81,
+        838,
+        239
+      ]
+    },
+    {
+      "sourcePath": "wordmarks/pd-white.png",
+      "targetPath": "wordmarks/pd-white.png",
+      "role": "raster-wordmark",
+      "qtEmbedded": true,
+      "license": "NOASSERTION",
+      "bytes": 9224,
+      "sha256": "08e1c49e6c676a8db2bf2fd9630da18e778cf3bb7f330a89ade99e13ae270752",
+      "format": "PNG",
+      "width": 1280,
+      "height": 320,
+      "rgbaSha256": "81f1b0f7f829c3db4f663835674899cfbcd4c4d4e3c5286fb9be1d1fee5a96d6",
+      "alphaBounds": [
+        433,
+        81,
+        838,
+        239
+      ]
+    }
+  ],
+  "selectedSourceCount": 54,
+  "runtimeMappingsCount": 16,
+  "excludedRoles": [
+    "blocks and all existing functional/loader/skin images",
+    "visual preview/contact sheets",
+    "original sources are never modified"
+  ],
+  "fontsProvided": false,
+  "vectorAuthoringSourceProvided": false,
+  "licenseOrNoticeFileNamesFound": [],
+  "artLicenseConfirmed": false,
+  "artLicenseExpression": "NOASSERTION",
+  "artCopyrightHolderConfirmed": false,
+  "sourceVerificationIsApplicationBuildEvidence": false,
+  "historicalBaseRevision": "ce10e62f151cdb79b00355d3fe2fe77664d3c512",
+  "nativeReleaseReady": false
+}

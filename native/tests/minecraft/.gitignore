@@ -1,0 +1,12 @@
+.build*/
+.deps/
+.deps-native*/
+.runtime*/
+.fixtures*/
+.evidence*/
+*.log
+*.obj
+*.pdb
+*.ilk
+__pycache__/
+*.pyc

@@ -1,0 +1,424 @@
+name: Build
+
+# 构建验证：原生 C++20 应用与测试
+#
+# 每个 push 到 main / PR / 手动触发都会：
+#   1. 用 scripts/native/bootstrap-deps.py 从锁定源码构建静态依赖与 Qt 6.8.3（EXACT）
+#   2. cmake --preset native-release 配置（UI + 测试全量图）
+#   3. cmake --build 编译链接
+#   4. ctest 执行完整测试清单（--no-tests=error）
+# 只做构建验证，不产出安装包、不发布 Release、不做签名。
+#
+# 手动触发时还会运行 `macos` 作业（显示为 Native · macos，矩阵注明 arm64 / x86_64）：
+# macOS 源码交付与打包验证。该作业耗时可达数小时，因此只在 workflow_dispatch 下、
+# 勾选 run_macos_delivery 时运行，不进入每次 push 的门禁。
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: "可选：要交付的完整提交（40 位小写十六进制）；留空使用触发提交"
+        type: string
+        required: false
+        default: ""
+      source_manifest_sha256:
+        description: "可选：独立核对过的源码清单 SHA256；留空时首次盘点记录实际摘要"
+        type: string
+        required: false
+        default: ""
+      dependency_lock_sha256:
+        description: "冻结的 13 项依赖锁 SHA256，必须与仓库中的锁一致"
+        type: string
+        required: true
+        default: "b974a9bcd5b9f6fab32ffbf248ccd23ab9938ff731a91c9aff2c162d70dd136d"
+      arm64_executable_sha256:
+        description: "可选：此前独立检查过的 arm64 可执行文件 SHA256"
+        type: string
+        required: false
+        default: ""
+      x86_64_executable_sha256:
+        description: "可选：此前独立检查过的 x86_64 可执行文件 SHA256"
+        type: string
+        required: false
+        default: ""
+      run_macos_delivery:
+        description: "是否同时运行 macOS 源码交付作业（需要新的冻结输入，耗时可达数小时）"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+  PYTHON_COLORS: "0"
+  NO_COLOR: "1"
+  CMAKE_BUILD_PARALLEL_LEVEL: "1"
+  CTEST_PARALLEL_LEVEL: "1"
+
+jobs:
+  native:
+    name: Native · ${{ matrix.label }}
+    # 只在本仓库运行；fork 的 PR 不消耗本仓库的构建资源。
+    if: github.repository == 'Nickel-Studio/Pd-Launcher'
+    runs-on: ${{ matrix.host }}
+    timeout-minutes: 360
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: windows-x64
+            host: windows-2025
+            target: windows-x64-static
+            architecture: AMD64
+          - label: linux-x64
+            host: ubuntu-24.04
+            target: linux-x64-static
+            architecture: x86_64
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install Linux compiler and desktop prerequisites
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential cmake ninja-build pkg-config perl gnupg curl ca-certificates \
+            libfontconfig1-dev libfreetype-dev libx11-dev libx11-xcb-dev \
+            libxext-dev libxfixes-dev libxi-dev libxrender-dev libsm-dev libice-dev \
+            libxcb1-dev libxcb-cursor-dev libxcb-icccm4-dev libxcb-image0-dev \
+            libxcb-keysyms1-dev libxcb-randr0-dev libxcb-render-util0-dev \
+            libxcb-shape0-dev libxcb-shm0-dev libxcb-sync-dev libxcb-util-dev \
+            libxcb-xfixes0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev \
+            libglib2.0-dev libdbus-1-dev libatspi2.0-dev xvfb xauth
+
+      - name: Install pinned test-fixture Python toolchain
+        shell: pwsh
+        run: |
+          python -m pip install --disable-pip-version-check --no-deps --only-binary=:all: --require-hashes -r scripts/native/test-fixture-python.lock
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -B scripts/native/test-fixture-python-verify.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Prepare private tool and temporary directories
+        shell: pwsh
+        run: |
+          $actual = python -B -c "import platform; print(platform.machine())"
+          if ($actual.Trim() -ne '${{ matrix.architecture }}') { throw "Runner architecture differs from the declared target: $actual" }
+          $temp = Join-Path $env:GITHUB_WORKSPACE '.snow/native-tmp'
+          $tools = Join-Path $env:RUNNER_TEMP 'pd-native-tools'
+          New-Item -ItemType Directory -Force $temp,$tools | Out-Null
+          "TEMP=$temp" >> $env:GITHUB_ENV
+          "TMP=$temp" >> $env:GITHUB_ENV
+          "TMPDIR=$temp" >> $env:GITHUB_ENV
+          "NICKEL_NATIVE_TOOLS=$tools" >> $env:GITHUB_ENV
+          "NICKEL_NATIVE_PREFIX=$tools/install/${{ matrix.target }}" >> $env:GITHUB_ENV
+          if ($IsWindows) {
+            $vswhere = Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio/Installer/vswhere.exe'
+            $vs = & $vswhere -latest -products '*' -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+            if ($LASTEXITCODE -ne 0 -or -not $vs) { throw 'An actual MSVC x64 toolchain is required' }
+            "NICKEL_VS_ROOT=$vs" >> $env:GITHUB_ENV
+          }
+
+      - name: Cache pinned native dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/pd-native-tools
+          key: pd-native-v4-${{ matrix.target }}-${{ matrix.host }}-${{ hashFiles('scripts/native/deps-lock.json', 'scripts/native/bootstrap-deps.py', 'scripts/native/deps/**', 'scripts/native/msvc.py', 'scripts/native/supply_openssl.py', 'tests/native-portability/openssl-linux-pin.json') }}
+
+      - name: Supply approved static OpenSSL (Linux)
+        if: runner.os == 'Linux'
+        shell: pwsh
+        run: |
+          $work = Join-Path $env:RUNNER_TEMP ('pd-openssl-' + $env:GITHUB_RUN_ID + '-' + $env:GITHUB_RUN_ATTEMPT)
+          python -B scripts/native/supply_openssl.py --pin tests/native-portability/openssl-linux-pin.json --prefix $env:NICKEL_NATIVE_PREFIX --work-root $work --output .snow/ci-openssl-supply.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          "PD_OPENSSL_WORK=$work" >> $env:GITHUB_ENV
+
+      - name: Build locked static dependencies and Qt 6.8.3
+        shell: pwsh
+        run: |
+          $deps = @('-B','scripts/native/bootstrap-deps.py','--tools-root',$env:NICKEL_NATIVE_TOOLS,'--target','${{ matrix.target }}','--only','all','--jobs','1')
+          if ($IsWindows) { $deps += @('--vs-root',$env:NICKEL_VS_ROOT) }
+          else { $deps += @('--openssl-prefix',$env:NICKEL_NATIVE_PREFIX) }
+          python @deps
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Verify build-tool and audit safety contracts
+        shell: pwsh
+        run: |
+          $args = @('-B','scripts/native/msvc.py')
+          if ($IsWindows) { $args += @('--vs-root',$env:NICKEL_VS_ROOT) }
+          $args += @('--log','.snow/ci-build-tools.log','--evidence','.snow/ci-build-tools.json','--','python','-B','-m','unittest','discover','-s','scripts/native/tests','-p','test_*.py')
+          python @args
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Verify immutable functional images
+        if: runner.os != 'Windows'
+        shell: bash
+        run: sha256sum --check tests/brand/functional-icons.sha256
+
+      - name: Configure the complete production application and tests
+        shell: pwsh
+        run: |
+          $args = @('-B','scripts/native/msvc.py')
+          if ($IsWindows) { $args += @('--vs-root',$env:NICKEL_VS_ROOT) }
+          $args += @(
+            '--log','.snow/ci-configure.log',
+            '--evidence','.snow/ci-configure.json',
+            '--',
+            'cmake','--preset','native-release',
+            '-DNICKEL_SHARED_NATIVE_ROOT=',
+            '-DNICKEL_BUILD_UI=ON',
+            '-DNICKEL_BUILD_TESTS=ON',
+            '-DNICKEL_TEST_TRANSPORT_FAULTS=ON',
+            '-DNICKEL_ENABLE_IPO=OFF',
+            ('-DASSET_ORACLE_ROOT=' + $env:GITHUB_WORKSPACE),
+            ('-DNICKEL_APP_WORKER_QUEUE_SOURCE=' + $env:GITHUB_WORKSPACE + '/native/app/WorkerQueue.cpp')
+          )
+          if ($IsLinux) {
+            $args += @(
+              '-DOPENSSL_USE_STATIC_LIBS=ON',
+              ('-DOPENSSL_ROOT_DIR=' + $env:NICKEL_NATIVE_PREFIX),
+              ('-DOPENSSL_INCLUDE_DIR=' + $env:NICKEL_NATIVE_PREFIX + '/include'),
+              ('-DOPENSSL_SSL_LIBRARY=' + $env:NICKEL_NATIVE_PREFIX + '/lib/libssl.a'),
+              ('-DOPENSSL_CRYPTO_LIBRARY=' + $env:NICKEL_NATIVE_PREFIX + '/lib/libcrypto.a')
+            )
+          }
+          python @args
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Compile and link the full root application and tests
+        shell: pwsh
+        run: |
+          $args = @('-B','scripts/native/msvc.py')
+          if ($IsWindows) { $args += @('--vs-root',$env:NICKEL_VS_ROOT) }
+          $args += @('--log','.snow/ci-build.log','--evidence','.snow/ci-build.json','--','cmake','--build','--preset','native-release','--','-d','keeprsp')
+          python @args
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Bind the configured CTest inventory
+        shell: pwsh
+        run: |
+          python -B scripts/native/ci_evidence.py inventory --build .snow/native-build --output .snow/ci-ctest-inventory.json --binding .snow/ci-ctest-inventory-binding.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Execute the complete serial CTest inventory
+        shell: pwsh
+        run: |
+          $args = @('-B','scripts/native/msvc.py')
+          if ($IsWindows) { $args += @('--vs-root',$env:NICKEL_VS_ROOT) }
+          $args += @('--log','.snow/ci-ctest.log','--evidence','.snow/ci-ctest.json','--')
+          if ($IsLinux) { $args += @('xvfb-run','-a') }
+          $build = Join-Path $env:GITHUB_WORKSPACE '.snow/native-build'
+          $junit = Join-Path $env:GITHUB_WORKSPACE '.snow/ci-ctest.xml'
+          $args += @('ctest','--test-dir',$build,'-C','Release','--parallel','1','--output-on-failure','--no-tests=error','--output-junit',$junit)
+          python @args
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Verify CTest execution matches the configured inventory
+        shell: pwsh
+        run: |
+          python -B scripts/native/ci_evidence.py verify-ctest --build .snow/native-build --inventory .snow/ci-ctest-inventory.json --binding .snow/ci-ctest-inventory-binding.json --junit .snow/ci-ctest.xml --evidence .snow/ci-ctest.json --output .snow/ci-ctest-verified.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Preserve raw build logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-evidence-${{ matrix.label }}-${{ github.run_id }}-${{ github.run_attempt }}
+          if-no-files-found: warn
+          include-hidden-files: true
+          retention-days: 7
+          path: |
+            .snow/ci-*.json
+            .snow/ci-*.log
+            .snow/ci-ctest.xml
+            .snow/native-build/Testing/Temporary/LastTest.log
+
+  macos:
+    name: Native · macos
+    if: github.event_name == 'workflow_dispatch' && inputs.run_macos_delivery && github.repository == 'Nickel-Studio/Pd-Launcher'
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        include:
+          - label: macos-arm64
+            arch: arm64
+            runner: macos-15
+          - label: macos-x86_64
+            arch: x86_64
+            runner: macos-15-intel
+    runs-on: ${{ matrix.runner }}
+    defaults:
+      run:
+        shell: bash
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
+      MACOSX_DEPLOYMENT_TARGET: "12.0"
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHON_COLORS: "0"
+      SOURCE_REF: ${{ inputs.source_ref || github.sha }}
+      SOURCE_MANIFEST_SHA256: ${{ inputs.source_manifest_sha256 || '' }}
+      LOCK_SHA256: ${{ inputs.dependency_lock_sha256 || 'b974a9bcd5b9f6fab32ffbf248ccd23ab9938ff731a91c9aff2c162d70dd136d' }}
+      EXPECTED_ARM64_EXE: ${{ inputs.arm64_executable_sha256 || '' }}
+      EXPECTED_X86_64_EXE: ${{ inputs.x86_64_executable_sha256 || '' }}
+      NATIVE_ARCH: ${{ matrix.arch }}
+    steps:
+      - name: Validate resolved push or manual input syntax before checkout
+        run: |
+          set -eu
+          [[ "$SOURCE_REF" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$LOCK_SHA256" == b974a9bcd5b9f6fab32ffbf248ccd23ab9938ff731a91c9aff2c162d70dd136d ]]
+          for hash in "$SOURCE_MANIFEST_SHA256" "$EXPECTED_ARM64_EXE" "$EXPECTED_X86_64_EXE"; do
+            [[ -z "$hash" || "$hash" =~ ^[0-9a-f]{64}$ ]]
+          done
+          printf 'NATIVE_WORK=%s/nickel-native-macos-%s-%s-%s\n' \
+            "$RUNNER_TEMP" "$NATIVE_ARCH" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" >> "$GITHUB_ENV"
+      - name: Checkout the exact reviewed source commit without persistent credentials
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.SOURCE_REF }}
+          fetch-depth: 1
+          persist-credentials: false
+          submodules: false
+          lfs: false
+      - name: Select per-architecture optional prior artifact pin
+        run: |
+          set -eu
+          if [[ "$NATIVE_ARCH" == arm64 ]]; then
+            printf 'EXPECTED_EXE_SHA256=%s\n' "$EXPECTED_ARM64_EXE" >> "$GITHUB_ENV"
+          else
+            printf 'EXPECTED_EXE_SHA256=%s\n' "$EXPECTED_X86_64_EXE" >> "$GITHUB_ENV"
+          fi
+      - name: Actual native Apple/Xcode/SDK and source commit preflight
+        run: |
+          set -eu
+          python3 -B scripts/native/macos-delivery.ci.py --phase "$PHASE" \
+            --arch "$NATIVE_ARCH" --source-ref "$SOURCE_REF" \
+            --source-manifest-sha256 "$SOURCE_MANIFEST_SHA256" --lock-sha256 "$LOCK_SHA256" \
+            --expected-executable-sha256 "$EXPECTED_EXE_SHA256" --work-root "$NATIVE_WORK" --jobs 2
+        env:
+          PHASE: preflight
+      - name: Host-independent negative gates (not Apple product acceptance)
+        run: |
+          set -eu
+          python3 -B tests/native-macos/test_delivery.py
+          python3 -B tests/native-macos/test_ci.py
+          python3 -B tests/native-macos/test_tools.py
+          python3 -B tests/native-macos/test_install_delivery.py
+          sh -n scripts/native/macos-delivery.sh
+      - name: Inventory actual canonical tracked source; exclude generated/user data; stage and rehash
+        run: |
+          set -eu
+          python3 -B scripts/native/macos-delivery.ci.py --phase "$PHASE" \
+            --arch "$NATIVE_ARCH" --source-ref "$SOURCE_REF" \
+            --source-manifest-sha256 "$SOURCE_MANIFEST_SHA256" --lock-sha256 "$LOCK_SHA256" \
+            --expected-executable-sha256 "$EXPECTED_EXE_SHA256" --work-root "$NATIVE_WORK" --jobs 2
+        env:
+          PHASE: inventory
+      - name: Download only pinned source/tool bytes; install isolated exact CMake/Ninja
+        run: |
+          set -eu
+          python3 -B scripts/native/macos-delivery.ci.py --phase "$PHASE" \
+            --arch "$NATIVE_ARCH" --source-ref "$SOURCE_REF" \
+            --source-manifest-sha256 "$SOURCE_MANIFEST_SHA256" --lock-sha256 "$LOCK_SHA256" \
+            --expected-executable-sha256 "$EXPECTED_EXE_SHA256" --work-root "$NATIVE_WORK" --jobs 2
+        env:
+          PHASE: tools
+      - name: Source-build native static OpenSSL 3.5.9 and frozen HTTP/archive/parsers
+        run: |
+          set -eu
+          python3 -B scripts/native/macos-delivery.ci.py --phase "$PHASE" \
+            --arch "$NATIVE_ARCH" --source-ref "$SOURCE_REF" \
+            --source-manifest-sha256 "$SOURCE_MANIFEST_SHA256" --lock-sha256 "$LOCK_SHA256" \
+            --expected-executable-sha256 "$EXPECTED_EXE_SHA256" --work-root "$NATIVE_WORK" --jobs 2
+        env:
+          PHASE: core
+      - name: Source-build exact Qt 6.8.3 dynamic frameworks and native image plugins
+        run: |
+          set -eu
+          python3 -B scripts/native/macos-delivery.ci.py --phase "$PHASE" \
+            --arch "$NATIVE_ARCH" --source-ref "$SOURCE_REF" \
+            --source-manifest-sha256 "$SOURCE_MANIFEST_SHA256" --lock-sha256 "$LOCK_SHA256" \
+            --expected-executable-sha256 "$EXPECTED_EXE_SHA256" --work-root "$NATIVE_WORK" --jobs 2
+        env:
+          PHASE: qt
+      - name: Build the full production root and run every canonical CTest/UI suite on Cocoa
+        run: |
+          set -eu
+          python3 -B scripts/native/macos-delivery.ci.py --phase "$PHASE" \
+            --arch "$NATIVE_ARCH" --source-ref "$SOURCE_REF" \
+            --source-manifest-sha256 "$SOURCE_MANIFEST_SHA256" --lock-sha256 "$LOCK_SHA256" \
+            --expected-executable-sha256 "$EXPECTED_EXE_SHA256" --work-root "$NATIVE_WORK" --jobs 2
+        env:
+          PHASE: app
+      - name: Execute owned native Vault/process/Theme/font/scale probes (not full product parity)
+        run: |
+          set -eu
+          python3 -B scripts/native/macos-delivery.ci.py --phase "$PHASE" \
+            --arch "$NATIVE_ARCH" --source-ref "$SOURCE_REF" \
+            --source-manifest-sha256 "$SOURCE_MANIFEST_SHA256" --lock-sha256 "$LOCK_SHA256" \
+            --expected-executable-sha256 "$EXPECTED_EXE_SHA256" --work-root "$NATIVE_WORK" --jobs 2
+        env:
+          PHASE: probes
+      - name: Deploy actual .app; inspect every Mach-O; match dSYM UUIDs; ad-hoc sign and package
+        run: |
+          set -eu
+          python3 -B scripts/native/macos-delivery.ci.py --phase "$PHASE" \
+            --arch "$NATIVE_ARCH" --source-ref "$SOURCE_REF" \
+            --source-manifest-sha256 "$SOURCE_MANIFEST_SHA256" --lock-sha256 "$LOCK_SHA256" \
+            --expected-executable-sha256 "$EXPECTED_EXE_SHA256" --work-root "$NATIVE_WORK" --jobs 2
+        env:
+          PHASE: deploy
+      - name: Bind corresponding source/notices/relink/installation material to actual deployment
+        if: always()
+        run: |
+          set -eu
+          python3 -B scripts/native/macos-delivery.ci.py --phase "$PHASE" \
+            --arch "$NATIVE_ARCH" --source-ref "$SOURCE_REF" \
+            --source-manifest-sha256 "$SOURCE_MANIFEST_SHA256" --lock-sha256 "$LOCK_SHA256" \
+            --expected-executable-sha256 "$EXPECTED_EXE_SHA256" --work-root "$NATIVE_WORK" --jobs 2
+        env:
+          PHASE: materials
+      - name: Collect successful or failed attempt evidence without promoting unexecuted gates
+        if: always()
+        run: |
+          set -eu
+          python3 -B scripts/native/macos-delivery.ci.py --phase "$PHASE" \
+            --arch "$NATIVE_ARCH" --source-ref "$SOURCE_REF" \
+            --source-manifest-sha256 "$SOURCE_MANIFEST_SHA256" --lock-sha256 "$LOCK_SHA256" \
+            --expected-executable-sha256 "$EXPECTED_EXE_SHA256" --work-root "$NATIVE_WORK" --jobs 2
+        env:
+          PHASE: collect
+      - name: Upload per-architecture raw logs, test outputs, Mach-O/dSYM/source material and actual product
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: palladium-macos-${{ matrix.arch }}-${{ env.SOURCE_REF }}-${{ github.run_attempt }}
+          path: ${{ env.NATIVE_WORK }}/artifacts
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 1
+          include-hidden-files: false

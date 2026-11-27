@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "baseline": "tests/brand/functional-icons.sha256",
+  "baselineEntries": 18,
+  "baselineContentSha256": "6a5443fbd3e2e0d6b2141a5be083073a88bd783519983618ccb89ab7e2021e08",
+  "oldMappingSource": "src/components/version/instanceVisuals.ts",
+  "iconKeys": {
+    "grass": "src/assets/blocks/Grass.png",
+    "command_block": "src/assets/blocks/CommandBlock.png",
+    "cobblestone": "src/assets/blocks/CobbleStone.png",
+    "anvil": "src/assets/blocks/Anvil.png",
+    "neoforge": "src/assets/blocks/NeoForge.png",
+    "fabric": "src/assets/blocks/Fabric.png",
+    "grass_path": "src/assets/blocks/GrassPath.png",
+    "egg": "src/assets/blocks/Egg.png",
+    "gold_block": "src/assets/blocks/GoldBlock.png",
+    "redstone_block": "src/assets/blocks/RedstoneBlock.png",
+    "redstone_lamp_on": "src/assets/blocks/RedstoneLampOn.png",
+    "redstone_lamp_off": "src/assets/blocks/RedstoneLampOff.png"
+  },
+  "fallback": "redstone_block",
+  "optifabricDedicated": "src/assets/blocks/OptiFabric.png",
+  "defaultMod": "src/assets/mod-placeholder.png",
+  "loaderInference": {
+    "forge": "anvil",
+    "neoforge": "neoforge",
+    "fabric": "fabric",
+    "optifine": "grass_path",
+    "liteloader": "egg"
+  },
+  "typeInference": {
+    "release": "grass",
+    "snapshot": "command_block",
+    "old_beta": "cobblestone",
+    "old_alpha": "cobblestone"
+  },
+  "inferenceNotes": "Preserve loader > missing JSON > April Fools > version type. OptiFabric instance inference follows vanilla/type; its dedicated badge uses OptiFabric.png. Redstone lamps keep on/off meaning.",
+  "additionalImmutable": {
+    "src/assets/skins/alex-head.png": "95496b5cd6749febb0f5d676e9375fb7500c60b1d510b53cb541429f2fb9d286",
+    "src/assets/skins/steve-head.png": "9b6bb76a9c787c33504cab6ef0688a4d2abb24f38b93f73dd414f3d603dbe38c",
+    "src/assets/credits/itzarona.png": "340792715b8fb7f98eb61d9a61956617bebe93fc25b4faf82f23f9cc6ee75d76",
+    "src/assets/credits/itzplana.png": "634f9052fe3345c087ba4c9d19dd46df9102cf57a9fd942207cdd15036f97af0",
+    "src/assets/credits/shittimchests.png": "6756a6e2177b600f3dd3204f0a3af158c1f9633e3fb2771a152e8354ee6c9073"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "artifactManifest": null,
+  "legacyArtifactManifest": null,
+  "sourceAudit": null,
+  "acceptanceTool": null,
+  "runtimeModules": null,
+  "functionalAcceptance": null,
+  "brandTool": null,
+  "legalBundle": null,
+  "cleanDeployment": null,
+  "performanceReport": null,
+  "platforms": {
+    "windows-x64": null,
+    "linux-x64": null,
+    "macos-arm64": null,
+    "macos-x64": null
+  },
+  "notes": [
+    "No complete launcher artifacts are supplied by this example.",
+    "Null denotes explicit pending, never a guessed path or hash.",
+    "Replace each available reference with an exact worktree-relative path, sha256 and byte count."
+  ]
+}

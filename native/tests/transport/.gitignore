@@ -1,0 +1,10 @@
+/build*/
+/__pycache__/
+/fixtures/
+/task-fixtures/
+/zip-fixtures/
+/archive-fixtures/
+*.obj
+*.exe
+*.pdb
+*.ilk

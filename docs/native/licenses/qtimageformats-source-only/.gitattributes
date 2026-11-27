@@ -1,0 +1,4 @@
+# Upstream archive, checksum and original legal/version texts retain exact bytes.
+*.tar.xz binary
+*.sha256 -text !eol
+source-materials/** -text !eol

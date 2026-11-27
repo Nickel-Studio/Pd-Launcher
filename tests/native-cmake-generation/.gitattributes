@@ -1,0 +1,9 @@
+*.py text eol=lf
+*.cmake text eol=lf
+fixture/** text eol=lf
+committed-fixture/** text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+records/** -text -eol
+validation* -text -eol
+commit-scope.json -text -eol

@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "preserved_existing_files": 166,
+  "byte_identical_block_copies": 44,
+  "symbol": "Independent Pd dual-chamber monogram with a narrow central seam; no N or detached dot",
+  "small_symbol_topology": "two separated foregrounds, two clear counters at all nine sizes",
+  "central_gap": {
+    "master_units_per_1024": 32.0,
+    "minimum_target_pixels": 1.5
+  },
+  "banners": 8,
+  "wordmarks": 20,
+  "icon_pngs": 20,
+  "ico_files": 2,
+  "ico_sizes": [
+    16,
+    20,
+    24,
+    32,
+    40,
+    48,
+    64,
+    128,
+    256
+  ],
+  "png_files": 104,
+  "checked_layouts": 36,
+  "chinese_glyphs_checked": "\u94af\u542f\u52a8\u5668",
+  "atomic_number": 46,
+  "element": "Pd",
+  "project_relationship": "Nickel Launcher / C++ Reworked",
+  "palette": {
+    "blue": [
+      15,
+      27,
+      46
+    ],
+    "silver": [
+      226,
+      234,
+      244
+    ],
+    "black": [
+      0,
+      0,
+      0
+    ],
+    "white": [
+      255,
+      255,
+      255
+    ]
+  },
+  "contrast_ratios": {
+    "light": {
+      "foreground": 15.77,
+      "muted": 5.37
+    },
+    "dark": {
+      "foreground": 14.23,
+      "muted": 6.7
+    }
+  },
+  "displayed_readme_links": 65,
+  "checks": [
+    "protected Nickel/legacy SHA-256 hashes",
+    "unchanged Glass files and 37.5% letter proportions",
+    "independent Pd geometry differs from the Nickel N silhouette",
+    "P and d retain a narrow seam and two clear counters at every icon size",
+    "all banners and wordmarks match fresh independent Pd renders",
+    "each app icon target size is rendered directly from Pd geometry",
+    "nine ICO frames per colorway match the independent PNG exports",
+    "transparent margins and identical wordmark alpha across all four colors",
+    "colored banner backgrounds and foregrounds",
+    "all recorded text/image bounds and overlap checks",
+    "native-pixel and 900/375px preview exports",
+    "README local links and embedding examples"
+  ],
+  "not_tested": [
+    "remote GitHub rendering",
+    "C++ project compilation"
+  ]
+}

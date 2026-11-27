@@ -1,0 +1,12 @@
+#pragma once
+
+#include <string_view>
+
+namespace nickel::app::build {
+inline constexpr std::string_view version = "@PROJECT_VERSION@";
+inline constexpr std::string_view version_label = "@_nickel_versionLabel@";
+inline constexpr std::string_view display_name = "@_nickel_displayName@";
+inline constexpr std::string_view application_id = "@_nickel_applicationId@";
+inline constexpr std::string_view executable_name = "@_nickel_executableName@";
+inline constexpr std::string_view license = "@_nickel_license@";
+} // namespace nickel::app::build

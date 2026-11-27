@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RCC>
+  <qresource prefix="/nickel/brand">
+    <file alias="NOTICE.txt">NOTICE.txt</file>
+    <file alias="fonts/NOTICE.md">fonts/NOTICE.md</file>
+    <file alias="fonts/OFL-1.1.txt">fonts/OFL-1.1.txt</file>
+    <file alias="fonts/nickel-text-subset.ttf">fonts/nickel-text-subset.ttf</file>
+    <file alias="icon-light.png">icon-light.png</file>
+    <file alias="icon.png">icon.png</file>
+    <file alias="mark-black.png">mark-black.png</file>
+    <file alias="mark-blue.png">mark-blue.png</file>
+    <file alias="mark-silver.png">mark-silver.png</file>
+    <file alias="mark-white.png">mark-white.png</file>
+    <file alias="wordmarks/ba-black.png">wordmarks/ba-black.png</file>
+    <file alias="wordmarks/ba-white.png">wordmarks/ba-white.png</file>
+    <file alias="wordmarks/palladium-black.png">wordmarks/palladium-black.png</file>
+    <file alias="wordmarks/palladium-launcher-black.png">wordmarks/palladium-launcher-black.png</file>
+    <file alias="wordmarks/palladium-launcher-white.png">wordmarks/palladium-launcher-white.png</file>
+    <file alias="wordmarks/palladium-white.png">wordmarks/palladium-white.png</file>
+    <file alias="wordmarks/pd-black.png">wordmarks/pd-black.png</file>
+    <file alias="wordmarks/pd-launcher-black.png">wordmarks/pd-launcher-black.png</file>
+    <file alias="wordmarks/pd-launcher-white.png">wordmarks/pd-launcher-white.png</file>
+    <file alias="wordmarks/pd-white.png">wordmarks/pd-white.png</file>
+  </qresource>
+</RCC>

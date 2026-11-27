@@ -1,0 +1,3 @@
+# Brand scripts only; integration scripts remain owned by build-release.
+brand*.py text eol=lf
+brand*.txt text eol=lf

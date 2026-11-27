@@ -1,0 +1,44 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": { "major": 3, "minor": 25, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "native-release",
+      "displayName": "Complete native C++20 static Release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/.snow/native-build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/.snow/native-release",
+        "CMAKE_PREFIX_PATH": "$env{NICKEL_NATIVE_PREFIX}",
+        "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreaded",
+        "NICKEL_BUILD_UI": "ON",
+        "NICKEL_BUILD_TESTS": "ON"
+      }
+    },
+    {
+      "name": "native-core",
+      "inherits": "native-release",
+      "displayName": "All actual pure C++ core domains and acceptance",
+      "cacheVariables": { "NICKEL_BUILD_UI": "OFF" }
+    }
+  ],
+  "buildPresets": [
+    { "name": "native-release", "configurePreset": "native-release", "jobs": 1 },
+    { "name": "native-core", "configurePreset": "native-core", "jobs": 1 }
+  ],
+  "testPresets": [
+    {
+      "name": "native-core",
+      "configurePreset": "native-core",
+      "output": { "outputOnFailure": true },
+      "execution": { "jobs": 1, "noTestsAction": "error" }
+    },
+    {
+      "name": "native-release",
+      "configurePreset": "native-release",
+      "output": { "outputOnFailure": true },
+      "execution": { "jobs": 1, "noTestsAction": "error" }
+    }
+  ]
+}

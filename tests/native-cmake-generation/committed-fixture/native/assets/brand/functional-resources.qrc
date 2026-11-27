@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/nickel/functional">
+        <file alias="fixture.txt">../../../src/assets/fixture.txt</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+.tool-isolation-*/
+.tool-file-*/

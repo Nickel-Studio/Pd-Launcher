@@ -1,0 +1,30 @@
+#include <winres.h>
+
+1 ICON "@_nickel_asset_source@/platform/app.ico"
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION @_nickel_version_tuple@,0
+ PRODUCTVERSION @_nickel_version_tuple@,0
+ FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+ FILEFLAGS 0
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE VFT_APP
+ FILESUBTYPE 0
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "@_nickel_displayName@\0"
+            VALUE "FileVersion", "@PROJECT_VERSION@\0"
+            VALUE "InternalName", "@_nickel_executableName@\0"
+            VALUE "OriginalFilename", "@_nickel_executableName@.exe\0"
+            VALUE "ProductName", "@_nickel_displayName@\0"
+            VALUE "ProductVersion", "@PROJECT_VERSION@\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1200
+    END
+END

@@ -1,0 +1,128 @@
+{
+  "version": "Version 2.04;241114210130;non-release",
+  "copyright": "\u00a9 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.",
+  "names": [
+    {
+      "id": 0,
+      "value": "\u00a9 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'."
+    },
+    {
+      "id": 1,
+      "value": "Noto Sans SC"
+    },
+    {
+      "id": 2,
+      "value": "Regular"
+    },
+    {
+      "id": 3,
+      "value": "2.004;ADBO;NotoSansSC-Thin;ADOBE"
+    },
+    {
+      "id": 4,
+      "value": "Noto Sans SC"
+    },
+    {
+      "id": 5,
+      "value": "Version 2.04;241114210130;non-release"
+    },
+    {
+      "id": 6,
+      "value": "NotoSansSC-Thin"
+    },
+    {
+      "id": 256,
+      "value": "Regular"
+    },
+    {
+      "id": 258,
+      "value": "Thin"
+    },
+    {
+      "id": 259,
+      "value": "Light"
+    },
+    {
+      "id": 260,
+      "value": "DemiLight"
+    },
+    {
+      "id": 261,
+      "value": "Regular"
+    },
+    {
+      "id": 262,
+      "value": "Medium"
+    },
+    {
+      "id": 263,
+      "value": "Bold"
+    },
+    {
+      "id": 264,
+      "value": "Black"
+    },
+    {
+      "id": 265,
+      "value": "Weight"
+    },
+    {
+      "id": 266,
+      "value": "Thin"
+    },
+    {
+      "id": 267,
+      "value": "NotoSansSC-Thin"
+    },
+    {
+      "id": 268,
+      "value": "Light"
+    },
+    {
+      "id": 269,
+      "value": "NotoSansSC-Light"
+    },
+    {
+      "id": 270,
+      "value": "DemiLight"
+    },
+    {
+      "id": 271,
+      "value": "NotoSansSC-DemiLight"
+    },
+    {
+      "id": 272,
+      "value": "Regular"
+    },
+    {
+      "id": 273,
+      "value": "NotoSansSC-Regular"
+    },
+    {
+      "id": 274,
+      "value": "Medium"
+    },
+    {
+      "id": 275,
+      "value": "NotoSansSC-Medium"
+    },
+    {
+      "id": 276,
+      "value": "Bold"
+    },
+    {
+      "id": 277,
+      "value": "NotoSansSC-Bold"
+    },
+    {
+      "id": 278,
+      "value": "Black"
+    },
+    {
+      "id": 279,
+      "value": "NotoSansSC-Black"
+    }
+  ],
+  "cmapCount": 109,
+  "originalSha256": "43279f9b64ccbeefff47bfb5bbcd1a0d06711359815d01b2360f1606e769f74c"
+}

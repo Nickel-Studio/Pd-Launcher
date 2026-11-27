@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "dba970e73d024a71caaeec958763809736b4a273",
+  "identityBasis": "Exact existing Windows checkout bytes; no dependency is rewritten by this tool.",
+  "files": [
+    {"path": "tests/native-acceptance/audit_windows.py", "bytes": 13737, "sha256": "e24a8e676bc49c2237f7f56b7d8114403a5a764d5fc079e5873934107011fe87"},
+    {"path": "tests/native-release/windows_metrics.py", "bytes": 22580, "sha256": "96ed9288a5d15d8ba621698e60afd43870199875e17196a1b1d70eb2727ab940"},
+    {"path": "tests/native-release/evidence_common.py", "bytes": 8990, "sha256": "9821b7e532ffacde51a26ded70f98177c1bf773de484187bd92b32719e0194bb"},
+    {"path": "tests/native-release/release_evidence.py", "bytes": 33812, "sha256": "b59fba2d4e4986f53c38268b7c4a9ac0a7841c6b48199593edd0a9b333e48cad"},
+    {"path": "tests/native-release/archive_inventory.py", "bytes": 3933, "sha256": "b91e284b532a556601a9184b46c58a561904eb0db3b61127e60d90e0048af2d9"},
+    {"path": "tests/native-release/event_trace.py", "bytes": 9120, "sha256": "f32802f744460a0b33b16e40a6d2d1303a8a9d9d47fd540a314287929c166462"},
+    {"path": "tests/native-release/bounded_process.py", "bytes": 3132, "sha256": "31999b281ca78ac81c1c6a2630a266b15ac210b468091c360b073e2dd6857a62"},
+    {"path": "tests/native-release/process_trace.ps1", "bytes": 3765, "sha256": "3d5ef05582b06a4e304292810188828dd59b87ce1df49c90a470758e5a3a88b1"}
+  ]
+}

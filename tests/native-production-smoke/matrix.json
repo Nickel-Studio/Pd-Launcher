@@ -1,0 +1,379 @@
+{
+  "schema": 1,
+  "suite": "native-production-smoke",
+  "production_port": "AppServices:UiServices:QObject",
+  "cases": [
+    {
+      "id": "startup-root",
+      "queries": ["Bootstrap", "Settings", "InstanceRoots", "Instances"],
+      "actions": [],
+      "requirement_ids": ["D01", "D02", "P03"],
+      "fixture": "whole-root-selection",
+      "checks": [
+        "whole-root",
+        "corrupt-proof",
+        "game-root-consistency",
+        "restart",
+        "startup-gate"
+      ]
+    },
+    {
+      "id": "startup-once",
+      "queries": ["Bootstrap", "Onboarding"],
+      "actions": [
+        "LaunchGame",
+        "AcceptEula",
+        "AcknowledgeChangelog",
+        "FinishOnboarding",
+        "RejectEula"
+      ],
+      "requirement_ids": ["P03"],
+      "fixture": "onboarding-cli-portable",
+      "checks": [
+        "first-finish-gate",
+        "consent-three-phase",
+        "no-game-before-finish",
+        "reject",
+        "accept-durable",
+        "cli-target",
+        "portable-import-once",
+        "launch-once"
+      ]
+    },
+    {
+      "id": "settings-transaction",
+      "queries": ["Settings"],
+      "actions": ["PatchSettings"],
+      "requirement_ids": ["D02", "N02"],
+      "fixture": "settings-store",
+      "checks": [
+        "unknown-fields",
+        "integer-precision",
+        "persist-before-budget",
+        "failure-no-state",
+        "restart"
+      ]
+    },
+    {
+      "id": "accounts-offline",
+      "queries": ["Accounts", "Characters"],
+      "actions": ["SetAccountType", "SetActiveAccount", "RemoveAccount"],
+      "requirement_ids": ["I01", "D02"],
+      "fixture": "synthetic-accounts",
+      "checks": [
+        "durable",
+        "active-consistency",
+        "public-no-secrets",
+        "rollback-conflict"
+      ]
+    },
+    {
+      "id": "accounts-protocol",
+      "queries": ["Accounts", "Characters"],
+      "actions": [
+        "BeginMicrosoftLogin",
+        "CancelMicrosoftLogin",
+        "LoginSkinServer",
+        "SelectCharacter",
+        "CancelCharacterSelection",
+        "RefreshCharacters"
+      ],
+      "requirement_ids": ["I01", "N02"],
+      "fixture": "controlled-auth-http",
+      "checks": [
+        "slow-down",
+        "cancel",
+        "single-commit",
+        "stale-choice",
+        "public-redaction"
+      ]
+    },
+    {
+      "id": "accounts-media",
+      "queries": ["Characters"],
+      "actions": [
+        "UpdateOfflineSkin",
+        "ResetOfflineSkin",
+        "UploadSkin",
+        "ChangePlayerName"
+      ],
+      "requirement_ids": ["I01", "I02"],
+      "fixture": "skin-file-http",
+      "checks": [
+        "bounded-image",
+        "persist-first",
+        "failure-preserves",
+        "redaction"
+      ]
+    },
+    {
+      "id": "roots-transaction",
+      "queries": ["InstanceRoots", "Instances", "Bootstrap"],
+      "actions": [
+        "ActivateRoot",
+        "AddRoot",
+        "CreateRoot",
+        "RenameRoot",
+        "RemoveRoot",
+        "DeleteRoot"
+      ],
+      "requirement_ids": ["D01", "P01"],
+      "fixture": "registered-roots",
+      "checks": [
+        "ordering",
+        "display-not-identity",
+        "game-root-consistency",
+        "authorization",
+        "foreign-preserved",
+        "restart"
+      ]
+    },
+    {
+      "id": "named-instance",
+      "queries": ["Instances", "VersionDetail"],
+      "actions": [
+        "SelectInstance",
+        "RenameInstance",
+        "SetInstanceIcon",
+        "SetInstanceFavorite",
+        "DeleteInstance"
+      ],
+      "requirement_ids": ["P01", "N02"],
+      "fixture": "named-profile",
+      "checks": [
+        "root-version-identity",
+        "effective-directory",
+        "durable",
+        "pending-owner",
+        "conflict"
+      ]
+    },
+    {
+      "id": "version-settings",
+      "queries": ["VersionSettings", "JavaInstallations"],
+      "actions": ["PatchVersionSettings", "ResetVersionSettings"],
+      "requirement_ids": ["P01", "M02", "D02"],
+      "fixture": "inherited-settings",
+      "checks": [
+        "inheritance",
+        "legacy-readonly",
+        "unknown-fields",
+        "validation",
+        "restart"
+      ]
+    },
+    {
+      "id": "install-version",
+      "queries": ["VanillaCatalog", "LoaderCatalog", "Downloads", "Instances"],
+      "actions": ["InstallVersion"],
+      "requirement_ids": ["M01", "M03", "N02"],
+      "fixture": "controlled-minecraft-http",
+      "checks": [
+        "named-target",
+        "real-layout",
+        "hash-failure",
+        "cancel",
+        "commit-external",
+        "no-complete-after-commit"
+      ]
+    },
+    {
+      "id": "pack-roundtrip",
+      "queries": ["ExportTree", "Instances"],
+      "actions": ["ImportPack", "ExportPack"],
+      "requirement_ids": ["P02", "P03", "N03"],
+      "fixture": "mrpack-portable",
+      "checks": [
+        "real-archive",
+        "schema1",
+        "whitelist",
+        "no-credentials",
+        "named-target",
+        "once",
+        "source-readonly"
+      ]
+    },
+    {
+      "id": "community-partial",
+      "queries": [
+        "CommunitySearch",
+        "ProjectDetail",
+        "ProjectVersions",
+        "RequiredDependencies"
+      ],
+      "actions": [],
+      "requirement_ids": ["R01", "R03", "O01"],
+      "fixture": "dual-provider-http",
+      "checks": [
+        "partial",
+        "full-body",
+        "version-filter",
+        "source-isolation",
+        "nonce"
+      ]
+    },
+    {
+      "id": "resource-import",
+      "queries": ["InstalledResources", "Downloads"],
+      "actions": ["ImportResources", "DeleteResource"],
+      "requirement_ids": ["R02", "N02", "N03"],
+      "fixture": "resources-and-foreign",
+      "checks": [
+        "frozen-source-identity",
+        "absolute-target",
+        "partial",
+        "cancel",
+        "foreign-preserved"
+      ]
+    },
+    {
+      "id": "resource-download",
+      "queries": ["InstalledResources", "Downloads"],
+      "actions": ["InstallProject", "DownloadProjectFile"],
+      "requirement_ids": ["R01", "N01", "N02"],
+      "fixture": "controlled-resource-http",
+      "checks": [
+        "actual-file-hash",
+        "dependency-context",
+        "cancel",
+        "publish-linearization",
+        "single-terminal"
+      ]
+    },
+    {
+      "id": "mods-transaction",
+      "queries": ["Mods", "InstalledResources"],
+      "actions": [
+        "SetModEnabled",
+        "RenameMod",
+        "DeleteMods",
+        "CheckModUpdates",
+        "UpdateMods",
+        "ExportMods"
+      ],
+      "requirement_ids": ["R02", "N02", "P02"],
+      "fixture": "jar-mods",
+      "checks": [
+        "real-scan",
+        "revision",
+        "atomic-update",
+        "cancel-preserves-old",
+        "export-whitelist"
+      ]
+    },
+    {
+      "id": "cleanup-identity",
+      "queries": ["JunkPreview"],
+      "actions": ["ScanJunk", "CleanJunk"],
+      "requirement_ids": ["L01", "N02"],
+      "fixture": "junk-allowlist",
+      "checks": [
+        "preview-token",
+        "identity-change",
+        "deep-path",
+        "foreign-preserved",
+        "partial",
+        "cancel"
+      ]
+    },
+    {
+      "id": "launch-named-target",
+      "queries": ["Logs", "RuntimeInformation", "VersionDetail"],
+      "actions": ["LaunchGame", "CancelLaunch"],
+      "requirement_ids": ["M01", "M02", "P01", "L01"],
+      "fixture": "owned-java-helper",
+      "checks": [
+        "effective-target",
+        "real-prepare",
+        "owned-spawn",
+        "cancel-running-survives",
+        "GameSession-wait",
+        "dual-eof-exit"
+      ]
+    },
+    {
+      "id": "diagnostic-report",
+      "queries": ["Logs", "RuntimeInformation"],
+      "actions": ["ExportLogs", "ExportErrorReport", "ClearLaunchError"],
+      "requirement_ids": ["L01"],
+      "fixture": "owned-output-failure",
+      "checks": [
+        "split-secret-redaction",
+        "bounded-output",
+        "frozen-diagnostic",
+        "full-report-file",
+        "actual-export-hash"
+      ]
+    },
+    {
+      "id": "download-lifecycle",
+      "queries": ["Downloads"],
+      "actions": [
+        "RefreshDownloads",
+        "CancelDownload",
+        "DismissDownload",
+        "DismissDownloadBubble",
+        "ClearDownloadError"
+      ],
+      "requirement_ids": ["N02", "O01"],
+      "fixture": "controlled-task-barriers",
+      "checks": [
+        "queued-cancel",
+        "one-terminal",
+        "no-resurrection",
+        "committed-late-cancel",
+        "bounded-history"
+      ]
+    },
+    {
+      "id": "widget-production-open",
+      "queries": ["Bootstrap"],
+      "actions": ["OpenPath", "OpenExternalUrl"],
+      "requirement_ids": ["U01", "P03"],
+      "fixture": "real-window-controlled-open",
+      "checks": [
+        "real-AppServices-binding",
+        "startup-gate",
+        "authorized-path",
+        "url-validation"
+      ]
+    },
+    {
+      "id": "nonce-stale",
+      "queries": [
+        "CommunitySearch",
+        "ProjectDetail",
+        "ProjectVersions",
+        "InstalledResources",
+        "Mods",
+        "Characters"
+      ],
+      "actions": ["SelectCharacter"],
+      "requirement_ids": ["O01", "R01"],
+      "fixture": "controlled-out-of-order",
+      "checks": [
+        "request-id-reuse",
+        "nonce",
+        "old-scope-not-applied",
+        "subscriber-isolation"
+      ]
+    },
+    {
+      "id": "shutdown-queue",
+      "queries": ["Bootstrap", "Downloads"],
+      "actions": ["CancelDownload"],
+      "requirement_ids": ["N02", "O01"],
+      "fixture": "bounded-queue-destruction",
+      "checks": [
+        "saturation",
+        "ui-responsive",
+        "reject-after-shutdown",
+        "owned-work-joined",
+        "no-late-QObject-callback"
+      ]
+    }
+  ],
+  "verdicts": ["PASS", "FAIL", "BLOCKED", "NOT_RUN"],
+  "tools_are_not_production": true,
+  "requires_frozen_publication": true
+}

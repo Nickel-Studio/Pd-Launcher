@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "ownerId": "build-storage",
+  "capturedAt": "2026-11-21T19:40:19.626Z",
+  "authority": {
+    "providedBy": "build-storage",
+    "scope": "owner-attested",
+    "foreignRecursiveRead": false
+  },
+  "readerLeaseInventoryComplete": true,
+  "writerInventoryComplete": true,
+  "leaseEpoch": "small-d-fixture-epoch",
+  "sourceOwnedRoots": [
+    "D:\\workon\\Pd-Launcher\\.snow\\worktrees\\team-1795251306296\\build-storage\\tests\\native-storage\\fixtures"
+  ],
+  "targetOwnedRoot": "D:\\workon\\Pd-Launcher\\.snow\\worktrees\\team-1795251306296\\build-storage\\tests\\native-storage\\fixtures",
+  "transferVerificationConsent": true,
+  "coverageId": "tiny-files-only",
+  "allocationInventoryComplete": true,
+  "entries": [
+    {
+      "id": "payload_txt",
+      "kind": "build",
+      "ownerId": "build-storage",
+      "closedAttestedBy": "build-storage",
+      "leaseEpoch": "small-d-fixture-epoch",
+      "markedClosed": true,
+      "protected": false,
+      "sourcePath": "D:\\workon\\Pd-Launcher\\.snow\\worktrees\\team-1795251306296\\build-storage\\tests\\native-storage\\fixtures\\payload.txt",
+      "targetPath": "D:\\workon\\Pd-Launcher\\.snow\\worktrees\\team-1795251306296\\build-storage\\tests\\native-storage\\fixtures\\payload.txt",
+      "sourceIsReparsePoint": false,
+      "targetIsReparsePoint": false,
+      "byte": 46,
+      "allocatedBytes": 4096,
+      "allocatedVolume": "D",
+      "allocationEvidence": "owner-native-allocated",
+      "fileIdentity": "fixture-owner-attested-1",
+      "hardlinkCount": 1,
+      "sha256": "b827d64b8799c44d141280adb509ea978c8684cd0df88ee97f9fc6521db047a0",
+      "activeWriterPids": [],
+      "readerLeases": []
+    }
+  ]
+}

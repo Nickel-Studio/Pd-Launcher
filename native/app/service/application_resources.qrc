@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/nickel/application">
+    <file alias="changelog.json">../../../CHANGELOG.json</file>
+  </qresource>
+</RCC>

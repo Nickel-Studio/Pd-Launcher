@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 私密安全报告
+    url: https://github.com/Nickel-Studio/Pd-Launcher/security/advisories/new
+    about: 报告认证、凭据、文件读写和代码执行相关漏洞
+  - name: 使用指南
+    url: https://github.com/Nickel-Studio/Pd-Launcher/blob/main/docs/native/user-guide.md
+    about: 查看首次运行、账号、实例、下载和排障操作

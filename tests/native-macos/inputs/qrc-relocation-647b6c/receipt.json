@@ -1,0 +1,398 @@
+{
+  "schema": 1,
+  "kind": "actual-git-byte-qrc-relocation-fixture-not-apple-runtime",
+  "executionSourceCommit": "474e5a67d326e5f9e326e57185120396ba4ef59a",
+  "originalSourceCommit": "647b6c0ffdba6a20d13c03062a16c639674e3fdb",
+  "sharedGitTree": "f433dabc01c02171fdda2e8c5482e890407a5ae0",
+  "archive": {
+    "path": "source.zip",
+    "bytes": 200507,
+    "sha256": "16525e95cd2beb394795d6dcb17d4b28bf86e81e320ab1cfe172d2c024d76b0a"
+  },
+  "historicalQrcPath": "native/assets/brand/history/nickel/brand.qrc",
+  "historicalQrcReferences": 33,
+  "referencedResources": [
+    {
+      "originalPath": "CC-BY-SA-4.0.txt",
+      "path": "native/assets/brand/CC-BY-SA-4.0.txt",
+      "bytes": 18375,
+      "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966"
+    },
+    {
+      "originalPath": "NOTICE.txt",
+      "path": "native/assets/brand/history/nickel/NOTICE.txt",
+      "bytes": 780,
+      "sha256": "7b8195c07b0ea199e97fc6151baf0b6692c048eee7387dd0cb46f50521dc3657"
+    },
+    {
+      "originalPath": "fonts/NOTICE.md",
+      "path": "native/assets/brand/history/nickel/fonts/NOTICE.md",
+      "bytes": 740,
+      "sha256": "7fd989195f35b9ea3a9131bd2d181120ae86ded86bdcaa436f7f802ed4a44c0e"
+    },
+    {
+      "originalPath": "fonts/OFL-1.1.txt",
+      "path": "native/assets/brand/fonts/OFL-1.1.txt",
+      "bytes": 4095,
+      "sha256": "6890de7dbb4866ae67d2c8481c7c194b0146ba62933b84e3e3e6f011d3717bc8"
+    },
+    {
+      "originalPath": "fonts/nickel-text-subset.ttf",
+      "path": "native/assets/brand/fonts/nickel-text-subset.ttf",
+      "bytes": 59104,
+      "sha256": "495a35cbdc278056ca33729ba58271f7459d832cb236245b8ce33a11cdb25efa"
+    },
+    {
+      "originalPath": "icon-light.png",
+      "path": "native/assets/brand/history/nickel/icon-light.png",
+      "bytes": 1843,
+      "sha256": "f8cde8c06fbd7c882db127d4ceb4c7d891695b3ec4ac4e15c32c24d45def77b4"
+    },
+    {
+      "originalPath": "icon-light.svg",
+      "path": "native/assets/brand/icon-light.svg",
+      "bytes": 3223,
+      "sha256": "9c7d32c98ddd2d3feddadb4564cd509333ec4d79ee5993559f569203684eaf96"
+    },
+    {
+      "originalPath": "icon.png",
+      "path": "native/assets/brand/history/nickel/icon.png",
+      "bytes": 1843,
+      "sha256": "7074a75c3dc28ff4f6fd91aceed9f0a11df6a20f1e5391204babf68653d5d29d"
+    },
+    {
+      "originalPath": "icon.svg",
+      "path": "native/assets/brand/icon.svg",
+      "bytes": 3217,
+      "sha256": "42f274905c833ebfa89322d673fede17c4186a014bee46f4e2dc0574a4331f0d"
+    },
+    {
+      "originalPath": "mark-black.png",
+      "path": "native/assets/brand/history/nickel/mark-black.png",
+      "bytes": 1617,
+      "sha256": "1bca7692e2741081b0e69b68f1f1eba3f2879c81cf9774eef460ff7879e27880"
+    },
+    {
+      "originalPath": "mark-black.svg",
+      "path": "native/assets/brand/mark-black.svg",
+      "bytes": 3163,
+      "sha256": "e19ec6acfffead3671fbbb703d7a0f0d45e58aa202b06219ac5be2e7b0bd4d56"
+    },
+    {
+      "originalPath": "mark-white.png",
+      "path": "native/assets/brand/history/nickel/mark-white.png",
+      "bytes": 1647,
+      "sha256": "083901260b8b811f3570829a07bcb5ae5347e9359312e8fa3694090d3ebe1527"
+    },
+    {
+      "originalPath": "mark-white.svg",
+      "path": "native/assets/brand/mark-white.svg",
+      "bytes": 3163,
+      "sha256": "569a756f0c2cdba8470711dfe92ce6fbfa82f5e5edd981dff412dfa07368b0b5"
+    },
+    {
+      "originalPath": "wordmarks/ni-black.png",
+      "path": "native/assets/brand/wordmarks/ni-black.png",
+      "bytes": 4325,
+      "sha256": "7d38170bef12169129a3a69d1b1d883fb0c2a3c7996f37777889026a14381cea"
+    },
+    {
+      "originalPath": "wordmarks/ni-black.svg",
+      "path": "native/assets/brand/wordmarks/ni-black.svg",
+      "bytes": 3344,
+      "sha256": "80a861deadc64bf4408758b0d974d7ae3d2a81e0c3c5deb5f83d6559a21423d8"
+    },
+    {
+      "originalPath": "wordmarks/ni-launcher-black.png",
+      "path": "native/assets/brand/wordmarks/ni-launcher-black.png",
+      "bytes": 19092,
+      "sha256": "55220f839e2ec913c5a8e10021daa8d20a628505479a1b89b140f38fe333ac1a"
+    },
+    {
+      "originalPath": "wordmarks/ni-launcher-black.svg",
+      "path": "native/assets/brand/wordmarks/ni-launcher-black.svg",
+      "bytes": 3860,
+      "sha256": "0bd0301493409c42f78145eaf113d045040713e18e82cba5f3f54fa19b216c77"
+    },
+    {
+      "originalPath": "wordmarks/ni-launcher-white.png",
+      "path": "native/assets/brand/wordmarks/ni-launcher-white.png",
+      "bytes": 17975,
+      "sha256": "f85bb669a78fae6791d505af7a268f94930f5970ba12917a426e6517b1549ef8"
+    },
+    {
+      "originalPath": "wordmarks/ni-launcher-white.svg",
+      "path": "native/assets/brand/wordmarks/ni-launcher-white.svg",
+      "bytes": 3860,
+      "sha256": "4ea72661e7411fd50783e9a7b0816d435e1caa1ae6fb047d3ee98ed3522f259a"
+    },
+    {
+      "originalPath": "wordmarks/ni-white.png",
+      "path": "native/assets/brand/wordmarks/ni-white.png",
+      "bytes": 4230,
+      "sha256": "17749fdce8df34f69abebb782648f957c1aa6e482f87809414622d90da3ad720"
+    },
+    {
+      "originalPath": "wordmarks/ni-white.svg",
+      "path": "native/assets/brand/wordmarks/ni-white.svg",
+      "bytes": 3344,
+      "sha256": "7152b8147dda2bae2aea4ba1bde49ab5ce6ad9ecd6df4e1ca36731cdf9730dee"
+    },
+    {
+      "originalPath": "wordmarks/nickel-black.png",
+      "path": "native/assets/brand/wordmarks/nickel-black.png",
+      "bytes": 14431,
+      "sha256": "e973f948f8a22e403a1ed9de5f1b69822af9afd53875905f054ad7b913266f3a"
+    },
+    {
+      "originalPath": "wordmarks/nickel-black.svg",
+      "path": "native/assets/brand/wordmarks/nickel-black.svg",
+      "bytes": 3602,
+      "sha256": "93b86b3f7f8d08223af50710f0d1b28d711ca87c1ba4cb2481474c1517c54b0d"
+    },
+    {
+      "originalPath": "wordmarks/nickel-launcher-black.png",
+      "path": "native/assets/brand/wordmarks/nickel-launcher-black.png",
+      "bytes": 21023,
+      "sha256": "d2b354e7023fd5bf8bc3fbdb59cb5945d829ae382613f421ff9257d63d2b4238"
+    },
+    {
+      "originalPath": "wordmarks/nickel-launcher-black.svg",
+      "path": "native/assets/brand/wordmarks/nickel-launcher-black.svg",
+      "bytes": 4124,
+      "sha256": "9d8c032cb5ee45744fa07c546b49bcd9d5fdad4b7847acc27abbf3812f6fed38"
+    },
+    {
+      "originalPath": "wordmarks/nickel-launcher-white.png",
+      "path": "native/assets/brand/wordmarks/nickel-launcher-white.png",
+      "bytes": 19472,
+      "sha256": "15caf922cadc31c5bf7cbe5a9e2d4ee64ec0d788593d0b5ce69c87fd0f6bc4e4"
+    },
+    {
+      "originalPath": "wordmarks/nickel-launcher-white.svg",
+      "path": "native/assets/brand/wordmarks/nickel-launcher-white.svg",
+      "bytes": 4124,
+      "sha256": "ff6363e6d09bb6c6699014f173ac1f9ba647f12b3b145019a8fb271f0227b8a9"
+    },
+    {
+      "originalPath": "wordmarks/nickel-white.png",
+      "path": "native/assets/brand/wordmarks/nickel-white.png",
+      "bytes": 13754,
+      "sha256": "fa342806e3243e86d095919205c592f77fcaf65e08be1e8a6b9467112ab12e82"
+    },
+    {
+      "originalPath": "wordmarks/nickel-white.svg",
+      "path": "native/assets/brand/wordmarks/nickel-white.svg",
+      "bytes": 3602,
+      "sha256": "206ac0fcf054cb0b0ac542976b15e8e06815b860f2e3618bdd01b481ea14ed42"
+    },
+    {
+      "originalPath": "wordmarks/nie-black.png",
+      "path": "native/assets/brand/wordmarks/nie-black.png",
+      "bytes": 6841,
+      "sha256": "bac839f54826e918d4608e644e5b246e6f40fe1a494607e8002a92aeaa22787d"
+    },
+    {
+      "originalPath": "wordmarks/nie-black.svg",
+      "path": "native/assets/brand/wordmarks/nie-black.svg",
+      "bytes": 3286,
+      "sha256": "c74f1b9fc73fc5e770fd781a63905b6758a18d76727638b6ea174f1dd5996e6a"
+    },
+    {
+      "originalPath": "wordmarks/nie-white.png",
+      "path": "native/assets/brand/wordmarks/nie-white.png",
+      "bytes": 6680,
+      "sha256": "57f7632986685af7fc1dfd6d0538c310b9342ead677ff25e9200b25d184772e0"
+    },
+    {
+      "originalPath": "wordmarks/nie-white.svg",
+      "path": "native/assets/brand/wordmarks/nie-white.svg",
+      "bytes": 3286,
+      "sha256": "0eed1ad0a5227fef214620e2d8ec62df7b00d551f9d5f3a65fd7d30a6564fc0a"
+    }
+  ],
+  "files": [
+    {
+      "path": "native/assets/brand/CC-BY-SA-4.0.txt",
+      "bytes": 18375,
+      "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966"
+    },
+    {
+      "path": "native/assets/brand/asset-manifest.json",
+      "bytes": 80020,
+      "sha256": "fb21803bc8c83262740c5b4f92e7b5dd527551860d0e6d62eaa0f5add743be43"
+    },
+    {
+      "path": "native/assets/brand/fonts/OFL-1.1.txt",
+      "bytes": 4095,
+      "sha256": "6890de7dbb4866ae67d2c8481c7c194b0146ba62933b84e3e3e6f011d3717bc8"
+    },
+    {
+      "path": "native/assets/brand/fonts/nickel-text-subset.ttf",
+      "bytes": 59104,
+      "sha256": "495a35cbdc278056ca33729ba58271f7459d832cb236245b8ce33a11cdb25efa"
+    },
+    {
+      "path": "native/assets/brand/history/nickel/NOTICE.txt",
+      "bytes": 780,
+      "sha256": "7b8195c07b0ea199e97fc6151baf0b6692c048eee7387dd0cb46f50521dc3657"
+    },
+    {
+      "path": "native/assets/brand/history/nickel/brand.qrc",
+      "bytes": 2463,
+      "sha256": "527cf8d34e65f43e87de34c602842392c5da25cce3aeae9553bdf38de427e179"
+    },
+    {
+      "path": "native/assets/brand/history/nickel/fonts/NOTICE.md",
+      "bytes": 740,
+      "sha256": "7fd989195f35b9ea3a9131bd2d181120ae86ded86bdcaa436f7f802ed4a44c0e"
+    },
+    {
+      "path": "native/assets/brand/history/nickel/icon-light.png",
+      "bytes": 1843,
+      "sha256": "f8cde8c06fbd7c882db127d4ceb4c7d891695b3ec4ac4e15c32c24d45def77b4"
+    },
+    {
+      "path": "native/assets/brand/history/nickel/icon.png",
+      "bytes": 1843,
+      "sha256": "7074a75c3dc28ff4f6fd91aceed9f0a11df6a20f1e5391204babf68653d5d29d"
+    },
+    {
+      "path": "native/assets/brand/history/nickel/mark-black.png",
+      "bytes": 1617,
+      "sha256": "1bca7692e2741081b0e69b68f1f1eba3f2879c81cf9774eef460ff7879e27880"
+    },
+    {
+      "path": "native/assets/brand/history/nickel/mark-white.png",
+      "bytes": 1647,
+      "sha256": "083901260b8b811f3570829a07bcb5ae5347e9359312e8fa3694090d3ebe1527"
+    },
+    {
+      "path": "native/assets/brand/icon-light.svg",
+      "bytes": 3223,
+      "sha256": "9c7d32c98ddd2d3feddadb4564cd509333ec4d79ee5993559f569203684eaf96"
+    },
+    {
+      "path": "native/assets/brand/icon.svg",
+      "bytes": 3217,
+      "sha256": "42f274905c833ebfa89322d673fede17c4186a014bee46f4e2dc0574a4331f0d"
+    },
+    {
+      "path": "native/assets/brand/mark-black.svg",
+      "bytes": 3163,
+      "sha256": "e19ec6acfffead3671fbbb703d7a0f0d45e58aa202b06219ac5be2e7b0bd4d56"
+    },
+    {
+      "path": "native/assets/brand/mark-white.svg",
+      "bytes": 3163,
+      "sha256": "569a756f0c2cdba8470711dfe92ce6fbfa82f5e5edd981dff412dfa07368b0b5"
+    },
+    {
+      "path": "native/assets/brand/source/nickel-asset-manifest.json",
+      "bytes": 30770,
+      "sha256": "d38b8aa1fa35eef72b48b5f553a5c85b46abfbe4d018433ac3daf807ef5abc7d"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/ni-black.png",
+      "bytes": 4325,
+      "sha256": "7d38170bef12169129a3a69d1b1d883fb0c2a3c7996f37777889026a14381cea"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/ni-black.svg",
+      "bytes": 3344,
+      "sha256": "80a861deadc64bf4408758b0d974d7ae3d2a81e0c3c5deb5f83d6559a21423d8"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/ni-launcher-black.png",
+      "bytes": 19092,
+      "sha256": "55220f839e2ec913c5a8e10021daa8d20a628505479a1b89b140f38fe333ac1a"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/ni-launcher-black.svg",
+      "bytes": 3860,
+      "sha256": "0bd0301493409c42f78145eaf113d045040713e18e82cba5f3f54fa19b216c77"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/ni-launcher-white.png",
+      "bytes": 17975,
+      "sha256": "f85bb669a78fae6791d505af7a268f94930f5970ba12917a426e6517b1549ef8"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/ni-launcher-white.svg",
+      "bytes": 3860,
+      "sha256": "4ea72661e7411fd50783e9a7b0816d435e1caa1ae6fb047d3ee98ed3522f259a"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/ni-white.png",
+      "bytes": 4230,
+      "sha256": "17749fdce8df34f69abebb782648f957c1aa6e482f87809414622d90da3ad720"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/ni-white.svg",
+      "bytes": 3344,
+      "sha256": "7152b8147dda2bae2aea4ba1bde49ab5ce6ad9ecd6df4e1ca36731cdf9730dee"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/nickel-black.png",
+      "bytes": 14431,
+      "sha256": "e973f948f8a22e403a1ed9de5f1b69822af9afd53875905f054ad7b913266f3a"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/nickel-black.svg",
+      "bytes": 3602,
+      "sha256": "93b86b3f7f8d08223af50710f0d1b28d711ca87c1ba4cb2481474c1517c54b0d"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/nickel-launcher-black.png",
+      "bytes": 21023,
+      "sha256": "d2b354e7023fd5bf8bc3fbdb59cb5945d829ae382613f421ff9257d63d2b4238"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/nickel-launcher-black.svg",
+      "bytes": 4124,
+      "sha256": "9d8c032cb5ee45744fa07c546b49bcd9d5fdad4b7847acc27abbf3812f6fed38"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/nickel-launcher-white.png",
+      "bytes": 19472,
+      "sha256": "15caf922cadc31c5bf7cbe5a9e2d4ee64ec0d788593d0b5ce69c87fd0f6bc4e4"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/nickel-launcher-white.svg",
+      "bytes": 4124,
+      "sha256": "ff6363e6d09bb6c6699014f173ac1f9ba647f12b3b145019a8fb271f0227b8a9"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/nickel-white.png",
+      "bytes": 13754,
+      "sha256": "fa342806e3243e86d095919205c592f77fcaf65e08be1e8a6b9467112ab12e82"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/nickel-white.svg",
+      "bytes": 3602,
+      "sha256": "206ac0fcf054cb0b0ac542976b15e8e06815b860f2e3618bdd01b481ea14ed42"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/nie-black.png",
+      "bytes": 6841,
+      "sha256": "bac839f54826e918d4608e644e5b246e6f40fe1a494607e8002a92aeaa22787d"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/nie-black.svg",
+      "bytes": 3286,
+      "sha256": "c74f1b9fc73fc5e770fd781a63905b6758a18d76727638b6ea174f1dd5996e6a"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/nie-white.png",
+      "bytes": 6680,
+      "sha256": "57f7632986685af7fc1dfd6d0538c310b9342ead677ff25e9200b25d184772e0"
+    },
+    {
+      "path": "native/assets/brand/wordmarks/nie-white.svg",
+      "bytes": 3286,
+      "sha256": "0eed1ad0a5227fef214620e2d8ec62df7b00d551f9d5f3a65fd7d30a6564fc0a"
+    }
+  ],
+  "notAppleRuntime": true,
+  "correspondingSourceInventoryNotLegalOpinion": true
+}

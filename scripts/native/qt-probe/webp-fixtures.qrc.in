@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RCC>
+  <qresource prefix="/nickel/probe/webp">
+    <file alias="reference.png">@_fixture_root_xml@/kollada.png</file>
+    <file alias="lossy.webp">@_fixture_root_xml@/kollada.webp</file>
+    <file alias="lossless.webp">@_fixture_root_xml@/kollada_lossless.webp</file>
+    <file alias="opaque.webp">@_fixture_root_xml@/kollada_noalpha.webp</file>
+    <file alias="animation.webp">@_fixture_root_xml@/kollada_animation.webp</file>
+  </qresource>
+</RCC>

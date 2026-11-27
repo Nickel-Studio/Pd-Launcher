@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Nickel-Studio/Ni-Launcher/docs/native/licenses/native-dependency-evidence.schema.json",
+  "title": "Read-only actual native dependency inspection, not a copied release bundle",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "kind",
+    "scope",
+    "observedAt",
+    "inspectionPassed",
+    "materialBundleCollected",
+    "dependencySnapshotValidationPassed",
+    "nativeLegalMaterialValidationPassed",
+    "nativeReleaseReady",
+    "lock",
+    "components",
+    "installedLibraryCount",
+    "unclaimedLibraries",
+    "bootstrapLogs",
+    "unverifiedGates",
+    "notes"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "kind": { "const": "native-dependency-inspection" },
+    "scope": { "const": "native-dependency-snapshot" },
+    "observedAt": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "inspectionPassed": { "const": true },
+    "materialBundleCollected": { "const": false },
+    "dependencySnapshotValidationPassed": { "const": false },
+    "nativeLegalMaterialValidationPassed": { "const": false },
+    "nativeReleaseReady": { "const": false },
+    "lock": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "components": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/component" }
+    },
+    "installedLibraryCount": { "type": "integer", "minimum": 1 },
+    "unclaimedLibraries": { "type": "array", "maxItems": 0 },
+    "bootstrapLogs": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/bootstrap" }
+    },
+    "unverifiedGates": {
+      "type": "array",
+      "minItems": 5,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "notes": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+  },
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "material": {
+      "type": "object",
+      "required": ["path", "kind", "sha256", "bytes", "available"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^\\.snow/(native-tools|native-shared)/.+"
+        },
+        "kind": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/hash" },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "available": { "const": true }
+      }
+    },
+    "materials": { "type": "array", "items": { "$ref": "#/$defs/material" } },
+    "bootstrap": {
+      "type": "object",
+      "required": [
+        "material",
+        "complete",
+        "successfulCommands",
+        "recordedLockSha256",
+        "recordedLockMatchesCurrent"
+      ],
+      "properties": {
+        "material": { "$ref": "#/$defs/material" },
+        "complete": { "const": true },
+        "successfulCommands": { "type": "integer", "minimum": 1 },
+        "recordedLockSha256": { "$ref": "#/$defs/hash" },
+        "recordedLockMatchesCurrent": { "type": "boolean" }
+      }
+    },
+    "qtSupplementalLibrary": {
+      "type": "object",
+      "required": [
+        "installedPath",
+        "upstreamFileEntryPresent",
+        "upstreamSpdxId",
+        "openSourceLicenseExpression",
+        "installedTargetMatches",
+        "material",
+        "versionEvidence",
+        "targetEvidence",
+        "sourceEvidence",
+        "licenseText"
+      ],
+      "properties": {
+        "installedPath": { "type": "string", "minLength": 1 },
+        "upstreamFileEntryPresent": { "const": false },
+        "upstreamSpdxId": { "type": "string", "minLength": 1 },
+        "openSourceLicenseExpression": { "type": "string", "minLength": 1 },
+        "installedTargetMatches": { "const": true },
+        "material": { "$ref": "#/$defs/material" },
+        "versionEvidence": { "$ref": "#/$defs/material" },
+        "targetEvidence": { "$ref": "#/$defs/material" },
+        "sourceEvidence": { "$ref": "#/$defs/material" },
+        "licenseText": { "$ref": "#/$defs/material" }
+      },
+      "additionalProperties": false
+    },
+    "qt": {
+      "type": "object",
+      "required": [
+        "upstreamSbom",
+        "independentValidationErrorCount",
+        "packages",
+        "files",
+        "libraryCoverage",
+        "attributions",
+        "supplementalLibraryCoverage",
+        "extractedLicenses",
+        "upstreamRelaxedJsonFiles",
+        "scopeLimit"
+      ],
+      "properties": {
+        "upstreamSbom": { "$ref": "#/$defs/material" },
+        "independentValidationErrorCount": { "const": 0 },
+        "packages": { "type": "integer", "minimum": 1 },
+        "files": { "type": "integer", "minimum": 1 },
+        "libraryCoverage": { "type": "array", "minItems": 1 },
+        "attributions": { "type": "array", "minItems": 1 },
+        "supplementalLibraryCoverage": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/qtSupplementalLibrary" }
+        },
+        "extractedLicenses": { "type": "array" },
+        "upstreamRelaxedJsonFiles": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "scopeLimit": { "type": "string", "minLength": 1 }
+      }
+    },
+    "component": {
+      "type": "object",
+      "required": [
+        "id",
+        "version",
+        "category",
+        "origin",
+        "lockedLicenseExpression",
+        "sourceArchive",
+        "sourceDirectory",
+        "artifacts",
+        "licenseAndNoticeFiles",
+        "buildMaterials",
+        "successfulBootstrapLogs",
+        "buildOptions",
+        "finalExecutableUseVerified"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$" },
+        "version": { "type": "string", "minLength": 1 },
+        "category": {
+          "enum": ["qt", "http", "archive", "compression", "other"]
+        },
+        "origin": { "type": "string", "minLength": 1 },
+        "lockedLicenseExpression": { "type": "string", "minLength": 1 },
+        "sourceArchive": {
+          "allOf": [
+            { "$ref": "#/$defs/material" },
+            {
+              "required": [
+                "lockedSha256Matches",
+                "readablePreferredFormArchive"
+              ],
+              "properties": {
+                "lockedSha256Matches": { "const": true },
+                "readablePreferredFormArchive": { "const": true }
+              }
+            }
+          ]
+        },
+        "sourceDirectory": {
+          "type": "string",
+          "pattern": "^\\.snow/native-tools/sources/.+"
+        },
+        "artifacts": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/material" }
+        },
+        "licenseAndNoticeFiles": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/material" }
+        },
+        "buildMaterials": {
+          "type": "array",
+          "minItems": 3,
+          "items": { "$ref": "#/$defs/material" }
+        },
+        "successfulBootstrapLogs": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/material" }
+        },
+        "buildOptions": { "type": "object" },
+        "dependencyResourceObjects": { "$ref": "#/$defs/materials" },
+        "perFileLicenseEvidence": { "$ref": "#/$defs/materials" },
+        "qt": { "$ref": "#/$defs/qt" },
+        "finalExecutableUseVerified": { "const": false }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "category": { "const": "qt" } } },
+          "then": { "required": ["qt", "dependencyResourceObjects"] }
+        }
+      ]
+    }
+  }
+}

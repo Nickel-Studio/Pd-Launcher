@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "publicationComplete": true,
+  "receiver": "macos-delivery",
+  "finishedUtc": "2026-11-21T15:06:27+00:00",
+  "sourceContractSha256": "ceb0caca487e77392851c3456028e4e0bc1a04b96d4970ff4a09f6bd4b255c6c",
+  "dependencyLockSha256": "b974a9bcd5b9f6fab32ffbf248ccd23ab9938ff731a91c9aff2c162d70dd136d",
+  "verificationRulesSha256": "831ce076f726323c9dc61c57c065ff9b204876a29f254ea00575b351755e36a4",
+  "copiedFiles": 4,
+  "classification": "small-input-contract-portal-not-full-build-source-route-or-runtime-PASS",
+  "readerLock": "new immutable text portal complete; no live mirror changed"
+}

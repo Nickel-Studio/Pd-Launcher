@@ -1,0 +1,5 @@
+*.py text eol=lf
+*.json text eol=lf
+*.cpp text eol=lf
+CMakeLists.txt text eol=lf
+*.png binary

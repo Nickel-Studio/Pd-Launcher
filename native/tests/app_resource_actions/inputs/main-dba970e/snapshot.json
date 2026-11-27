@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "kind": "bounded-immutable-main-header-input",
+  "owner": "app-resource-actions",
+  "sourceCommit": "dba970e73d024a71caaeec958763809736b4a273",
+  "createdUtc": "2026-11-21T16:50:44.651024+00:00",
+  "root": "native/tests/app_resource_actions/inputs/main-dba970e",
+  "files": {
+    "native/app/AppServices.hpp": {
+      "gitBlob": "3d2c89ebe7404cda6b598f85b5b70d677fee7168",
+      "bytes": 2115,
+      "sha256": "758e5b6674961bf24692bde56d3a9f2e0fe29cd52d04e82c99e9d43a3b063685"
+    },
+    "native/app/WorkerQueue.hpp": {
+      "gitBlob": "b9fbbceb3f3b084c33951d561a0895abeb6f57cc",
+      "bytes": 893,
+      "sha256": "d68f4418386994616ef11d95cf94f28accc7525b1051d4f676997902432b0025"
+    },
+    "native/app/application_state.hpp": {
+      "gitBlob": "c134d96b5038bcd50de24d1e21115bd40348ef63",
+      "bytes": 10789,
+      "sha256": "a065cbf101ebf62d2c8149456570f4d142a20c37a7db2bb33e87ec25845249bb"
+    },
+    "native/app/service/mutation_gate.hpp": {
+      "gitBlob": "b924eeadd4d620dd07308ddec5033ee5457e4b0f",
+      "bytes": 1251,
+      "sha256": "a0b43efbe2d5ad591bd224299aa283b2fb43c75d168d35b78a2c3094c5a280d3"
+    },
+    "native/app/service/operation_queue.hpp": {
+      "gitBlob": "ad6b8df74a2719e6ef6d9d8be604eb5fa8876daf",
+      "bytes": 4717,
+      "sha256": "58a5cdda9abd0c2a16dac2375ac59a746b9afcebfb553324c965b149fc1d86f1"
+    },
+    "native/app/service/public_dto.hpp": {
+      "gitBlob": "d1c2ea3805892a5d90007ec2fdee2275ad3cdd14",
+      "bytes": 935,
+      "sha256": "1345bedee99f7554d13944d2b94685e331909dee2e12dd51ee6648a0ef2059db"
+    },
+    "native/app/service/snapshots.hpp": {
+      "gitBlob": "cf42d512e6705820c0e276534941f51dd3bb5200",
+      "bytes": 1237,
+      "sha256": "e71cd16c9d9b28751c73fc6848e5032528b9a1551146482076966aefb9a4fb72"
+    },
+    "native/core/accounts/accounts.hpp": {
+      "gitBlob": "1fb445ea5583c8ff147b0073385bf578adc94ff2",
+      "bytes": 4962,
+      "sha256": "c9a9c150703f7718a0752ef54c6e0c34a38a2bc4034e398d92c914d8cef3a6e9"
+    },
+    "native/core/accounts/auth.hpp": {
+      "gitBlob": "99badd375b60e516037fe3bb7d105aeb2007c859",
+      "bytes": 8842,
+      "sha256": "3b79103d4eaff23fa3fa16a53da5c3c78b36a87944b9631c52ab3c2d2aa258e7"
+    },
+    "native/core/accounts/http_port.hpp": {
+      "gitBlob": "46bbe257f72b4ba9e57234fd4498c72f9ef40f19",
+      "bytes": 1236,
+      "sha256": "9080e327b6f922fd84a51f0a14441c934d0c4d15299a74f63aab55568ec8d480"
+    },
+    "native/core/archive/archive.hpp": {
+      "gitBlob": "9cd0af9c6e7747099f0bb9532e2d24503822a88f",
+      "bytes": 4768,
+      "sha256": "75d3f1f5344d8c66de87ee35c1440cbf5c6bfa3e6e0ab8096b06bb43a2d97931"
+    },
+    "native/core/common/cancellation.hpp": {
+      "gitBlob": "c9c5c8ad59856297d4baf7116833d02481012c46",
+      "bytes": 549,
+      "sha256": "01530545a3dfc528877007abafa78723036f9d09292ec7a48d7c45bcb146ebba"
+    },
+    "native/core/common/error.hpp": {
+      "gitBlob": "0198d55bb58f2d61e3194ce66421d94923168962",
+      "bytes": 503,
+      "sha256": "5b6f70fe5f158ac2d73213d8744710b8489b33f042110a97eb3ecf886433e74e"
+    },
+    "native/core/common/json.hpp": {
+      "gitBlob": "9d260adbb873a85413ea1c87e65cbdf52cfc60cd",
+      "bytes": 94,
+      "sha256": "0e70c71b250fdabdfe1c5ba46b267cfff8470629fe5bb751f89e1609935fb9e5"
+    },
+    "native/core/config/atomic_file.hpp": {
+      "gitBlob": "7afe56ff8e5ca9d683bb47609f4d4ce8f59d6ba3",
+      "bytes": 3032,
+      "sha256": "bc63e08b261d7be57ee4dc082c582d535b85dc46a11ad2ee92d61d7d6428c309"
+    },
+    "native/core/config/path_guard.hpp": {
+      "gitBlob": "48f03597b909972f7ad67d5f1161de392f43d01e",
+      "bytes": 2040,
+      "sha256": "db2835b2c626075b32ce90b9406612c9d966b2ed1603dc88868187ce628eb573"
+    },
+    "native/core/config/paths.hpp": {
+      "gitBlob": "6d6209b66e1bb23eb4b17ab53d839042b375e81d",
+      "bytes": 2015,
+      "sha256": "3162c4721f617c0556bd8e6a867e90475e7b6674f27f9e30626d786c8ef0d862"
+    },
+    "native/core/config/repository.hpp": {
+      "gitBlob": "c1024bf119801ced5233b65db5b3489277d99540",
+      "bytes": 2129,
+      "sha256": "c6d922f7fd71890ad185ef14dd8f7e115e7b92d1fdc714225142cdd5126003f7"
+    },
+    "native/core/config/vault.hpp": {
+      "gitBlob": "a6437938f87489b8cea6a08ded24f9999432d9c0",
+      "bytes": 1002,
+      "sha256": "54ac92306a6b44d0765c13b5f23d999672ab991194d24bb1fc807a91d4003b67"
+    },
+    "native/core/diagnostics/diagnostics.hpp": {
+      "gitBlob": "3c4bcd47152de3c1b6281ec95f350fb3bbf8d11f",
+      "bytes": 4085,
+      "sha256": "bc5d07eef04e775f86428601ef9f72237c764090eff21f5f798205bd00cc5d3c"
+    },
+    "native/core/diagnostics/junk.hpp": {
+      "gitBlob": "31cf13a1608563a30c7c22657d765d75c7b12553",
+      "bytes": 3257,
+      "sha256": "7bc1f2cb46a6bcda5777dcef2665ae37f245abb8e620834ce9a004482a6e96de"
+    },
+    "native/core/diagnostics/logs.hpp": {
+      "gitBlob": "01c9144dfec7cefba6ea7755ddf74983245d45bd",
+      "bytes": 5809,
+      "sha256": "544b53ae1c698f499ca573d060ad85ce2d076d99c7572cfe3f930554d60574ff"
+    },
+    "native/core/documents/body.hpp": {
+      "gitBlob": "261f214b6738df9a1d34d99d66ca3bc63991cfd2",
+      "bytes": 4058,
+      "sha256": "0342ea29d8f48d55ca4e6200404b95624943a1e73b9da4d4abbc3fde7e503a02"
+    },
+    "native/core/instances/instances.hpp": {
+      "gitBlob": "5264258a4046d1f722df7c7f893855e902504a81",
+      "bytes": 6558,
+      "sha256": "ee432291836df85bf824cbadeb542cb340039fd9117f2cbc8d1a4d727657ee3a"
+    },
+    "native/core/instances/settings.hpp": {
+      "gitBlob": "c1547a3dca99cf00482e67d486246d0fd9318928",
+      "bytes": 3598,
+      "sha256": "0571683c23fac8d02d8ae047fcf48a0121ef524aaa59abc39f58cdd6879b9b67"
+    },
+    "native/core/instances/startup.hpp": {
+      "gitBlob": "1cd46c4800069a3108cbf88ba44ab61828266919",
+      "bytes": 2738,
+      "sha256": "b770770fddad795dc6f95ed5b458676aa9265a360c420a9284c181dd01d63950"
+    },
+    "native/core/media/images.hpp": {
+      "gitBlob": "83de09a2cacc6d9377d7c642fe54dfb7331a30ee",
+      "bytes": 6711,
+      "sha256": "2b173924c59c9ef1bb7b87f593902e857fd2b17ec127567f9fbb5d8263a32479"
+    },
+    "native/core/media/offline_skin.hpp": {
+      "gitBlob": "78a2669fb2d8d5efc024bddf4166c53865da4617",
+      "bytes": 4714,
+      "sha256": "087ba809424c7f8b2a8e29e9f5973719d82b6d8b377d5edcb1e73d1e55daf05e"
+    },
+    "native/core/media/offline_skin_native.hpp": {
+      "gitBlob": "4df249b14f62e7e985862447345190fdb45aa242",
+      "bytes": 1726,
+      "sha256": "b4bb0be7f392a626ac50df0c1ec2ca72ee43af8bf335f1b46f0ee7196829f361"
+    },
+    "native/core/media/skin_png.hpp": {
+      "gitBlob": "59b4221ad3a140eb209c6ab126f5f994d684353f",
+      "bytes": 1154,
+      "sha256": "2ca88ad08445643d202f2f6d2a1893d9a8b2c3fe858953168bb9c22c6669a8f6"
+    },
+    "native/core/minecraft/catalog.hpp": {
+      "gitBlob": "9f7f4eae1d3e3b3cdbb0da9257e429cee1fa1587",
+      "bytes": 2255,
+      "sha256": "802c1353718560ca0ccc2f17a51a2a505bcef4528206a5b9d0d12ce12d8a209f"
+    },
+    "native/core/minecraft/installer.hpp": {
+      "gitBlob": "0e1bd6562a89e272de1dc657ab2e34f785a218a3",
+      "bytes": 5012,
+      "sha256": "1b99d05edea7beb186bda77c0bbc8bb4b2c254d9f6b8d5b84c6babb0ccaeb836"
+    },
+    "native/core/minecraft/java.hpp": {
+      "gitBlob": "c2a59abf703e101e95cec691a29d3bf2909a80bf",
+      "bytes": 1925,
+      "sha256": "ffef15482805c190b51a28c6486fdab20c830b83c2c5a66f5c24af1a240e079b"
+    },
+    "native/core/minecraft/json.hpp": {
+      "gitBlob": "4a9ae48dbc2dc3a089d4aac0b660b734a2218b94",
+      "bytes": 119,
+      "sha256": "191c519bd609ebafe2645da81dfb5fea09daa8777adbf1a7cbe9f3477e5a9d06"
+    },
+    "native/core/minecraft/launcher.hpp": {
+      "gitBlob": "302beb5473871b9fa7965fe93fa6ac176907a5e7",
+      "bytes": 4956,
+      "sha256": "d712f95d08b4c7b68ee31c2549d57ea03e265890a2eea028d32488e074739c8d"
+    },
+    "native/core/minecraft/loader_policy.hpp": {
+      "gitBlob": "2b92875cddbc9749202f2850686c011da8bb0fad",
+      "bytes": 2119,
+      "sha256": "7f98432a87798a4e1c8cdb8d337cb09010407d8607455a3404644f92347ac6e1"
+    },
+    "native/core/minecraft/memory.hpp": {
+      "gitBlob": "f9dfb3be118467124578df92c9186a24599777d3",
+      "bytes": 1203,
+      "sha256": "d69e79d7fc986fd40b7af6dcd500813d0176ef0a988a59b6198afff8d1f98266"
+    },
+    "native/core/minecraft/metadata.hpp": {
+      "gitBlob": "cf05d4082a40be3ec6412955d72c7a163005bc7c",
+      "bytes": 4070,
+      "sha256": "7e888109e1643d1affdf8c82c2ca8407fdad2c12ec895a81a8bbafc5c0e49302"
+    },
+    "native/core/minecraft/rules.hpp": {
+      "gitBlob": "8269230e1bcaaaef2c16f3c3fcb1b531b280e267",
+      "bytes": 1005,
+      "sha256": "d55af55965cfe32eaaa90fa3d0a678c8f56168280205cdd2112edf989017247b"
+    },
+    "native/core/minecraft/services.hpp": {
+      "gitBlob": "096781660b49797189bdd789046d18e680d11a98",
+      "bytes": 3388,
+      "sha256": "c418736984da9a77fd7a793e6132ac101444aa69e3e5643ab4db386f28da1364"
+    },
+    "native/core/minecraft/services_native.hpp": {
+      "gitBlob": "227db2619e59ff48cbf8b35f1aa2cbbf741fa077",
+      "bytes": 622,
+      "sha256": "65f8af676f06213a3a5d1ba75ca88d9e2cda1a7ab5cd51de5d1e337008bbc3a8"
+    },
+    "native/core/network/budget.hpp": {
+      "gitBlob": "2d6f72c121be4a4d83cc62a2d074b38b8ceb2014",
+      "bytes": 1755,
+      "sha256": "48f043bccee18f439b2cccdd973a64b824a7224c14a99b20bb33123889733c08"
+    },
+    "native/core/network/control.hpp": {
+      "gitBlob": "69f397840b37d7638b1be676712156d73c00d4e4",
+      "bytes": 746,
+      "sha256": "30ac117f14fca5e2b1e8e0411c4b77c4f82b6d240a7bde868c3ebb9f7f6948ad"
+    },
+    "native/core/network/download.hpp": {
+      "gitBlob": "19fe26045b95de49689b8b18989297b037446f33",
+      "bytes": 1138,
+      "sha256": "b44fc7a9584e1edf37702fe0702ebcb782667b86919a983fa7503e21ef899366"
+    },
+    "native/core/network/errors.hpp": {
+      "gitBlob": "05fd80686df17e7a92680191fe537d924a86b5ab",
+      "bytes": 876,
+      "sha256": "dd3e7c6fbefcdda65b5484495337cc7bfb4f39aecbfe5dae3d9cda86f4b53ba9"
+    },
+    "native/core/network/hash.hpp": {
+      "gitBlob": "b6642b68108975ef5b562064c44daf4006406b94",
+      "bytes": 1312,
+      "sha256": "4881544efb0ca3532d673c89fae6438ad712d3cb9b9f3680719967e137bff112"
+    },
+    "native/core/network/http.hpp": {
+      "gitBlob": "ad0a85d16f40c220dece0f9124611bb903dd2bdd",
+      "bytes": 6193,
+      "sha256": "edcb2111497f0e586b27eebd2b2941dfe0ff9dbc2058bf67d98f770d41cc655c"
+    },
+    "native/core/packs/native_services.hpp": {
+      "gitBlob": "9e0599dc004f5e78ff7dfabb58696881d9bbbda2",
+      "bytes": 2054,
+      "sha256": "b327525bdd41b5a79c5112f72e31b95e931b4f7a0b95221d90875b98fbfa01b1"
+    },
+    "native/core/packs/packs.hpp": {
+      "gitBlob": "bbfb96ceb2d3ba7ff11493cc0bfde6ede8cf423e",
+      "bytes": 8384,
+      "sha256": "9654c30dafea97f7229dc492d5cc79db33cc586752b69d1c5db487dfff4de81a"
+    },
+    "native/core/resources/adapters.hpp": {
+      "gitBlob": "0a8ddcd97c3cd65e5c0afa5b0de528f27e1f21e7",
+      "bytes": 1859,
+      "sha256": "af7ea41f4d3a8b5b83dfd3b449b75b5d7327cbba9d5d7696b291f2d2916e8031"
+    },
+    "native/core/resources/community.hpp": {
+      "gitBlob": "cce592e6b43128027c118e4d08d00dc1b1fc5088",
+      "bytes": 5086,
+      "sha256": "b8f46c2cebeb30e18566a54b9496c20e2560d38b6040bd288db90b99310df5b9"
+    },
+    "native/core/resources/export.hpp": {
+      "gitBlob": "552ecb24099a6d6597df7c69496558a13ca3ef54",
+      "bytes": 1119,
+      "sha256": "43557f78cd7c20aa051ae4e1ae5ac0d56cf38f2ac236ead6f0fd1e4ab265e7fa"
+    },
+    "native/core/resources/mods.hpp": {
+      "gitBlob": "10d15bcab68be19b31107e535332ae477acd7789",
+      "bytes": 4973,
+      "sha256": "e7b13ca54f6e93add6aab312fc959af0800f6c2c086cfe42edaf0d537ae41372"
+    },
+    "native/core/resources/network.hpp": {
+      "gitBlob": "ccba3fca86b1d3d21e57fde89673c554cbcdd7a0",
+      "bytes": 3989,
+      "sha256": "2a5550da509a1cebea9abbb84630a1fedfe29fb140e848c1a0a7a57e7ee52536"
+    },
+    "native/core/resources/types.hpp": {
+      "gitBlob": "d21c1c5260db08e65dccbc6fbab565583788295a",
+      "bytes": 5504,
+      "sha256": "1e27908b8facbd94c16f173dc20d62b228f2bdf76ecb0643fbff194bccdb9b89"
+    },
+    "native/core/resources/utility.hpp": {
+      "gitBlob": "96558844fa5a8634bb4f2db4c170a72b612086b4",
+      "bytes": 1496,
+      "sha256": "a433ea3f338cc30b122004beecbfe348a92ae01ec3890e84054ca1096b766448"
+    },
+    "native/core/tasks/secure_fs.hpp": {
+      "gitBlob": "7caa7d2f90c0b6b005d21cab0ca7e5fb21f9eea2",
+      "bytes": 5881,
+      "sha256": "a813404cc2484c92d2dfe65e43c63641a6c32dd706f1383397cb9b03b980c9db"
+    },
+    "native/core/tasks/task.hpp": {
+      "gitBlob": "aa5c442a75c7934ac06cd88628c86dab038dd050",
+      "bytes": 108,
+      "sha256": "72ad68f85786b37065a56eeb5cfe948f2d93f0490feabf2c3936cbeb78229b7c"
+    },
+    "native/core/tasks/tasks.hpp": {
+      "gitBlob": "521ffac4e1cda16f7f39344f12c5686df9f1b97c",
+      "bytes": 5408,
+      "sha256": "56dd5bacf10b76beeb604cb6b589d1db4770981b35fe7be347ccf56a9b6b2661"
+    },
+    "native/ui/DecodeImage.hpp": {
+      "gitBlob": "0a734f13cd48544ef531ad908b17d49041975d4a",
+      "bytes": 845,
+      "sha256": "0882ca148e54035984f1d5ae5abcf5e7d60ccb0af820cae148ac51388baf0c59"
+    },
+    "native/ui/UiServices.hpp": {
+      "gitBlob": "f739e3709d614bbec9a838069a3e38cd33624fe0",
+      "bytes": 3633,
+      "sha256": "0548a1246e0e781621db137ce621a6c6856f1bf763db6a68f0ef5076904532f8"
+    }
+  },
+  "sourceFileCount": 61,
+  "sourceBytes": 186550,
+  "includeScope": "Only project headers transitively referenced by the two owned TUs; no tests/deps, objects, libraries, executable, full prefix or build cache copied",
+  "missingProjectIncludes": [],
+  "productComplete": false,
+  "runtimePassed": false,
+  "oldReceiverUsed": false
+}

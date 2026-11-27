@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.25)
+project(NickelDependencyProbe LANGUAGES C CXX)
+set(CMAKE_MSVC_RUNTIME_LIBRARY MultiThreaded)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+include("${CMAKE_CURRENT_LIST_DIR}/../../../cmake/NickelDependencies.cmake")
+add_executable(nickel_dependency_probe probe.cpp)
+target_link_libraries(nickel_dependency_probe PRIVATE CURL::libcurl LibArchive::LibArchive
+    ZLIB::ZLIB BZip2::BZip2 LibLZMA::LibLZMA zstd::libzstd_static gumbo::gumbo
+    tomlplusplus::tomlplusplus yaml::yaml nlohmann_json::nlohmann_json)
+if(MSVC)
+    target_compile_options(nickel_dependency_probe PRIVATE /W4 /utf-8 /EHsc /permissive-)
+endif()
+enable_testing()
+add_test(NAME native_dependency_runtime COMMAND nickel_dependency_probe)

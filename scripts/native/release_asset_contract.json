@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "product": "Palladium",
+  "executableName": "pd-launcher",
+  "tagPrefix": "pd-v",
+  "assetPrefix": "Palladium",
+  "requiredPlatforms": ["windows-x64", "linux-x64", "macos-arm64", "macos-x64"],
+  "formats": {
+    "windows-exe": { "platform": "windows", "architecture": "x64", "suffix": ".exe", "archiveFormat": "raw" },
+    "windows-msi": { "platform": "windows", "architecture": "x64", "suffix": ".msi", "archiveFormat": null },
+    "macos-arm64": { "platform": "macos", "architecture": "arm64", "suffix": ".dmg", "archiveFormat": null },
+    "macos-x64": { "platform": "macos", "architecture": "x64", "suffix": ".dmg", "archiveFormat": null },
+    "macos-arm64-zip": { "platform": "macos", "architecture": "arm64", "suffix": ".zip", "archiveFormat": "zip" },
+    "macos-x64-zip": { "platform": "macos", "architecture": "x64", "suffix": ".zip", "archiveFormat": "zip" },
+    "linux-appimage": { "platform": "linux", "architecture": "x64", "suffix": ".AppImage", "archiveFormat": null },
+    "linux-deb": { "platform": "linux", "architecture": "x64", "suffix": ".deb", "archiveFormat": null },
+    "linux-tar-gz": { "platform": "linux", "architecture": "x64", "suffix": ".tar.gz", "archiveFormat": "tar.gz" },
+    "linux-zip": { "platform": "linux", "architecture": "x64", "suffix": ".zip", "archiveFormat": "zip" }
+  }
+}

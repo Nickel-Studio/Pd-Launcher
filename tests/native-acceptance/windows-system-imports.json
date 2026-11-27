@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "kind": "documented-exact-windows-system-imports",
+  "scope": "Four exact API DLL names; no wildcard, deployment or runtime exemption",
+  "verifiedUtc": "2026-11-21T14:51:00Z",
+  "systemDirectory": {
+    "url": "https://learn.microsoft.com/en-us/windows/win32/winprog64/file-system-redirector",
+    "quote": "The %windir%\\System32 directory is reserved for 64-bit applications on 64-bit Windows.",
+    "runtimePolicy": "Require the observed absolute module path below System32, SysWOW64 or WinSxS; app-local copies remain rejected."
+  },
+  "libraries": {
+    "authz.dll": {
+      "api": "AuthzAccessCheck",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/authz/nf-authz-authzaccesscheck",
+      "minimumClient": "Windows XP [desktop apps only]",
+      "minimumServer": "Windows Server 2003 [desktop apps only]",
+      "requirementsQuote": "Minimum supported client: Windows XP [desktop apps only]; Minimum supported server: Windows Server 2003 [desktop apps only]; DLL: Authz.dll"
+    },
+    "netapi32.dll": {
+      "api": "NetServerEnum",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/lmserver/nf-lmserver-netserverenum",
+      "minimumClient": "Windows 2000 Professional [desktop apps only]",
+      "minimumServer": "Windows 2000 Server [desktop apps only]",
+      "requirementsQuote": "Minimum supported client: Windows 2000 Professional [desktop apps only]; Minimum supported server: Windows 2000 Server [desktop apps only]; DLL: Netapi32.dll"
+    },
+    "uiautomationcore.dll": {
+      "api": "UiaReturnRawElementProvider",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/uiautomationcoreapi/nf-uiautomationcoreapi-uiareturnrawelementprovider",
+      "minimumClient": "Windows XP [desktop apps]",
+      "minimumServer": "Windows Server 2003 [desktop apps]",
+      "requirementsQuote": "Minimum supported client: Windows XP [desktop apps; Minimum supported server: Windows Server 2003 [desktop apps; DLL: Uiautomationcore.dll",
+      "note": "The published requirements table has a truncated desktop-app suffix. Newer individual UI Automation APIs can require newer Windows versions; this is not a whole-product minimum-OS certification."
+    },
+    "xmllite.dll": {
+      "api": "CreateXmlReader",
+      "url": "https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ee388577(v=vs.85)",
+      "apiUrl": "https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ms752822(v=vs.85)",
+      "minimumClient": "Windows Vista or later; also Windows XP with Service Pack 3 or later",
+      "minimumServer": "Windows Server 2008 or later; also Windows Server 2003 with Service Pack 2 or later",
+      "requirementsQuote": "The XmlLite runtime file, Xmllite.dll, is integrated into the following operating systems and products: Windows Server 2008 or later; Windows Vista or later; Windows XP with Service Pack 3 or later; Windows Server 2003 with Service Pack 2 or later.",
+      "deploymentQuote": "The XmlLite runtime is maintained by the Windows Update service. You cannot redistribute the Xmllite.dll file with your application."
+    }
+  },
+  "limitations": [
+    "Documentation establishes these exact OS API library identities, not actual loaded-module observations.",
+    "Minimum OS values describe representative APIs, not the complete launcher or every imported symbol.",
+    "Forbidden engines, dynamic compiler runtimes, unknown names and app-local system-name DLL copies remain rejected.",
+    "No signatures or runtime results are fabricated when the host signature command is unavailable."
+  ]
+}

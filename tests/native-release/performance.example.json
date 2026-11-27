@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "workerCount": 1,
+  "syntheticInputsOnly": true,
+  "scheduleSeed": 20261121,
+  "launchers": { "legacy": null, "native": null },
+  "equivalenceEvidence": null,
+  "inputCorpus": [],
+  "idleBaselineScenario": "home-no-background",
+  "limits": {
+    "sampleIntervalMs": 500,
+    "settleSeconds": 30,
+    "memoryWindowSeconds": 30,
+    "readyTimeoutSeconds": 60,
+    "cooldownSeconds": 2,
+    "maxFixtureBytes": 16777216,
+    "maxExecutionSeconds": 3600,
+    "maxOwnedOutputBytes": 268435456
+  },
+  "cachePolicy": {
+    "groups": ["cold-app-cache", "hot-app-cache"],
+    "hotWarmupRuns": 1,
+    "osCache": "uncontrolled-recorded"
+  },
+  "scenarios": [],
+  "notes": [
+    "This explicit-pending example contains no launcher/probe performance result.",
+    "Use at least 20 startup and 10 independent memory runs per launcher TOTAL, equally split cold/hot application-cache groups.",
+    "A bounded minimum schedule uses idle baseline 6 startup/5 memory per group plus four other common scenarios 1 startup/0 memory per group: 40 measured starts, 20 uncounted warmups, 20 memory windows across both launchers.",
+    "All 12 themes and shared functional/visual states are a separate equivalence gate, not 20 extra launches per theme.",
+    "Each state includes route/windowLogicalSize/dpiPercent/fontProfile/themeId/mode/backgroundSha256/blur/reducedMotion/fixtureId/pendingImageCount/activeTaskCount.",
+    "Each actual executable needs a prearmed first-frame driver and hash-bound runtimeIsolationEvidence before launch; cwd alone does not protect legacy APPDATA or adjacent Nickel roots.",
+    "Native-only long body/images open/closed/cache fallback scenarios use native-only-body-incremental and never claim old-feature reduction.",
+    "Cold means fresh application-cache fixture, not OS cold boot. A real reboot/flush study requires separate target-host evidence."
+  ]
+}
