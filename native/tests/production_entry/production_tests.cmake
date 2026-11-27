@@ -1,0 +1,30 @@
+if(NOT TARGET Nickel::AppServices OR NOT TARGET nickel_ui)
+    message(FATAL_ERROR "Production entry tests require the real root AppServices and UI libraries; no substitutes")
+endif()
+find_package(Qt6 6.8.3 EXACT CONFIG REQUIRED COMPONENTS Core Gui Widgets Svg Test)
+set(_entry_native "${CMAKE_CURRENT_LIST_DIR}/../..")
+set(_entry_app "${_entry_native}/app")
+set(_entry_sources
+    "${_entry_app}/AcceptancePaths.cpp"
+    "${_entry_app}/PerformanceApplication.cpp"
+    "${_entry_app}/PerformanceProbe.cpp"
+)
+add_executable(nickel_production_entry_tests "${CMAKE_CURRENT_LIST_DIR}/entry_tests.cpp" ${_entry_sources})
+add_executable(nickel_production_entry_fixture "${_entry_app}/main.cpp" ${_entry_sources})
+foreach(_target nickel_production_entry_tests nickel_production_entry_fixture)
+    target_link_libraries(${_target} PRIVATE Nickel::AppServices nickel_ui Qt6::Test)
+    target_compile_features(${_target} PRIVATE cxx_std_20)
+    target_include_directories(${_target} PRIVATE "${_entry_native}" "${_entry_app}" "${NICKEL_ENTRY_BUILD_INFO_DIRECTORY}")
+    set_target_properties(${_target} PROPERTIES CXX_EXTENSIONS OFF)
+    if(MSVC)
+        target_compile_options(${_target} PRIVATE /W4 /WX /utf-8 /EHsc /permissive- /Zc:__cplusplus)
+        target_link_libraries(${_target} PRIVATE advapi32 user32)
+    else()
+        target_compile_options(${_target} PRIVATE -Wall -Wextra -Wpedantic -Werror)
+    endif()
+    qt_import_plugins(${_target} INCLUDE Qt6::QOffscreenIntegrationPlugin)
+endforeach()
+add_dependencies(nickel_production_entry_tests nickel_production_entry_fixture)
+add_test(NAME nickel_production_entry COMMAND nickel_production_entry_tests)
+set_tests_properties(nickel_production_entry PROPERTIES TIMEOUT 60
+    ENVIRONMENT "NICKEL_ENTRY_TEST_ROOT=${CMAKE_CURRENT_BINARY_DIR}/production-entry-fixtures;NICKEL_ENTRY_FIXTURE=$<TARGET_FILE:nickel_production_entry_fixture>;QT_QPA_PLATFORM=offscreen")

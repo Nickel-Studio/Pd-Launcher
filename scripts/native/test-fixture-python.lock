@@ -1,0 +1,25 @@
+# Exact-pinned independent test-fixture cryptography toolchain for the hosted native CI.
+# Scope: Python test fixture generators only (native/tests/foundation/make_fixtures.py,
+# native/tests/transport/socket_fixture.py, native/tests/community/socket_fixture.py).
+# This is NOT a product runtime dependency: the product CMake graph never reads this file and
+# the pinned static OpenSSL 3.5.9 supply chain is completely separate.
+# The install is fail-closed: --require-hashes refuses any artifact whose SHA256 is not pinned
+# below, --only-binary=:all: refuses source distributions, --no-deps refuses transitive drift,
+# and the ==version pins leave pip no resolution freedom. scripts/native/test-fixture-python-verify.py
+# must run right after this install and before any CMake configure.
+# Runners: windows-2025-vs2026 (CPython 3.13.18 win_amd64) and ubuntu-24.04 (CPython 3.13.18
+# x86_64, glibc 2.39). Both legs enable -DNICKEL_BUILD_TESTS=ON and both generate the foundation
+# fixtures through add_custom_command, so both need this toolchain.
+# cryptography 48.0.1 ships cp311-abi3 stable-ABI wheels: the exact same release serves CPython
+# 3.13 on both runners. Its only CPython dependency (cffi>=2.0.0) and cffi's own pycparser
+# dependency are pinned here because the install runs with --no-deps.
+# Hash evidence: official PyPI JSON API https://pypi.org/pypi/<name>/<version>/json.
+cryptography==48.0.1 --hash=sha256:0ee6ea481db1ab889cba043ec1eda17bb9c1ea79db6722f779c3667f9f70322f --hash=sha256:3752f2dbc8f07a30aad2932c986cea495b03bb554887828225da104f732852b6 --hash=sha256:39489bfca54c7a1f6b297efcd8bc608ab92d16c4ca631b0cad4da46724588b24
+# cryptography-48.0.1-cp311-abi3-manylinux_2_34_x86_64.whl 4745488 bytes (ubuntu-24.04 x86_64 primary)
+# cryptography-48.0.1-cp311-abi3-manylinux_2_28_x86_64.whl 4746137 bytes (glibc>=2.28 pre-approved fallback)
+# cryptography-48.0.1-cp311-abi3-win_amd64.whl 3817138 bytes (windows x64)
+cffi==2.1.1 --hash=sha256:a931079504ecc49efed7744c476a5c343a92fabf66dec2db95edb1b2fdc770e2 --hash=sha256:1aa5645c30469b09530c4ebca77ebf8f17618293c58f8549cb1a543a50236e7d
+# cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl 221824 bytes (ubuntu-24.04 x86_64)
+# cffi-2.1.1-cp313-cp313-win_amd64.whl 185688 bytes (windows x64)
+pycparser==2.23 --hash=sha256:e5c6e8d3fbad53479cab09ac03729e0a9faf2bee3db8208a550daf5af81a5934
+# pycparser-2.23-py3-none-any.whl 118140 bytes (pure Python, both runners)

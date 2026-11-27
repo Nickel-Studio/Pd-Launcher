@@ -1,0 +1,14 @@
+# Manifest hashes use exact bytes on every platform.
+*.svg text eol=lf
+*.qrc text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt -text
+*.ttf binary
+*.woff2 binary
+*.png binary
+*.ico binary
+*.icns binary
+# Supplied user metadata is original material, including its existing line endings.
+source/Palladium-verification.json -text !eol
+source/Palladium-README.md -text !eol

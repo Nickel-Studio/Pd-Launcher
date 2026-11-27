@@ -1,0 +1,461 @@
+{
+  "schemaVersion": 1,
+  "kind": "library-binding-evidence",
+  "owner": "legal-evidence-wire",
+  "observedAt": "2026-11-24",
+  "sourceReport": "link map (Qt 6.8.3 windows-x64-static, external build artifact)",
+  "sourceCommit": "5360620",
+  "purpose": "二进制级链接证据：为 scripts/native/library_binding_verify.py 的 40 行矩阵提供 link map 归因（符号数/贡献字节）、安装树 .lib 字节与 SHA-256，以及证据等级。本文件只记录事实，不改变任何证据强度；等级 gap 的行照旧计为缺口。",
+  "grades": {
+    "link-map-proved": "该 .lib 被 build.ninja LINK_LIBRARIES 声明，且在 MSVC link map 中有 >=1 个符号归因（symbolCount>0、contributionBytes>0）；map 与 EXE 的 SHA-256 已归档（linkMap 块）。",
+    "justified-absent": "该 .lib 在静态前缀安装树在册但未进入交付二进制：link map 中 0 符号、0 字节，且“为何不链入”的理由已按 linker-binding 报告 §6a-§6d 的分类逐条记录（reason 非空 + sourceReport + sourceSection）。这是“已证明的不链入”，不是“未取证”。",
+    "gap": "无二进制级证据，或证据结构/引用不完整（缺 mapPath/sourceReport/sourceSection、符号数与等级矛盾、理由为空）。一律计入 missing-binding 缺口。"
+  },
+  "linkMap": {
+    "mapPath": "D:\\lb-b\\native\\app\\pd-launcher.map",
+    "mapBytes": 42941296,
+    "mapSha256": "02b5fccd3652af01e74cb0df63a6574a928a302b87ddf18ebf3758a00c2026de",
+    "exePath": "D:\\lb-b\\native\\app\\pd-launcher.exe",
+    "exeBytes": 26607616,
+    "exeSha256": "5a4236de87710aea2da38f025d8f7644df0dc929f7f93725aaeaccc34d82168d",
+    "buildSourceCommit": "6c7fe8dfe4edd71730bfbb6376c6ddcf20323326",
+    "buildSourceRef": "main@6c7fe8d",
+    "deterministicRelink": true,
+    "attributedBytesToMatrixLibs": 18875794,
+    "attributedBytesTotal": 24116324,
+    "note": "map/EXE 由生产链接自带的 /MAP（native/app/CMakeLists.txt:250-252）产出；/Brepro 下删除产物仅重链接一次后 EXE 与 map 逐字节一致。"
+  },
+  "archiveProvenanceNote": "archiveBytes/archiveSha256 为取证时对静态前缀安装树（D:/workon/nickel-native-tools/install/windows-x64-static）的实测值（事后取证），不是构建流水线当时写下的记录；linker-binding-evidence-current.md §9.1 已如实披露这一边界。",
+  "expected": {
+    "link-map-proved": 27,
+    "justified-absent": 13,
+    "gap": 0,
+    "totalContributionBytes": 18875794
+  },
+  "sbomVersionMap": {
+    "Qt6BundledHarfbuzz.lib": "BundledHarfbuzz",
+    "Qt6BundledLibjpeg.lib": "BundledLibjpeg",
+    "Qt6BundledLibjpeg12bits.lib": "BundledLibjpeg12bits",
+    "Qt6BundledLibjpeg16bits.lib": "BundledLibjpeg16bits",
+    "Qt6BundledLibpng.lib": "BundledLibpng"
+  },
+  "sbomNote": "仓库外事实不写死：上述 5 行的版本证据来自 Qt 6.8.3 安装树自带的 SPDX tag-value（sbom/qtbase-6.8.3.spdx，sha256 665a467098f536231c6e190d0085a826a2cf7049b52c406e190d07e6d0ba7e58），只能在运行时用 --sbom <path> 读取；未提供 --sbom 时这 5 行继续按“未记录（缺口）”计。",
+  "gateFieldOwners": {
+    "finalExecutableUseVerified": [
+      "docs/native/licenses/native-dependency-evidence.json",
+      "docs/native/licenses/trusted-launcher-notice-input.json"
+    ],
+    "unverifiedGates": [
+      "docs/native/licenses/native-dependency-evidence.json",
+      "docs/native/licenses/legal-tooling-evidence.json",
+      "docs/native/licenses/asset-bundle-evidence.json"
+    ],
+    "nativeReleaseMissingMaterials": [
+      "docs/native/licenses/native-release-gaps-current.json"
+    ],
+    "correctedFrom": "docs/native/licenses/native-release-gaps-current.json unverifiedGates（该键不存在，旧提示文本归属错位）"
+  },
+  "rows": {
+    "Qt6Core.lib": {
+      "matrixIndex": 1,
+      "grade": "link-map-proved",
+      "symbolCount": 33222,
+      "contributionBytes": 3530950,
+      "objectCount": 182,
+      "archiveBytes": 30925896,
+      "archiveSha256": "148c457d2f3eb0cd18c8ba100384c8b4d7869a26ce17050581ece47407b8c523",
+      "sourceSection": "§5 表 B #1"
+    },
+    "Qt6Gui.lib": {
+      "matrixIndex": 2,
+      "grade": "link-map-proved",
+      "symbolCount": 33218,
+      "contributionBytes": 4616234,
+      "objectCount": 199,
+      "archiveBytes": 36258066,
+      "archiveSha256": "ed39c88e31f6e21d98a27542db12a3471d5f5cfe61437930492e9d7fcc2bf5b3",
+      "sourceSection": "§5 表 B #2"
+    },
+    "Qt6Widgets.lib": {
+      "matrixIndex": 3,
+      "grade": "link-map-proved",
+      "symbolCount": 33503,
+      "contributionBytes": 4279759,
+      "objectCount": 142,
+      "archiveBytes": 36952186,
+      "archiveSha256": "a725d361e6839c07039cda1e87aa8bb6e6006a6784dd01a4f2a9237b1891bba7",
+      "sourceSection": "§5 表 B #3"
+    },
+    "Qt6Xml.lib": {
+      "matrixIndex": 4,
+      "grade": "justified-absent",
+      "symbolCount": 0,
+      "contributionBytes": 0,
+      "archiveBytes": 677198,
+      "archiveSha256": "00f0139ec015d9f843d4cf06c9c89bda891b9fd92cdb7a728cdf07c38ed548a0",
+      "sourceSection": "§6a",
+      "reason": "未引用 Qt 模块：应用 find_package(Qt6 … Core Gui Widgets Svg) 与静态插件导入清单均不含 Qt6Xml，build.ninja LINK_LIBRARIES 无声明、link map 中 0 符号（在册 ≠ 链入）；证据：link map §6a"
+    },
+    "Qt6Concurrent.lib": {
+      "matrixIndex": 5,
+      "grade": "justified-absent",
+      "symbolCount": 0,
+      "contributionBytes": 0,
+      "archiveBytes": 53688,
+      "archiveSha256": "ea0d68da7be0710930332652b0f960e484153b4ad0923fbae6aff43490094c2f",
+      "sourceSection": "§6a",
+      "reason": "未引用 Qt 模块：应用 find_package(Qt6 … Core Gui Widgets Svg) 与静态插件导入清单均不含 Qt6Concurrent，build.ninja LINK_LIBRARIES 无声明、link map 中 0 符号（在册 ≠ 链入）；证据：link map §6a"
+    },
+    "Qt6Test.lib": {
+      "matrixIndex": 6,
+      "grade": "justified-absent",
+      "symbolCount": 0,
+      "contributionBytes": 0,
+      "archiveBytes": 2377158,
+      "archiveSha256": "5d098e426a7c0eb42eeb9f56c072b96d8ada0cfefb8ea367e41a3f0303094cb0",
+      "sourceSection": "§6a",
+      "reason": "未引用 Qt 模块：Qt6Test 为 FEATURE_testlib=ON 的 host 测试侧产物，应用 find_package(Qt6 … Core Gui Widgets Svg) 与静态插件导入清单均不含它，LINK_LIBRARIES 无声明、link map 中 0 符号（在册 ≠ 链入）；证据：link map §6a"
+    },
+    "Qt6EntryPoint.lib": {
+      "matrixIndex": 7,
+      "grade": "link-map-proved",
+      "symbolCount": 9,
+      "contributionBytes": 620,
+      "objectCount": 1,
+      "archiveBytes": 4924,
+      "archiveSha256": "085b838d3492a4276c76a21cac4707f160929eafee7c5b6d356018e23b81f31a",
+      "sourceSection": "§5 表 B #7"
+    },
+    "Qt6ExampleIcons.lib": {
+      "matrixIndex": 8,
+      "grade": "justified-absent",
+      "symbolCount": 0,
+      "contributionBytes": 0,
+      "archiveBytes": 282938,
+      "archiveSha256": "c746edd1b40a0d20fe3c64e3f56ced48bb01b80da59d94c116bf7578ff1f2ff5",
+      "sourceSection": "§6a",
+      "reason": "未引用 Qt 模块：应用 find_package(Qt6 … Core Gui Widgets Svg) 与静态插件导入清单均不含 Qt6ExampleIcons（ExampleIconsPrivate），LINK_LIBRARIES 无声明、link map 中 0 符号（在册 ≠ 链入）；证据：link map §6a"
+    },
+    "Qt6DeviceDiscoverySupport.lib": {
+      "matrixIndex": 9,
+      "grade": "justified-absent",
+      "symbolCount": 0,
+      "contributionBytes": 0,
+      "archiveBytes": 50182,
+      "archiveSha256": "52f03735236afbbf206216c48d32c44ff4d44f1fb6f7bcde0b2cc78e79775cad",
+      "sourceSection": "§6a",
+      "reason": "未引用 Qt 模块：应用 find_package(Qt6 … Core Gui Widgets Svg) 与静态插件导入清单均不含 Qt6DeviceDiscoverySupport（DeviceDiscoverySupportPrivate），LINK_LIBRARIES 无声明、link map 中 0 符号（在册 ≠ 链入）；证据：link map §6a"
+    },
+    "Qt6FbSupport.lib": {
+      "matrixIndex": 10,
+      "grade": "justified-absent",
+      "symbolCount": 0,
+      "contributionBytes": 0,
+      "archiveBytes": 206620,
+      "archiveSha256": "1f43627f5fdc4a9c59c068c3c68b41b3ed2cb67074edd1a31ea4d9e501d9a480",
+      "sourceSection": "§6a",
+      "reason": "未引用 Qt 模块：应用 find_package(Qt6 … Core Gui Widgets Svg) 与静态插件导入清单均不含 Qt6FbSupport（FbSupportPrivate），LINK_LIBRARIES 无声明、link map 中 0 符号（在册 ≠ 链入）；证据：link map §6a"
+    },
+    "Qt6BundledFreetype.lib": {
+      "matrixIndex": 11,
+      "grade": "link-map-proved",
+      "symbolCount": 3983,
+      "contributionBytes": 595556,
+      "objectCount": 28,
+      "archiveBytes": 2005716,
+      "archiveSha256": "c797aeac6ff7d6c5bf48418d7869abbc125571ddb0873a0968f2185caace94d1",
+      "sourceSection": "§5 表 B #11"
+    },
+    "Qt6BundledHarfbuzz.lib": {
+      "matrixIndex": 12,
+      "grade": "link-map-proved",
+      "symbolCount": 4668,
+      "contributionBytes": 803700,
+      "objectCount": 44,
+      "archiveBytes": 13018512,
+      "archiveSha256": "37d169f1a11e418094ebd34dd11a45bab6ff28b9259baf746724acaeb5c61290",
+      "sourceSection": "§5 表 B #12"
+    },
+    "Qt6BundledLibjpeg.lib": {
+      "matrixIndex": 13,
+      "grade": "link-map-proved",
+      "symbolCount": 2118,
+      "contributionBytes": 512860,
+      "objectCount": 91,
+      "archiveBytes": 1292452,
+      "archiveSha256": "c0d50e933b27c6f843148075c7f97a4c2570c692ea142af8b9788458b04e12fb",
+      "sourceSection": "§5 表 B #13"
+    },
+    "Qt6BundledLibjpeg12bits.lib": {
+      "matrixIndex": 14,
+      "grade": "justified-absent",
+      "symbolCount": 0,
+      "contributionBytes": 0,
+      "archiveBytes": 341260,
+      "archiveSha256": "13745d1a66ac1cfad5903c251c441bb02ab73976a237950205bf2cec2011f6ce",
+      "sourceSection": "§6b",
+      "reason": "libjpeg 12-bit 冗余独立归档：未声明、link map 全文无 Libjpeg12bits 出现（0 符号）；12-bit 代码本体已随 Qt6BundledLibjpeg.lib 以 26 个 *_12 对象链入（122,288 B / 577 符号），该独立归档仅为本 qtbase 配置下的冗余安装产物；证据：link map §6b"
+    },
+    "Qt6BundledLibjpeg16bits.lib": {
+      "matrixIndex": 15,
+      "grade": "justified-absent",
+      "symbolCount": 0,
+      "contributionBytes": 0,
+      "archiveBytes": 121602,
+      "archiveSha256": "09151cd51716742ae29764531f3d6fd81d41abc92cbc26b93e0466bd7d752b63",
+      "sourceSection": "§6b",
+      "reason": "libjpeg 16-bit 冗余独立归档：未声明、link map 全文无 Libjpeg16bits 出现（0 符号）；16-bit 代码本体已随 Qt6BundledLibjpeg.lib 以 13 个 *_16 对象链入（32,140 B），该独立归档仅为本 qtbase 配置下的冗余安装产物；证据：link map §6b"
+    },
+    "Qt6BundledLibpng.lib": {
+      "matrixIndex": 16,
+      "grade": "link-map-proved",
+      "symbolCount": 1002,
+      "contributionBytes": 112260,
+      "objectCount": 14,
+      "archiveBytes": 663730,
+      "archiveSha256": "aa1b9ecace9d243565ab8b830c73ee63ad2bcdd9fb9fe3b1da6804698e688af7",
+      "sourceSection": "§5 表 B #16"
+    },
+    "Qt6BundledPcre2.lib": {
+      "matrixIndex": 17,
+      "grade": "link-map-proved",
+      "symbolCount": 1038,
+      "contributionBytes": 507931,
+      "objectCount": 22,
+      "archiveBytes": 960300,
+      "archiveSha256": "17c445f9235436aff0dc2704c970bbe97f0c1fef20b35f2ddf12852d05b9d9dd",
+      "sourceSection": "§5 表 B #17"
+    },
+    "Qt6BundledZLIB.lib": {
+      "matrixIndex": 18,
+      "grade": "link-map-proved",
+      "symbolCount": 154,
+      "contributionBytes": 40718,
+      "objectCount": 10,
+      "archiveBytes": 201974,
+      "archiveSha256": "377c53afea69ed8adde874af90935557abee136b6f85d4cff64fe851dc6e452e",
+      "sourceSection": "§5 表 B #18"
+    },
+    "qwindows.lib": {
+      "matrixIndex": 19,
+      "grade": "link-map-proved",
+      "symbolCount": 7161,
+      "contributionBytes": 736148,
+      "objectCount": 52,
+      "archiveBytes": 9949902,
+      "archiveSha256": "b34626128d602cafe17184b3d918a5513e3a5c7364a1b49e5a00d8bae1b9a5fb",
+      "sourceSection": "§5 表 B #19"
+    },
+    "qdirect2d.lib": {
+      "matrixIndex": 20,
+      "grade": "justified-absent",
+      "symbolCount": 0,
+      "contributionBytes": 0,
+      "archiveBytes": 10381026,
+      "archiveSha256": "b2fc8e7527c6b9fc6b5dedb3ff840535aa46fdd8083e92a6ba140f93df75223c",
+      "sourceSection": "§6d",
+      "reason": "未导入的平台插件：应用 qt_import_plugins(platforms QWindows) 只导入 qwindows.lib，LINK_LIBRARIES 与 link map 均无 qdirect2d（安装树在册，非 app 导入清单成员）；证据：link map §6d"
+    },
+    "qminimal.lib": {
+      "matrixIndex": 21,
+      "grade": "justified-absent",
+      "symbolCount": 0,
+      "contributionBytes": 0,
+      "archiveBytes": 111600,
+      "archiveSha256": "85d78a63adaf0d89a7e399c3f2e63b716754eeb8151d408b8301baab2c7cf0f3",
+      "sourceSection": "§6d",
+      "reason": "未导入的平台插件：应用 qt_import_plugins(platforms QWindows) 只导入 qwindows.lib，LINK_LIBRARIES 与 link map 均无 qminimal（安装树在册，非 app 导入清单成员）；证据：link map §6d"
+    },
+    "qoffscreen.lib": {
+      "matrixIndex": 22,
+      "grade": "justified-absent",
+      "symbolCount": 0,
+      "contributionBytes": 0,
+      "archiveBytes": 356766,
+      "archiveSha256": "ab071d2c194825a74ae917688477b23c00cb17192a5234f025101d0f1a4d3924",
+      "sourceSection": "§6d",
+      "reason": "未导入的平台插件：应用 qt_import_plugins(platforms QWindows) 只导入 qwindows.lib，LINK_LIBRARIES 与 link map 均无 qoffscreen（安装树在册，非 app 导入清单成员）；证据：link map §6d"
+    },
+    "qgif.lib": {
+      "matrixIndex": 23,
+      "grade": "link-map-proved",
+      "symbolCount": 132,
+      "contributionBytes": 14652,
+      "objectCount": 2,
+      "archiveBytes": 83132,
+      "archiveSha256": "66b11e9e8cad290f0f950e085ee5f191a239f2b7d73c6b3155dd99b4071a68e7",
+      "sourceSection": "§5 表 B #23"
+    },
+    "qico.lib": {
+      "matrixIndex": 24,
+      "grade": "link-map-proved",
+      "symbolCount": 119,
+      "contributionBytes": 11684,
+      "objectCount": 2,
+      "archiveBytes": 99800,
+      "archiveSha256": "e8ae4a9aa7ed7ace7ed2a72f166d4ec85071d7c04d463513e894cb873df6b173",
+      "sourceSection": "§5 表 B #24"
+    },
+    "qjpeg.lib": {
+      "matrixIndex": 25,
+      "grade": "link-map-proved",
+      "symbolCount": 153,
+      "contributionBytes": 18520,
+      "objectCount": 2,
+      "archiveBytes": 170588,
+      "archiveSha256": "db24dc5aaefa08fa8eb1f1d16341110731708fb9c5801f5cfeef2a0fdd01c69f",
+      "sourceSection": "§5 表 B #25"
+    },
+    "qmodernwindowsstyle.lib": {
+      "matrixIndex": 26,
+      "grade": "link-map-proved",
+      "symbolCount": 737,
+      "contributionBytes": 148480,
+      "objectCount": 6,
+      "archiveBytes": 607854,
+      "archiveSha256": "557af773f5408e3cf28cff9f1e2132b5ac170034a8df4db92ac2febfcd3b4abe",
+      "sourceSection": "§5 表 B #26"
+    },
+    "Qt6Svg.lib": {
+      "matrixIndex": 27,
+      "grade": "link-map-proved",
+      "symbolCount": 2521,
+      "contributionBytes": 281918,
+      "objectCount": 9,
+      "archiveBytes": 2028348,
+      "archiveSha256": "9ed2ee3d833bf65295de2f005c64cccd85b5c5758c994af6e978236d21f4f92b",
+      "sourceSection": "§5 表 B #27"
+    },
+    "Qt6SvgWidgets.lib": {
+      "matrixIndex": 28,
+      "grade": "justified-absent",
+      "symbolCount": 0,
+      "contributionBytes": 0,
+      "archiveBytes": 135570,
+      "archiveSha256": "7eb2b6c7351e7810edc5c405d68a229ad0bb5fdd2a0c0105601c377a0b8f3ab1",
+      "sourceSection": "§6a",
+      "reason": "未引用 Qt 模块：应用 find_package(Qt6 … Core Gui Widgets Svg) 与静态插件导入清单均不含 Qt6SvgWidgets，LINK_LIBRARIES 无声明、link map 中 0 符号（在册 ≠ 链入）；证据：link map §6a"
+    },
+    "qsvgicon.lib": {
+      "matrixIndex": 29,
+      "grade": "link-map-proved",
+      "symbolCount": 232,
+      "contributionBytes": 40088,
+      "objectCount": 2,
+      "archiveBytes": 199490,
+      "archiveSha256": "4705723af54a6f1e38aa687c7964d0c0837a832f687507b9cb2eade8b7d22b66",
+      "sourceSection": "§5 表 B #29"
+    },
+    "qsvg.lib": {
+      "matrixIndex": 30,
+      "grade": "link-map-proved",
+      "symbolCount": 80,
+      "contributionBytes": 5300,
+      "objectCount": 2,
+      "archiveBytes": 55230,
+      "archiveSha256": "c56d97777a6c795b01860be010ed91f978cbcbcd92de9d337e7d3e94bddace30",
+      "sourceSection": "§5 表 B #30"
+    },
+    "qwebp.lib": {
+      "matrixIndex": 31,
+      "grade": "link-map-proved",
+      "symbolCount": 2713,
+      "contributionBytes": 507176,
+      "objectCount": 87,
+      "archiveBytes": 1619450,
+      "archiveSha256": "82389e634caf14a400686ce24438e2a288b50b2f83d19d88a048cc313310ec3d",
+      "sourceSection": "§5 表 B #31",
+      "note": "链接证据已证明链入；但 qtimageformats 本地构建材料（下载/源码树/CMakeCache/install_manifest/SPDX）仍缺失，该附加缺口由矩阵行 bindingState=gap 单独计，不能由本等级抵消。"
+    },
+    "libcurl.lib": {
+      "matrixIndex": 32,
+      "grade": "link-map-proved",
+      "symbolCount": 6929,
+      "contributionBytes": 643748,
+      "objectCount": 145,
+      "archiveBytes": 3701982,
+      "archiveSha256": "b755ee8a5961449099eebb270325a91057dfbc56caa9eb373fd069a03a013174",
+      "sourceSection": "§5 表 B #32"
+    },
+    "archive.lib": {
+      "matrixIndex": 33,
+      "grade": "link-map-proved",
+      "symbolCount": 2908,
+      "contributionBytes": 361837,
+      "objectCount": 47,
+      "archiveBytes": 3043268,
+      "archiveSha256": "e92a642851520aed23ffe2d74b51d420aa8d81caa5f87c0682def562ae09c8f1",
+      "sourceSection": "§5 表 B #33"
+    },
+    "zlib.lib": {
+      "matrixIndex": 34,
+      "grade": "justified-absent",
+      "symbolCount": 0,
+      "contributionBytes": 0,
+      "archiveBytes": 16638,
+      "archiveSha256": "4fe195e496826a1506ba9b37a9917447a39b9d23a9fdb07794a1eb4d177fbaa3",
+      "sourceSection": "§6c",
+      "reason": "zlib 导入库（import library，86 个 short-import 对象）：未声明、未链入；生产链接声明并链入 zlibstatic.lib（45,816 B / 183 符号）；证据：link map §6c"
+    },
+    "zlibstatic.lib": {
+      "matrixIndex": 35,
+      "grade": "link-map-proved",
+      "symbolCount": 183,
+      "contributionBytes": 45816,
+      "objectCount": 9,
+      "archiveBytes": 194180,
+      "archiveSha256": "c2bc9387b4ca77c8f92137ec5f0ab2e7d0cc04fdb20cbb72d01740bdaa1d9ab4",
+      "sourceSection": "§5 表 B #35"
+    },
+    "lzma.lib": {
+      "matrixIndex": 36,
+      "grade": "link-map-proved",
+      "symbolCount": 582,
+      "contributionBytes": 115024,
+      "objectCount": 54,
+      "archiveBytes": 571576,
+      "archiveSha256": "dd5038ab7976b554767a068bcbce150e6da5704ebda26add3ee5ab75bac7668f",
+      "sourceSection": "§5 表 B #36"
+    },
+    "zstd_static.lib": {
+      "matrixIndex": 37,
+      "grade": "link-map-proved",
+      "symbolCount": 1884,
+      "contributionBytes": 508151,
+      "objectCount": 28,
+      "archiveBytes": 2003346,
+      "archiveSha256": "4dd03ad29be24b2370258fde58337f967af5b33193f1a37cafb38a91f14cace6",
+      "sourceSection": "§5 表 B #37"
+    },
+    "bz2.lib": {
+      "matrixIndex": 38,
+      "grade": "link-map-proved",
+      "symbolCount": 148,
+      "contributionBytes": 55832,
+      "objectCount": 7,
+      "archiveBytes": 137656,
+      "archiveSha256": "f2c9d7af5f50cb296849801bfdeac8c7def4395c61c3dc86ed8fe6473340d9b1",
+      "sourceSection": "§5 表 B #38"
+    },
+    "gumbo.lib": {
+      "matrixIndex": 39,
+      "grade": "link-map-proved",
+      "symbolCount": 1091,
+      "contributionBytes": 330548,
+      "objectCount": 11,
+      "archiveBytes": 733600,
+      "archiveSha256": "a58482c3240b48c41d1d6608509f821fcc3b2f32f2bb8d11894da4207d29adda",
+      "sourceSection": "§5 表 B #39"
+    },
+    "yaml.lib": {
+      "matrixIndex": 40,
+      "grade": "link-map-proved",
+      "symbolCount": 207,
+      "contributionBytes": 50284,
+      "objectCount": 4,
+      "archiveBytes": 266104,
+      "archiveSha256": "c533b0f0d57f764263344baf397e7f954e89423640f21d63e0538815fdb5788f",
+      "sourceSection": "§5 表 B #40"
+    }
+  }
+}

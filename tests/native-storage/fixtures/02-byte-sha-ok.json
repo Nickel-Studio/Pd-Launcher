@@ -1,0 +1,1 @@
+{"id":"byte-sha-ok","covers":["actual D byte and SHA256","empty file","read-only CLI","no C source read"]}

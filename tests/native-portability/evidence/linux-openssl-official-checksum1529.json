@@ -1,0 +1,74 @@
+{
+  "kind": "official-openssl-checksum-signature-download",
+  "createdUtc": "2026-11-21T15:29:25.265958+00:00",
+  "metadataPath": "tests\\native-portability\\evidence\\linux-openssl-stable-metadata1527.json",
+  "metadataSha256": "95853a18a3e6ccf8b28db878366deec7405c02e173f585fd47df487f5739bb2e",
+  "version": "3.5.9",
+  "archive": {
+    "name": "openssl-3.5.9.tar.gz",
+    "size": 53279637,
+    "digest": "sha256:603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a",
+    "browser_download_url": "https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz"
+  },
+  "checksumSha256": "603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a",
+  "commands": [
+    {
+      "argv": [
+        "curl.exe",
+        "--silent",
+        "--show-error",
+        "--fail",
+        "--location",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "30",
+        "--max-filesize",
+        "4096",
+        "https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz.sha256"
+      ],
+      "exitCode": 0,
+      "stdout": "603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a *openssl-3.5.9.tar.gz\n",
+      "stderr": "",
+      "bytes": 87,
+      "sha256": "f482705825eb43b47ce08d5cf4287ae062cdbada1a142d728a8d89c387300bf0",
+      "expectedMetadataDigest": "sha256:f482705825eb43b47ce08d5cf4287ae062cdbada1a142d728a8d89c387300bf0",
+      "metadataMatched": true
+    },
+    {
+      "argv": [
+        "curl.exe",
+        "--silent",
+        "--show-error",
+        "--fail",
+        "--location",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "30",
+        "--max-filesize",
+        "4096",
+        "https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz.asc"
+      ],
+      "exitCode": 0,
+      "stdout": "-----BEGIN PGP SIGNATURE-----\n\nwsG7BAABCgBvBYJqu8WkCRBk7XsdzOccskcUAAAAAAAeACBzYWx0QG5vdGF0aW9u\ncy5zZXF1b2lhLXBncC5vcme78m4dcegjYVbCh2wT8ZCmhRnbBObZfjivcql0KBNY\nIhYhBMRu0/LL79of2q2kQmTtex3M5xyyAADggQ/8C/plUysl4K9RETtG1ki3aSq/\nC5XhPO34q5vVCdqJ7ZofGkVcE5j8PKlWCYphLioEok6wWrZPdoWpA06JJwiSoR1r\n8B5dk45v8ZCK54STl5nJTgAmtX+TIvU+ptIzzLtYT/UmCB793LMg86SW/3Mfe9aO\nfGLOt/Gq11+AsUOmb1w9PT8obMj2hshYLEbNISFSEkf8aOIFVm+b/ImgcbAKzF4/\n3dPzck/RfPhBWn0bwRaJFkaF13nVXbN7zaSRdnILQ8/zLoKdxByS6ttUhLFUHwA8\ndgHNoL1ox8CEXgHbf0f5jSRSKLuUpUZ9JpjgQHHJBM5xH9Dlq74mksbSYKYoPbU1\nO2vblaHGu/MxsagcR8jC+f05knX42s5JfXitouVULh1JwQ8c9sXKR1CSW4UKwaXJ\ncIydpP/5TetQPZ/JPg6+Tt6zisnRzmDfRmKr7S1yIlV+J8UeK6qBGHndPmbUgJ73\nt/SFKLV/v1P3kMS4B5trhwyg4hCsH2ny9gdqx6DMeorMe1CjhTn1MxMZXhPNHVac\n2YpVPUrGh6e+xPkkULnRENBvX5pFtiDOc8xSKmq7JhrGXMnIP3TBeWiqV5vinyvb\nFcQqBhId80wd9rUBuQSPh2RhZLFgdYIzglhuKc/ikycdw9T+zPOZlq8sJZy+sH+3\ne60m2cASuHe/ogrForg=\n=e77c\n-----END PGP SIGNATURE-----\n",
+      "stderr": "",
+      "bytes": 931,
+      "sha256": "bdccf2057a7c4ae377b40e832cb8c632ae8b532d4fb64cc7b843066eee748f89",
+      "expectedMetadataDigest": "sha256:bdccf2057a7c4ae377b40e832cb8c632ae8b532d4fb64cc7b843066eee748f89",
+      "metadataMatched": true
+    }
+  ],
+  "metadataAndChecksumMatched": true,
+  "sourceArchiveDownloaded": false,
+  "signatureVerified": false,
+  "completeProductVerified": false
+}

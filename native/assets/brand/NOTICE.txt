@@ -1,0 +1,8 @@
+Palladium / Pd native brand and artwork notice
+Artwork: Palladium brand and art assets, Nickel Studio (ItzArona, ItzPlana), 2026.
+License: Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA-4.0).
+Full text: the LICENSE-ASSETS file at the repository root, also copied as LICENSES/CC-BY-SA-4.0.txt.
+Source: the Palladium art package recorded in source/palladium-intake.json; PNG and ICO files are copied byte-for-byte.
+Existing Noto font software remains under OFL-1.1; see fonts/OFL-1.1.txt and fonts/NOTICE.md.
+Code and project documentation: AGPL-3.0-only, see the root LICENSE.
+Game, loader, skin and third-party artwork referenced by the functional resource list keep their own rights; the /nickel/ resource namespaces stay unchanged for compatibility.

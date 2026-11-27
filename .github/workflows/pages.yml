@@ -1,0 +1,64 @@
+name: Deploy homepage
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "website/**"
+      - ".github/workflows/pages.yml"
+      - "native/metadata.json"
+      - "native/assets/brand/mark-black.png"
+      - "native/assets/brand/mark-white.png"
+      - "native/assets/brand/platform/favicon-32.png"
+      - "native/assets/brand/banners/palladium-launcher-hero-light.png"
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout homepage source
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Test static site build
+        run: node --test website/build.test.mjs
+      - name: Build static homepage
+        run: node website/build.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAGES_BASE_URL: ${{ steps.pages.outputs.base_url }}
+      - name: Upload website only
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

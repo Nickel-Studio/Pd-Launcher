@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RCC>
+  <qresource prefix="/nickel/application">
+    <file alias="changelog.json">@_nickel_changelog_xml@</file>
+  </qresource>
+</RCC>

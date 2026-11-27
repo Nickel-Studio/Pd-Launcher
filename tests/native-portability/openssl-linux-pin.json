@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "kind": "supplemental-nonwindows-dependency-source-pin",
+  "name": "openssl",
+  "version": "3.5.9",
+  "releaseSeries": "3.5 LTS",
+  "releaseUtc": "2026-09-29T14:10:08Z",
+  "endOfLife": "2030-04-08",
+  "archive": "openssl-3.5.9.tar.gz",
+  "url": "https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz",
+  "bytes": 53279637,
+  "sha256": "603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a",
+  "sourceDirectory": "openssl-3.5.9",
+  "license": "Apache-2.0",
+  "hashEvidence": "https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz.sha256",
+  "checksumFile": {
+    "bytes": 87,
+    "sha256": "f482705825eb43b47ce08d5cf4287ae062cdbada1a142d728a8d89c387300bf0"
+  },
+  "signatureFile": {
+    "url": "https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz.asc",
+    "bytes": 931,
+    "sha256": "bdccf2057a7c4ae377b40e832cb8c632ae8b532d4fb64cc7b843066eee748f89"
+  },
+  "metadataEvidence": {
+    "path": "evidence/linux-openssl-stable-metadata1527.json",
+    "sha256": "95853a18a3e6ccf8b28db878366deec7405c02e173f585fd47df487f5739bb2e"
+  },
+  "verificationEvidence": {
+    "path": "evidence/linux-openssl-official-checksum1529.json",
+    "sha256": "a2b73433232ee3a88087755592fa8dbcc628f839668bad584d2d4a51a9cae38b"
+  },
+  "officialReleaseApi": "https://api.github.com/repos/openssl/openssl/releases/tags/openssl-3.5.9",
+  "officialLifecycle": "https://openssl-library.org/policies/releasestrat/",
+  "metadataAndChecksumMatched": true,
+  "signatureVerified": false,
+  "sourceArchiveDownloaded": false,
+  "completeProductVerified": false,
+  "scope": "Supplemental static TLS supply pin, not a modification to the immutable 13-source production lock; actual archive hash, build, certificate path and runtime acceptance remain separate"
+}

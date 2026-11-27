@@ -1,0 +1,36 @@
+#include "stream_copy_faults.hpp"
+
+// This test-only translation unit reuses the real implementation while replacing
+// selected I/O symbols. Production has no fault switches or injectable filesystem.
+#ifdef _WIN32
+#define CreateFileW foundation_test_CreateFileW
+#define ReadFile foundation_test_ReadFile
+#define WriteFile foundation_test_WriteFile
+#define FlushFileBuffers foundation_test_FlushFileBuffers
+#define GetFileInformationByHandle foundation_test_GetFileInformationByHandle
+#else
+#define openat foundation_test_openat
+#define read foundation_test_read
+#define write foundation_test_write
+#define fstat foundation_test_fstat
+#define fsync foundation_test_fsync
+#endif
+#define valid_utf8 foundation_test_valid_utf8
+#define path_from_utf8 foundation_test_path_from_utf8
+#define path_to_utf8 foundation_test_path_to_utf8
+#define reject_path_links foundation_test_reject_path_links
+#define read_file_bounded foundation_test_read_file_bounded
+#define read_text_bounded foundation_test_read_text_bounded
+#define unique_token foundation_test_unique_token
+#define create_file_exclusive foundation_test_create_file_exclusive
+#define atomic_write_file foundation_test_atomic_write_file
+#define atomic_write_text foundation_test_atomic_write_text
+#define atomic_copy_no_replace foundation_test_atomic_copy_no_replace
+#define rename_no_replace foundation_test_rename_no_replace
+#define sync_directory foundation_test_sync_directory
+#define FileLock FoundationTestFileLock
+#define atomic_create_file foundation_test_atomic_create_file
+#define move_file_if_matches foundation_test_move_file_if_matches
+#define remove_file_if_matches foundation_test_remove_file_if_matches
+#define NICKEL_SKIP_CONDITIONAL_IMPLEMENTATION
+#include "../../core/config/atomic_file.cpp"

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "kind": "storage-recovery-planning-sample",
+  "sample": {
+    "providedBy": "lead",
+    "source": "lead-attested-physical-DriveInfo",
+    "capturedAt": "2026-11-21T18:31:00Z",
+    "availableBytes": {
+      "C": 1705369600,
+      "D": 3294576640
+    },
+    "timestampPrecision": "minute, as supplied by lead",
+    "independentlyResampled": false
+  },
+  "demand": {
+    "C": {
+      "growthUpperBytes": null,
+      "tempPeakUpperBytes": null,
+      "outstandingHoldsBytes": null,
+      "otherWriterUpperBytes": null
+    },
+    "D": {
+      "growthUpperBytes": null,
+      "tempPeakUpperBytes": null,
+      "outstandingHoldsBytes": null,
+      "otherWriterUpperBytes": null
+    }
+  },
+  "candidateAuthorization": "No current owner-closed candidate inventory received",
+  "compressionExecuted": false,
+  "productionAdmission": false
+}

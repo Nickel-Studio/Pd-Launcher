@@ -1,0 +1,49 @@
+{
+  "schema": "pd.trusted-export.required-cases.v1",
+  "productionNegative": [
+    "options-text-executable-no-trust",
+    "options-missing-executable-no-trust",
+    "options-directory-executable-no-trust",
+    "options-wrong-os-image-no-trust",
+    "options-wrong-arch-image-no-trust",
+    "options-dll-image-no-trust",
+    "options-copy-of-test-image-no-trust",
+    "options-replaced-exe-no-trust",
+    "options-same-size-tampered-exe-no-trust",
+    "payload-launcher-path-denied",
+    "payload-executable-path-denied",
+    "payload-artifact-denied",
+    "payload-original-sha-denied",
+    "payload-source-path-denied",
+    "source-absolute-selection-denied",
+    "source-protected-selection-denied",
+    "cancel-before-publication",
+    "destination-collision-preserved",
+    "content-secret-whitelist-denied",
+    "notice-outside-whitelist-denied",
+    "notice-file-input-denied",
+    "notice-duplicate-denied",
+    "notice-missing-source-denied",
+    "notice-traversal-denied",
+    "notice-overquota-denied"
+  ],
+  "receiptNegative": [
+    "receipt-current-test-image-denied",
+    "receipt-source-identity-before-copy-changed",
+    "receipt-source-sha-before-copy-changed",
+    "receipt-source-identity-after-copy-changed",
+    "receipt-source-sha-after-copy-changed",
+    "receipt-copied-exe-tampered",
+    "receipt-copied-exe-wrong-type",
+    "receipt-copied-exe-wrong-os",
+    "receipt-copied-exe-wrong-arch",
+    "receipt-cancel-publication"
+  ],
+  "actualPd": [
+    "actualPd-current-image-compiled-legal-receipt",
+    "actualPd-schema1-export-with-launcher",
+    "actualPd-exported-launcher-sha-type-arch-legal",
+    "actualPd-schema1-import-public-AppServices",
+    "actualPd-reimport-idempotent-no-auto-game"
+  ]
+}

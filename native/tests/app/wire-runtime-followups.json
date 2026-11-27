@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "type": "wire-runtime-defect-source-followups",
+  "sourceTip": "68c0907e72bbe948e45017881124f75d127d6364",
+  "rootRuntimeSource": "647b6c0ffdba6a20d13c03062a16c639674e3fdb",
+  "sourceClosure": [
+    {
+      "path": "native/app/service/startup_actions.cpp",
+      "bytes": 6811,
+      "sha256": "5c3289575793be50ac7d323434090e65a3280c28aa36b6c79c49eae34aa59f8b"
+    },
+    {
+      "path": "native/tests/app/production_lifecycle_tests.cpp",
+      "bytes": 36982,
+      "sha256": "32568b188d60bbe3ed0287da2d9d5e4f5af36d860e316337a50c910b862b5976"
+    },
+    {
+      "path": "native/app/service/accounts_actions.cpp",
+      "bytes": 14904,
+      "sha256": "3329d3f13a3e77c75864d92d29e961957b11df572b55b1ff3c0a357d342a9c71"
+    },
+    {
+      "path": "native/tests/app/production_tests.cpp",
+      "bytes": 20771,
+      "sha256": "36efc5b3ec32cc6990f836dc2ca3a3fa14fae25fceacb66e78601d051c90ce23"
+    }
+  ],
+  "fixes": [
+    {
+      "id": "rejected-finish",
+      "commit": "dfef18c850555d6ecaa7c69390a1f97d67536e46",
+      "cause": "Canonical consent gate throws exact exiting after RejectEula; old action boundary maps it to internal.",
+      "fix": "Normalize only exact exiting within action_startup to onboarding_required; preserve other failures and domain.",
+      "rootFailureEvidence": "native/tests/app/evidence/rejected-finish-647b-excerpt.json",
+      "successorRuntime": "NOT_RUN"
+    },
+    {
+      "id": "active-account-sibling",
+      "commit": "68c0907e72bbe948e45017881124f75d127d6364",
+      "cause": "Canonical repository read/update falls back on oversized/corrupt/wrong-shape settings and silently commits replacement plus active selection.",
+      "fix": "Within AccountService-owned transaction inspect and accept only Missing/Valid; merge checked value and write, refusing damaged data before commit.",
+      "rootFailureEvidence": "native/tests/app/evidence/root-ctest-app24-647b6c.log",
+      "successorRuntime": "NOT_RUN"
+    }
+  ],
+  "objectChecks": [
+    {
+      "path": "native/tests/app/build-composed/startup_actions.object.log",
+      "bytes": 21,
+      "sha256": "656f94e8449e1ec41c97c6e5cbe45fa8a6cd44a6fd02fc2769e8515d72dcfb50",
+      "kind": "actual-msvc-c-only",
+      "passed": true
+    },
+    {
+      "path": "native/tests/app/build-composed/production_lifecycle_tests.object.log",
+      "bytes": 108,
+      "sha256": "fd485d1f75c35029c41e16d7afd67cc6c487f0e6ce82e10c7fa796453b87fa5c",
+      "kind": "actual-msvc-c-only",
+      "passed": true
+    },
+    {
+      "path": "native/tests/app/build-composed/accounts_actions.object.log",
+      "bytes": 22,
+      "sha256": "271a3e885a08385a1caa1ae3bcfd0bf180541e3c1b9b03ea18a0606eb672abcf",
+      "kind": "actual-msvc-c-only",
+      "passed": true
+    },
+    {
+      "path": "native/tests/app/build-composed/production_tests.object.log",
+      "bytes": 98,
+      "sha256": "420a727c26ff2eb5671f07d6c7b9fc7498e2e83723c220153bbe64ca1614ddb0",
+      "kind": "actual-msvc-c-only",
+      "passed": true
+    }
+  ],
+  "boundaryTests": {
+    "passed": 4,
+    "failed": 0,
+    "observedUtc": "2026-11-21T19:51:59.814Z",
+    "notProductionRuntime": true
+  },
+  "all24ProductionCasesPassed": false,
+  "newProductionEntryPassed": false
+}

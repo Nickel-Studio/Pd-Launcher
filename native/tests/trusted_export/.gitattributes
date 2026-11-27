@@ -1,0 +1,5 @@
+*.cpp -text
+*.py -text
+*.json -text
+CMakeLists.txt -text
+evidence/** -text

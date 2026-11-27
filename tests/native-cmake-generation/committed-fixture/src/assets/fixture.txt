@@ -1,0 +1,1 @@
+Pd CMake/Ninja configure-dependency fixture, not original artwork.

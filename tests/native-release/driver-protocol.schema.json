@@ -1,0 +1,514 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nickel.windows.release.driver.v1",
+  "title": "Finite opt-in Windows production and frozen-legacy observation receipt",
+  "description": "Native internal markers and frozen-legacy external observations are distinct. Successful DwmFlush is Windows-only. The runner additionally verifies cross-field identity, fresh phase nonces, time ordering, observed roots and raw hashes; schema validity alone is not actual observation evidence.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "protocol",
+    "origin",
+    "runId",
+    "scenarioId",
+    "requestNonce",
+    "phaseRequestNonce",
+    "role",
+    "observationAdapter",
+    "phase",
+    "executableSha256",
+    "sourceCommit",
+    "driverSourceSha256",
+    "inputCorpusSha256",
+    "rootPid",
+    "rootCreationTime100ns"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "protocol": { "const": "nickel-evidence-driver-v1" },
+    "origin": { "const": "actual-launcher-ui-observation" },
+    "runId": { "$ref": "#/$defs/identifier" },
+    "scenarioId": { "$ref": "#/$defs/identifier" },
+    "requestNonce": { "$ref": "#/$defs/identifier" },
+    "phaseRequestNonce": { "$ref": "#/$defs/identifier" },
+    "role": { "enum": ["native", "legacy"] },
+    "observationAdapter": {
+      "enum": ["native-production-markers-v1", "legacy-external-ui-observer-v1"]
+    },
+    "phase": { "enum": ["ready", "state", "shutdown"] },
+    "executableSha256": { "$ref": "#/$defs/sha256" },
+    "sourceCommit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}([0-9a-f]{24})?$"
+    },
+    "sourceSnapshotSha256": {
+      "anyOf": [{ "$ref": "#/$defs/sha256" }, { "type": "null" }]
+    },
+    "buildSourceSha256": {
+      "anyOf": [{ "$ref": "#/$defs/sha256" }, { "type": "null" }]
+    },
+    "driverSourceSha256": { "$ref": "#/$defs/sha256" },
+    "inputCorpusSha256": { "$ref": "#/$defs/sha256" },
+    "rootPid": { "$ref": "#/$defs/positiveInteger" },
+    "rootCreationTime100ns": { "$ref": "#/$defs/positiveInteger" },
+    "ready": { "const": true },
+    "inputResponsive": { "const": true },
+    "pendingImageCount": { "const": 0 },
+    "readyMonotonicNs": { "$ref": "#/$defs/positiveInteger" },
+    "state": { "$ref": "#/$defs/state" },
+    "dataRoots": {
+      "type": "object",
+      "required": ["config", "game", "cache", "temp"],
+      "additionalProperties": false,
+      "properties": {
+        "config": { "type": "string", "minLength": 1 },
+        "game": { "type": "string", "minLength": 1 },
+        "cache": { "type": "string", "minLength": 1 },
+        "temp": { "type": "string", "minLength": 1 }
+      }
+    },
+    "pathContextAcceptance": { "$ref": "#/$defs/pathContextAcceptance" },
+    "uiObservation": { "$ref": "#/$defs/uiObservation" },
+    "shutdownObserved": { "const": true },
+    "shutdownMonotonicNs": { "$ref": "#/$defs/positiveInteger" },
+    "rawEvidence": { "$ref": "#/$defs/rawEvidence" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "phase": { "enum": ["ready", "state"] } },
+        "required": ["phase"]
+      },
+      "then": {
+        "required": [
+          "ready",
+          "inputResponsive",
+          "pendingImageCount",
+          "readyMonotonicNs",
+          "state",
+          "dataRoots",
+          "pathContextAcceptance",
+          "uiObservation"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": { "phase": { "const": "shutdown" } },
+        "required": ["phase"]
+      },
+      "then": {
+        "required": ["shutdownObserved", "shutdownMonotonicNs", "rawEvidence"]
+      }
+    },
+    {
+      "if": {
+        "properties": { "role": { "const": "native" } },
+        "required": ["role"]
+      },
+      "then": {
+        "required": ["sourceSnapshotSha256", "buildSourceSha256"],
+        "properties": {
+          "sourceSnapshotSha256": { "$ref": "#/$defs/sha256" },
+          "buildSourceSha256": { "$ref": "#/$defs/sha256" },
+          "observationAdapter": { "const": "native-production-markers-v1" },
+          "uiObservation": { "$ref": "#/$defs/nativeUiObservation" },
+          "pathContextAcceptance": {
+            "properties": {
+              "protocol": { "const": "explicit-accepted-path-context-v1" },
+              "systemKnownFolderAccess": { "const": "disabled" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "role": { "const": "legacy" } },
+        "required": ["role"]
+      },
+      "then": {
+        "properties": {
+          "observationAdapter": { "const": "legacy-external-ui-observer-v1" },
+          "uiObservation": { "$ref": "#/$defs/legacyUiObservation" },
+          "pathContextAcceptance": {
+            "properties": {
+              "protocol": { "const": "legacy-isolated-runtime-v1" },
+              "systemKnownFolderAccess": {
+                "const": "fixture-isolated-os-profile"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "identifier": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "positiveInteger": { "type": "integer", "minimum": 1 },
+    "reference": {
+      "type": "object",
+      "required": ["path", "sha256", "bytes"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "bytes": { "$ref": "#/$defs/positiveInteger" }
+      }
+    },
+    "rawEvidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/reference" }
+    },
+    "state": {
+      "type": "object",
+      "required": [
+        "route",
+        "windowLogicalSize",
+        "dpiPercent",
+        "fontProfile",
+        "themeId",
+        "mode",
+        "backgroundSha256",
+        "blur",
+        "reducedMotion",
+        "fixtureId",
+        "pendingImageCount",
+        "activeTaskCount"
+      ],
+      "description": "Must exactly equal the hash-bound frozen scenario, not only these required fields.",
+      "properties": {
+        "route": { "type": "string", "minLength": 1 },
+        "windowLogicalSize": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "$ref": "#/$defs/positiveInteger" }
+        },
+        "dpiPercent": { "type": "integer", "minimum": 50, "maximum": 800 },
+        "fontProfile": { "type": "string", "minLength": 1 },
+        "themeId": {
+          "enum": [
+            "mono",
+            "emerald",
+            "blue",
+            "violet",
+            "amber",
+            "rose",
+            "nickel",
+            "copper",
+            "abyss",
+            "paper",
+            "fortyTwo",
+            "custom"
+          ]
+        },
+        "mode": { "enum": ["light", "dark"] },
+        "backgroundSha256": {
+          "anyOf": [{ "type": "null" }, { "$ref": "#/$defs/sha256" }]
+        },
+        "blur": { "type": "number", "minimum": 0 },
+        "reducedMotion": { "type": "boolean" },
+        "fixtureId": { "type": "string", "minLength": 1 },
+        "pendingImageCount": { "const": 0 },
+        "activeTaskCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "pathContextAcceptance": {
+      "type": "object",
+      "required": [
+        "protocol",
+        "explicitAcceptedPathContext",
+        "executableGuardPassed",
+        "fixturePathsGuardPassed",
+        "allDataRootsWithinRunFixture",
+        "systemKnownFolderAccess",
+        "requestNonce",
+        "rawEvidence"
+      ],
+      "properties": {
+        "protocol": {
+          "enum": [
+            "explicit-accepted-path-context-v1",
+            "legacy-isolated-runtime-v1"
+          ]
+        },
+        "explicitAcceptedPathContext": { "const": true },
+        "executableGuardPassed": { "const": true },
+        "fixturePathsGuardPassed": { "const": true },
+        "allDataRootsWithinRunFixture": { "const": true },
+        "systemKnownFolderAccess": {
+          "enum": ["disabled", "fixture-isolated-os-profile"]
+        },
+        "requestNonce": { "$ref": "#/$defs/identifier" },
+        "rawEvidence": { "$ref": "#/$defs/rawEvidence" }
+      },
+      "description": "Native opt-in bypasses SHGetKnownFolderPath only after EXE/fixture guards. Frozen legacy needs an independently verified, already isolated OS-profile host. CWD/APPDATA alone is insufficient."
+    },
+    "marker": {
+      "type": "object",
+      "required": [
+        "observed",
+        "rootPid",
+        "scenarioId",
+        "requestNonce",
+        "monotonicNs",
+        "method",
+        "rawEvidence"
+      ],
+      "properties": {
+        "observed": { "const": true },
+        "rootPid": { "$ref": "#/$defs/positiveInteger" },
+        "scenarioId": { "$ref": "#/$defs/identifier" },
+        "requestNonce": { "$ref": "#/$defs/identifier" },
+        "monotonicNs": { "$ref": "#/$defs/positiveInteger" },
+        "method": { "type": "string", "minLength": 1 },
+        "rawEvidence": { "$ref": "#/$defs/rawEvidence" }
+      }
+    },
+    "inputReady": {
+      "type": "object",
+      "required": [
+        "observed",
+        "rootPid",
+        "scenarioId",
+        "requestNonce",
+        "replyRequestNonce",
+        "queuedEventMonotonicNs",
+        "queryMonotonicNs",
+        "replyMonotonicNs",
+        "query",
+        "method",
+        "rawEvidence"
+      ],
+      "properties": {
+        "observed": { "const": true },
+        "rootPid": { "$ref": "#/$defs/positiveInteger" },
+        "scenarioId": { "$ref": "#/$defs/identifier" },
+        "requestNonce": { "$ref": "#/$defs/identifier" },
+        "replyRequestNonce": { "$ref": "#/$defs/identifier" },
+        "queuedEventMonotonicNs": { "$ref": "#/$defs/positiveInteger" },
+        "queryMonotonicNs": { "$ref": "#/$defs/positiveInteger" },
+        "replyMonotonicNs": { "$ref": "#/$defs/positiveInteger" },
+        "query": { "type": "string", "minLength": 1 },
+        "method": { "type": "string", "minLength": 1 },
+        "rawEvidence": { "$ref": "#/$defs/rawEvidence" }
+      }
+    },
+    "uiObservation": {
+      "type": "object",
+      "required": [
+        "platform",
+        "clock",
+        "windowIdentity",
+        "scenarioAppliedBeforePaint",
+        "inputReady"
+      ],
+      "properties": {
+        "platform": { "const": "windows" },
+        "clock": { "const": "perf_counter_ns" },
+        "windowIdentity": {
+          "type": "object",
+          "required": ["hwnd", "rootPid", "rootCreationTime100ns"],
+          "properties": {
+            "hwnd": { "$ref": "#/$defs/positiveInteger" },
+            "rootPid": { "$ref": "#/$defs/positiveInteger" },
+            "rootCreationTime100ns": { "$ref": "#/$defs/positiveInteger" }
+          }
+        },
+        "scenarioAppliedBeforePaint": { "$ref": "#/$defs/marker" },
+        "presentDwmConfirmed": {
+          "anyOf": [{ "type": "null" }, { "$ref": "#/$defs/dwmMarker" }]
+        },
+        "inputReady": { "$ref": "#/$defs/inputReady" },
+        "startupReady": {
+          "description": "Independent onboarding marker only; never satisfies compositor presentation, input readiness or benchmark timing."
+        }
+      }
+    },
+    "dwmMarker": {
+      "allOf": [
+        { "$ref": "#/$defs/marker" },
+        {
+          "required": ["hresult"],
+          "properties": {
+            "method": { "const": "DwmFlush" },
+            "hresult": { "const": 0 }
+          }
+        }
+      ]
+    },
+    "nativeUiObservation": {
+      "required": ["externalClientFramePresented"],
+      "properties": {
+        "paintComplete": { "type": "null" },
+        "flushComplete": { "type": "null" },
+        "presentDwmConfirmed": { "type": "null" },
+        "externalClientFramePresented": { "$ref": "#/$defs/nativeWgcFrame" },
+        "inputReady": {
+          "properties": {
+            "query": { "const": "canonicalRuntimeInformation" },
+            "method": { "const": "ui-queued-query-matching-reply" }
+          }
+        }
+      },
+      "description": "Only independent actual client WGC pixels establish native compositor presentation; rendered hashes, Qt dispatch and GPU/DwmFlush markers do not pass."
+    },
+    "nativeWgcFrame": {
+      "allOf": [
+        { "$ref": "#/$defs/marker" },
+        {
+          "required": [
+            "hwnd",
+            "rootCreationTime100ns",
+            "phase",
+            "phaseRequestNonce",
+            "clientOnly",
+            "frozenStateObserved",
+            "frameEvidence",
+            "captureReceipt",
+            "renderedReceipt",
+            "stateSha256",
+            "pixelSize"
+          ],
+          "properties": {
+            "method": { "const": "external-WGC-presented" },
+            "hwnd": { "$ref": "#/$defs/positiveInteger" },
+            "rootCreationTime100ns": { "$ref": "#/$defs/positiveInteger" },
+            "phase": { "enum": ["ready", "state"] },
+            "phaseRequestNonce": { "$ref": "#/$defs/identifier" },
+            "clientOnly": { "const": true },
+            "frozenStateObserved": { "const": true },
+            "frameEvidence": { "$ref": "#/$defs/reference" },
+            "captureReceipt": { "$ref": "#/$defs/reference" },
+            "renderedReceipt": { "$ref": "#/$defs/reference" },
+            "stateSha256": { "$ref": "#/$defs/sha256" },
+            "pixelSize": { "$ref": "#/$defs/pixelSize" }
+          }
+        }
+      ],
+      "description": "Actual WGC compositor client frame, not photon scan-out or Qt/DwmFlush proxy. Runner rehashes both raw receipts/PNGs, compares decoded RGBA pixels, verifies fresh state/phase and SystemRelativeTime QPC ordering. Black, stale, other-window, pixel and clock mismatches fail."
+    },
+    "pixelSize": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "type": "integer", "minimum": 1, "maximum": 16384 }
+    },
+    "productionEvent": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "protocol",
+        "origin",
+        "sourceBindingsOrigin",
+        "product",
+        "executableName",
+        "platform",
+        "clock",
+        "runId",
+        "scenarioId",
+        "requestNonce",
+        "phaseRequestNonce",
+        "phase",
+        "role",
+        "observationAdapter",
+        "sourceCommit",
+        "sourceSnapshotSha256",
+        "buildSourceSha256",
+        "executableSha256",
+        "driverSourceSha256",
+        "inputCorpusSha256",
+        "rootPid",
+        "rootCreationTime100ns",
+        "event",
+        "sequence",
+        "monotonicNs",
+        "observation"
+      ],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "protocol": { "const": "nickel-evidence-driver-v1" },
+        "origin": { "const": "actual-launcher-production-event" },
+        "sourceBindingsOrigin": {
+          "const": "runner-context-claims-not-build-attestation"
+        },
+        "product": { "const": "Palladium" },
+        "executableName": { "const": "pd-launcher" },
+        "platform": { "const": "windows" },
+        "clock": { "const": "perf_counter_ns" },
+        "role": { "const": "native" },
+        "observationAdapter": { "const": "native-production-markers-v1" },
+        "phase": { "enum": ["ready", "state", "shutdown"] },
+        "event": {
+          "enum": [
+            "scenarioAppliedBeforePaint",
+            "paintComplete",
+            "flushComplete",
+            "presentDwmConfirmed",
+            "inputReady",
+            "pathContextAcceptance",
+            "shutdownObserved",
+            "frameObservation",
+            "renderedFrame",
+            "startupReady"
+          ]
+        },
+        "sequence": { "$ref": "#/$defs/positiveInteger" },
+        "monotonicNs": { "$ref": "#/$defs/positiveInteger" },
+        "observation": { "type": "object" },
+        "ready": { "const": false }
+      },
+      "description": "A bounded UTF-8 JSONL raw producer record under the existing v1 protocol, not a final ready receipt or build attestation. Sequence is contiguous and phase requests are immutable/hash-referenced."
+    },
+    "legacyUiObservation": {
+      "required": ["externalClientFramePresented", "presentDwmConfirmed"],
+      "not": {
+        "anyOf": [
+          { "required": ["paintComplete"] },
+          { "required": ["flushComplete"] }
+        ]
+      },
+      "properties": {
+        "presentDwmConfirmed": { "$ref": "#/$defs/dwmMarker" },
+        "externalClientFramePresented": {
+          "allOf": [
+            { "$ref": "#/$defs/marker" },
+            {
+              "required": [
+                "hwnd",
+                "clientOnly",
+                "frozenStateObserved",
+                "frameEvidence"
+              ],
+              "properties": {
+                "method": { "const": "windows-graphics-capture-client-frame" },
+                "hwnd": { "$ref": "#/$defs/positiveInteger" },
+                "clientOnly": { "const": true },
+                "frozenStateObserved": { "const": true },
+                "frameEvidence": { "$ref": "#/$defs/reference" }
+              }
+            }
+          ]
+        },
+        "inputReady": {
+          "required": [
+            "normalization",
+            "productNonceSupported",
+            "responseObserved",
+            "frozenStateRestored"
+          ],
+          "properties": {
+            "query": { "const": "observed-legacy-runtime-state" },
+            "method": { "const": "uia-reversible-action-observed-response" },
+            "normalization": { "const": "external-driver-only" },
+            "productNonceSupported": { "const": false },
+            "responseObserved": { "const": true },
+            "frozenStateRestored": { "const": true }
+          }
+        }
+      },
+      "description": "Actual composited client pixels and a reversible UI action with observed response/restored frozen state, correlated by the external driver only; no product marker or source modification."
+    }
+  }
+}

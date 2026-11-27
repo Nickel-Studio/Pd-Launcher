@@ -1,0 +1,22 @@
+include_guard(GLOBAL)
+
+function(nickel_configure_qt_dependencies)
+    if(NOT TARGET Qt6::Svg)
+        message(FATAL_ERROR "The installed Qt6::Svg target is required")
+    endif()
+    if(NOT TARGET ZLIB::ZLIB)
+        set(ZLIB_USE_STATIC_LIBS ON)
+        find_package(ZLIB 1.3.1 EXACT REQUIRED)
+    endif()
+    if(WIN32)
+        include("${CMAKE_CURRENT_FUNCTION_LIST_DIR}/NickelStaticDependencies.cmake")
+        nickel_require_windows_static_zlib(ZLIB::ZLIB)
+    endif()
+    # Standalone QtSvg sees the shared prefix's unprefixed zlib headers.
+    # Its SVGZ symbols therefore use the already-required static core zlib.
+    get_target_property(_configured Qt6::Svg _nickel_zlib_configured)
+    if(NOT _configured)
+        set_property(TARGET Qt6::Svg APPEND PROPERTY INTERFACE_LINK_LIBRARIES ZLIB::ZLIB)
+        set_property(TARGET Qt6::Svg PROPERTY _nickel_zlib_configured TRUE)
+    endif()
+endfunction()

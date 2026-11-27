@@ -1,0 +1,41 @@
+{
+  "schema": "pd.trust-negatives.inventory.v1",
+  "publicNegative": [
+    "factory-test-exe-cannot-mint",
+    "factory-pre-cancelled",
+    "public-options-text-no-trust",
+    "public-options-missing-no-trust",
+    "public-options-directory-no-trust",
+    "public-options-wrong-os-no-trust",
+    "public-options-arm64-no-trust",
+    "public-options-pe32-no-trust",
+    "public-options-dll-no-trust",
+    "public-options-no-versioninfo-no-trust",
+    "public-options-identity-replacement-no-trust",
+    "public-options-same-size-hash-mutation-no-trust",
+    "public-cancel-before-work"
+  ],
+  "requiresIndependentBranchOrActualPd": [
+    "factory-no-header-branch",
+    "factory-material-ready-false-branch",
+    "actual-pd-path-identity-replacement",
+    "actual-pd-arch-type-version-denial",
+    "actual-pd-notice-missing",
+    "actual-pd-notice-hash-mismatch",
+    "actual-pd-notice-set-mismatch",
+    "actual-pd-copy-pin-lifecycle",
+    "actual-pd-archive-write-pin-lifecycle",
+    "actual-pd-include-launcher-schema1-roundtrip"
+  ],
+  "acceptance": {
+    "failureReturnCode": 1,
+    "notRunReturnCode": 77,
+    "productAccepted": false,
+    "actualPdRoundTripPass": false,
+    "noOptionsExecutableTrust": true,
+    "noTestExecutableTrustMint": true,
+    "actualAppServicesPublicAction": "ExportPack",
+    "includeLauncher": true,
+    "legalReadyFalseCannotPass": true
+  }
+}

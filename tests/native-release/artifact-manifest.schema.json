@@ -1,0 +1,299 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nickel.native.release.artifact-manifest.v1",
+  "title": "Actual legacy/native full launcher Release Artifact manifest v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "kind",
+    "scope",
+    "product",
+    "releaseId",
+    "version",
+    "configuration",
+    "platform",
+    "architecture",
+    "sourceCommit",
+    "executable",
+    "files",
+    "deployment",
+    "releaseProvenance",
+    "programPackage"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "kind": { "enum": ["legacy-release", "native-release"] },
+    "scope": { "const": "full-launcher" },
+    "product": {
+      "enum": [
+        "Nickel",
+        "ni-launcher",
+        "Palladium",
+        "Pd",
+        "\u94af",
+        "pd-launcher"
+      ],
+      "description": "Palladium is the current canonical native identity (Pd, Chinese alias and pd-launcher product name accepted). Nickel native manifests remain historical only; frozen legacy identity is unchanged."
+    },
+    "releaseId": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "minLength": 1 },
+    "configuration": { "const": "Release" },
+    "platform": { "enum": ["windows", "linux", "macos"] },
+    "architecture": { "enum": ["x64", "arm64"] },
+    "sourceCommit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}([0-9a-f]{24})?$"
+    },
+    "originalSourceCommit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}([0-9a-f]{24})?$",
+      "description": "Original private-history source checkpoint; never substitute it for the actual CI/build sourceCommit. Requires sourceTree and a byte-verified snapshotMapping."
+    },
+    "sourceTree": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}([0-9a-f]{24})?$",
+      "description": "Exact Git tree shared by originalSourceCommit and the actual CI sourceCommit; not a sourceSnapshotSha256 claim."
+    },
+    "snapshotMapping": {
+      "$ref": "#/$defs/reference",
+      "description": "Actual-git-source-snapshot-mapping v1 JSON with originalSourceCommit/sourceCommit/sourceParentCommit/sourceTree/sourceSnapshotSha256, full sourceFiles, fileCount and rawEvidence; both immutable trees and all blob bytes are independently rehashed. Only source audits may reuse the original commit; product/build reports retain the actual Artifact sourceCommit."
+    },
+    "sourceSnapshotSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "Canonical sorted committed sourceFiles records, not a Git tree ID or actual build-source digest"
+    },
+    "buildSourceSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "Canonical SHA256 of sorted actual compiled/header/generated/resource/configuration input records, including sourceArchivePath; not sourceSnapshotSha256"
+    },
+    "buildSourceInventory": {
+      "$ref": "#/$defs/reference",
+      "description": "Actual-native-build-source-inventory JSON bound to the final EXE, source commit/snapshot, exact build consumption evidence and byte-corresponding source archive"
+    },
+    "productIdentityInput": {
+      "allOf": [
+        { "$ref": "#/$defs/reference" },
+        {
+          "type": "object",
+          "required": ["sourcePath"],
+          "properties": { "sourcePath": { "$ref": "#/$defs/relativePath" } }
+        }
+      ],
+      "description": "For Palladium, exact consumed native metadata JSON with schemaVersion 1, Palladium/Pd/Chinese displayName, name and executableName pd-launcher, and matching version; sourcePath identifies the committed metadata record. Windows application deployment basename must match pd-launcher.exe. Must be in actual input/consumption inventories and byte-corresponding source archive. Renaming historical reports is insufficient."
+    },
+    "executable": { "$ref": "#/$defs/reference" },
+    "releaseProvenance": {
+      "$ref": "#/$defs/reference",
+      "description": "Actual release/build provenance JSON, source commit, configuration, executable SHA and raw origin evidence. Palladium additionally binds product, sourceSnapshotSha256 and buildSourceSha256 to the same generation."
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "allOf": [
+          { "$ref": "#/$defs/reference" },
+          {
+            "type": "object",
+            "required": ["role", "distributionPath"],
+            "properties": {
+              "distributionPath": { "$ref": "#/$defs/relativePath" },
+              "role": {
+                "enum": [
+                  "application",
+                  "runtime-dependency",
+                  "embedded-notice",
+                  "data-resource",
+                  "corresponding-source",
+                  "application-objects",
+                  "relink-material",
+                  "sbom",
+                  "license-material",
+                  "build-log",
+                  "link-command",
+                  "link-map",
+                  "dependency-inventory",
+                  "build-source-inventory",
+                  "build-input-consumption",
+                  "symbols",
+                  "installation-information"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "deployment": {
+      "type": "object",
+      "required": [
+        "fileSetComplete",
+        "externalRequirements",
+        "runtimeClosureEvidence"
+      ],
+      "properties": {
+        "fileSetComplete": { "const": true },
+        "windowsSingleExe": { "type": "boolean" },
+        "selfExtractsRuntime": { "type": "boolean" },
+        "runtimeClosureEvidence": { "$ref": "#/$defs/reference" },
+        "externalRequirements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["kind", "name", "minimum"],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "system",
+                  "shared-installed-runtime",
+                  "graphics-driver"
+                ]
+              },
+              "name": { "type": "string", "minLength": 1 },
+              "minimum": { "type": "string", "minLength": 1 },
+              "includedInDownloadBytes": { "type": "boolean" },
+              "installationBytes": {
+                "type": ["integer", "null"],
+                "minimum": 0
+              },
+              "measurementEvidence": { "$ref": "#/$defs/reference" }
+            }
+          }
+        }
+      }
+    },
+    "buildEvidence": {
+      "type": "object",
+      "required": [
+        "build-log",
+        "link-command",
+        "link-map",
+        "dependency-inventory"
+      ],
+      "properties": {
+        "build-log": { "$ref": "#/$defs/reference" },
+        "link-command": { "$ref": "#/$defs/reference" },
+        "link-map": { "$ref": "#/$defs/reference" },
+        "dependency-inventory": { "$ref": "#/$defs/reference" }
+      }
+    },
+    "programPackage": {
+      "allOf": [
+        { "$ref": "#/$defs/reference" },
+        {
+          "type": "object",
+          "required": ["scope", "compression"],
+          "properties": {
+            "scope": { "const": "program-runtime-only" },
+            "compression": {
+              "type": "object",
+              "required": ["format", "algorithm", "level"],
+              "properties": {
+                "format": { "enum": ["zip", "tar", "tar.gz", "tar.xz", "raw"] },
+                "algorithm": { "type": "string", "minLength": 1 },
+                "level": { "type": ["integer", "string"] },
+                "tool": { "type": "string" },
+                "toolVersion": { "type": "string" }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "equivalentFeatureEvidence": { "$ref": "#/$defs/reference" },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  },
+  "$defs": {
+    "relativePath": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Exact worktree-relative slash path, no absolute/UNC/drive/colon/traversal/reparse redirects"
+    },
+    "reference": {
+      "type": "object",
+      "required": ["path", "sha256", "bytes"],
+      "properties": {
+        "path": { "$ref": "#/$defs/relativePath" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "bytes": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "sourceMappingFields": {
+      "required": ["originalSourceCommit", "sourceTree", "snapshotMapping"],
+      "properties": {
+        "kind": { "const": "native-release" },
+        "product": { "enum": ["Palladium", "Pd", "\u94af", "pd-launcher"] }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "kind": { "const": "native-release" } },
+        "required": ["kind"]
+      },
+      "then": {
+        "required": [
+          "sourceSnapshotSha256",
+          "buildSourceSha256",
+          "buildSourceInventory",
+          "buildEvidence"
+        ],
+        "properties": {
+          "deployment": {
+            "required": ["selfExtractsRuntime"],
+            "properties": { "selfExtractsRuntime": { "const": false } }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": { "const": "native-release" },
+          "platform": { "const": "windows" }
+        },
+        "required": ["kind", "platform"]
+      },
+      "then": {
+        "properties": {
+          "architecture": { "const": "x64" },
+          "deployment": {
+            "required": ["windowsSingleExe"],
+            "properties": { "windowsSingleExe": { "const": true } }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "kind": { "const": "legacy-release" } },
+        "required": ["kind"]
+      },
+      "then": {
+        "properties": { "product": { "enum": ["Nickel", "ni-launcher"] } }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": { "const": "native-release" },
+          "product": { "enum": ["Palladium", "Pd", "\u94af", "pd-launcher"] }
+        },
+        "required": ["kind", "product"]
+      },
+      "then": { "required": ["productIdentityInput"] }
+    },
+    {
+      "if": {
+        "anyOf": [
+          { "required": ["originalSourceCommit"] },
+          { "required": ["sourceTree"] },
+          { "required": ["snapshotMapping"] }
+        ]
+      },
+      "then": { "$ref": "#/$defs/sourceMappingFields" }
+    }
+  ]
+}

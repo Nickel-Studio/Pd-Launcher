@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RCC>
+  <qresource prefix="/nickel/functional">
+    <file alias="blocks/Anvil.png">../../../src/assets/blocks/Anvil.png</file>
+    <file alias="blocks/Beta.png">../../../src/assets/blocks/Beta.png</file>
+    <file alias="blocks/CobbleStone.png">../../../src/assets/blocks/CobbleStone.png</file>
+    <file alias="blocks/CommandBlock.png">../../../src/assets/blocks/CommandBlock.png</file>
+    <file alias="blocks/EarlyAlpha.png">../../../src/assets/blocks/EarlyAlpha.png</file>
+    <file alias="blocks/Egg.png">../../../src/assets/blocks/Egg.png</file>
+    <file alias="blocks/Fabric.png">../../../src/assets/blocks/Fabric.png</file>
+    <file alias="blocks/GoldBlock.png">../../../src/assets/blocks/GoldBlock.png</file>
+    <file alias="blocks/Grass.png">../../../src/assets/blocks/Grass.png</file>
+    <file alias="blocks/GrassPath.png">../../../src/assets/blocks/GrassPath.png</file>
+    <file alias="blocks/NeoForge.png">../../../src/assets/blocks/NeoForge.png</file>
+    <file alias="blocks/OptiFabric.png">../../../src/assets/blocks/OptiFabric.png</file>
+    <file alias="blocks/Other.png">../../../src/assets/blocks/Other.png</file>
+    <file alias="blocks/RedstoneBlock.png">../../../src/assets/blocks/RedstoneBlock.png</file>
+    <file alias="blocks/RedstoneLampOff.png">../../../src/assets/blocks/RedstoneLampOff.png</file>
+    <file alias="blocks/RedstoneLampOn.png">../../../src/assets/blocks/RedstoneLampOn.png</file>
+    <file alias="blocks/Release.png">../../../src/assets/blocks/Release.png</file>
+    <file alias="credits/itzarona.png">../../../src/assets/credits/itzarona.png</file>
+    <file alias="credits/itzplana.png">../../../src/assets/credits/itzplana.png</file>
+    <file alias="credits/shittimchests.png">../../../src/assets/credits/shittimchests.png</file>
+    <file alias="mod-placeholder.png">../../../src/assets/mod-placeholder.png</file>
+    <file alias="skins/alex-head.png">../../../src/assets/skins/alex-head.png</file>
+    <file alias="skins/steve-head.png">../../../src/assets/skins/steve-head.png</file>
+    <file alias="icons/anvil.png">../../../src/assets/blocks/Anvil.png</file>
+    <file alias="icons/cobblestone.png">../../../src/assets/blocks/CobbleStone.png</file>
+    <file alias="icons/command_block.png">../../../src/assets/blocks/CommandBlock.png</file>
+    <file alias="icons/egg.png">../../../src/assets/blocks/Egg.png</file>
+    <file alias="icons/fabric.png">../../../src/assets/blocks/Fabric.png</file>
+    <file alias="icons/gold_block.png">../../../src/assets/blocks/GoldBlock.png</file>
+    <file alias="icons/grass.png">../../../src/assets/blocks/Grass.png</file>
+    <file alias="icons/grass_path.png">../../../src/assets/blocks/GrassPath.png</file>
+    <file alias="icons/neoforge.png">../../../src/assets/blocks/NeoForge.png</file>
+    <file alias="icons/redstone_block.png">../../../src/assets/blocks/RedstoneBlock.png</file>
+    <file alias="icons/redstone_lamp_off.png">../../../src/assets/blocks/RedstoneLampOff.png</file>
+    <file alias="icons/redstone_lamp_on.png">../../../src/assets/blocks/RedstoneLampOn.png</file>
+    <file alias="icons/optifabric.png">../../../src/assets/blocks/OptiFabric.png</file>
+  </qresource>
+</RCC>

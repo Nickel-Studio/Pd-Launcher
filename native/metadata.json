@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "name": "pd-launcher",
+  "displayName": "Palladium",
+  "version": "0.1.0",
+  "versionLabel": "0.1.0 Indev",
+  "applicationId": "studio.nickel.launcher",
+  "repository": "https://github.com/Nickel-Studio/Pd-Launcher",
+  "issues": "https://github.com/Nickel-Studio/Pd-Launcher/issues",
+  "license": "AGPL-3.0-only",
+  "executableName": "pd-launcher",
+  "releaseChannel": "native"
+}

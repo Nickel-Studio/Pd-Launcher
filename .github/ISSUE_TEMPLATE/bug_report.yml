@@ -1,0 +1,65 @@
+name: 故障反馈
+description: 报告启动、下载、账号或界面问题
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请先搜索已有问题，并将日志中的令牌、密码、邮箱和本机用户名移除。
+        账号凭据泄露或代码执行问题请通过仓库 Security 页私密报告。
+  - type: input
+    id: version
+    attributes:
+      label: Pd 版本
+      description: 在「更多 → 关于」查看版本号。
+      placeholder: "1.0.1"
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 操作系统
+      options:
+        - Windows
+        - macOS
+        - Linux
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 系统与游戏环境
+      description: 填写系统版本、CPU 架构；游戏相关问题补充游戏、加载器与 Java 版本。
+      placeholder: "Windows 11 x64 · Minecraft 1.21.4 · Fabric · Java 21"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 从打开启动器开始，列出能够触发问题的操作。
+      placeholder: |
+        1. 打开……
+        2. 选择……
+        3. 点击……
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+      description: 可以附上截图或错误提示。
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 相关日志
+      description: 启动失败时使用「打开日志目录」，截取问题发生时的日志。
+      render: text

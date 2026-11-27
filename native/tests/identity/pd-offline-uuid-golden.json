@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "gate": "G03",
+  "oracle": {
+    "commit": "aa7402ecdce1b4beb60ca2652a5f454d53585ca0",
+    "path": "native/tests/identity/offline_uuid_legacy_oracle.rs",
+    "gitBlob": "2710485d7eff2529e11c3067d5e0f3dace1b7c64",
+    "byteLength": 1494,
+    "sha256": "c216de3cd35a6ab6a5a5bdc813936518e476a4e6c6d030118e4fde4a9addfac1"
+  },
+  "evidence": "immutable-old-Rust-source port, crosschecked with independent 16-bit arithmetic; not Rust or native execution",
+  "rustRuntime": "NOT_RUN",
+  "nativeRuntime": "NOT_RUN",
+  "contract": "lowercase dashed36; exact UTF-8 bytes; case-sensitive; no trimming; empty raw allowed; invalid UTF-8, embedded NUL, or more than 256 bytes rejected by native helper",
+  "vectors": [
+    {
+      "label": "empty-raw",
+      "utf8Hex": "",
+      "byteLength": 0,
+      "uuid": "14650fb0-739d-3383-8bf2-9ce484222325"
+    },
+    {
+      "label": "Notch",
+      "utf8Hex": "4e6f746368",
+      "byteLength": 5,
+      "uuid": "f14dc048-28d2-3bc4-803c-36d82b6053b9"
+    },
+    {
+      "label": "notch",
+      "utf8Hex": "6e6f746368",
+      "byteLength": 5,
+      "uuid": "8823ce1e-3e03-3ce4-807c-4f71b94b0159"
+    },
+    {
+      "label": "NOTCH",
+      "utf8Hex": "4e4f544348",
+      "byteLength": 5,
+      "uuid": "aaf1756b-a5e8-39c4-ac23-75ccc8044179"
+    },
+    {
+      "label": "Steve",
+      "utf8Hex": "5374657665",
+      "byteLength": 5,
+      "uuid": "5358462a-6f40-3373-91fb-2213cc6a7b64"
+    },
+    {
+      "label": "Player",
+      "utf8Hex": "506c61796572",
+      "byteLength": 6,
+      "uuid": "47cc85be-501b-307c-b33d-c56ddffd8ea0"
+    },
+    {
+      "label": "chinese-player",
+      "utf8Hex": "e78ea9e5aeb6",
+      "byteLength": 6,
+      "uuid": "e9325e85-3f71-3886-9df7-82da62c7f606"
+    },
+    {
+      "label": "mixed-chinese",
+      "utf8Hex": "41e78ea9e5aeb67a",
+      "byteLength": 8,
+      "uuid": "bc51e1b1-aeef-3237-b507-d7058053c263"
+    },
+    {
+      "label": "raw-padding",
+      "utf8Hex": "204e6f74636820",
+      "byteLength": 7,
+      "uuid": "54d3a5e2-22b1-39e0-8c46-48cfe2985cc9"
+    },
+    {
+      "label": "raw-whitespace",
+      "utf8Hex": "20090a",
+      "byteLength": 3,
+      "uuid": "e764fae8-258e-3a36-83ff-2217cef56818"
+    },
+    {
+      "label": "ascii-255",
+      "utf8Repeat": {
+        "unitHex": "61",
+        "count": 255
+      },
+      "byteLength": 255,
+      "uuid": "40050404-9c54-3792-bb04-934eeef462a6"
+    },
+    {
+      "label": "ascii-256",
+      "utf8Repeat": {
+        "unitHex": "61",
+        "count": 256
+      },
+      "byteLength": 256,
+      "uuid": "48e78063-a457-3b83-bd29-16200943d825"
+    },
+    {
+      "label": "utf8-255",
+      "utf8Repeat": {
+        "unitHex": "e78ea9",
+        "count": 85,
+        "suffixHex": ""
+      },
+      "byteLength": 255,
+      "uuid": "bbc3dcd6-366d-3156-b8da-48481ce89df3"
+    },
+    {
+      "label": "utf8-256",
+      "utf8Repeat": {
+        "unitHex": "e78ea9",
+        "count": 85,
+        "suffixHex": "61"
+      },
+      "byteLength": 256,
+      "uuid": "01e52f43-0c2b-3b40-8386-64891f43bf16"
+    },
+    {
+      "label": "four-byte-256",
+      "utf8Repeat": {
+        "unitHex": "f09f9880",
+        "count": 64
+      },
+      "byteLength": 256,
+      "uuid": "0e081e61-0b6a-3883-932b-200ca1580925"
+    }
+  ]
+}

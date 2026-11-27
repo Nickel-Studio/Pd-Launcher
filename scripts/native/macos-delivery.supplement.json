@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "kind": "owner-scoped-exact-macos-input-supplement",
+  "authority": "independent-supplement-per-frozen-verification-rules; OpenSSL-3.5.9-LTS-lead-approved-2026-11-21",
+  "dependencyLockSha256": "b974a9bcd5b9f6fab32ffbf248ccd23ab9938ff731a91c9aff2c162d70dd136d",
+  "sourceContractSha256": "ceb0caca487e77392851c3456028e4e0bc1a04b96d4970ff4a09f6bd4b255c6c",
+  "verificationRulesSha256": "831ce076f726323c9dc61c57c065ff9b204876a29f254ea00575b351755e36a4",
+  "sources": [
+    {
+      "name": "openssl",
+      "version": "3.5.9",
+      "archive": "openssl-3.5.9.tar.gz",
+      "url": "https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz",
+      "sha256": "603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a",
+      "bytes": 53279637,
+      "sourceDirectory": "openssl-3.5.9",
+      "hashEvidence": "https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz.sha256",
+      "checksumSha256": "f482705825eb43b47ce08d5cf4287ae062cdbada1a142d728a8d89c387300bf0",
+      "checksumBytes": 87,
+      "license": "Apache-2.0",
+      "linkage": "static",
+      "systemFallbackAllowed": false
+    }
+  ],
+  "tools": [
+    {
+      "name": "cmake-wheel",
+      "version": "3.31.6",
+      "archive": "cmake-3.31.6-py3-none-macosx_10_10_universal2.whl",
+      "url": "https://files.pythonhosted.org/packages/7f/09/516b0d709672bc430eb13278f0316acd34869269447744f5d136daeef689/cmake-3.31.6-py3-none-macosx_10_10_universal2.whl",
+      "sha256": "da9d4fd9abd571fd016ddb27da0428b10277010b23bb21e3678f8b9e96e1686e",
+      "bytes": 47224338,
+      "hashEvidence": "https://pypi.org/pypi/cmake/3.31.6/json"
+    },
+    {
+      "name": "ninja-wheel",
+      "version": "1.13.0",
+      "archive": "ninja-1.13.0-py3-none-macosx_10_9_universal2.whl",
+      "url": "https://files.pythonhosted.org/packages/3c/74/d02409ed2aa865e051b7edda22ad416a39d81a84980f544f8de717cab133/ninja-1.13.0-py3-none-macosx_10_9_universal2.whl",
+      "sha256": "fa2a8bfc62e31b08f83127d1613d10821775a0eb334197154c4d6067b7068ff1",
+      "bytes": 310125,
+      "hashEvidence": "https://pypi.org/pypi/ninja/1.13.0/json"
+    }
+  ],
+  "classification": "official-metadata-and-checksum-pins-only-not-archive-download-build-or-runtime-PASS"
+}

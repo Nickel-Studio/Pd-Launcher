@@ -1,0 +1,17 @@
+# Legal text/source evidence hashes must survive cross-platform checkout.
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.txt -text
+*.LICENSE -text
+materials/** -text
+*.zip binary
+*.tar binary
+*.xz binary
+*.gz binary
+*.lib binary
+*.a binary
+*.obj binary
+*.o binary
+*.ttf binary
+*.woff2 binary
