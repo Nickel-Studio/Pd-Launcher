@@ -27,6 +27,8 @@ Minecraft Java 版启动器 · C++20 / Qt 6 原生实现
 
 Palladium（Pd / 钯）是 Minecraft Java 版启动器。界面用 C++20 与 Qt 6 Widgets 自绘，不依赖内嵌浏览器；账号、实例、下载与启动准备都在启动器内完成，Java、Minecraft 和各类加载器作为独立进程运行。
 
+# Palladium正在早期开发阶段，此时使用你将遇到大量的BUG（例如动画化覆盖度几乎为0，如同滚木搬的UI等），在早期开发阶段结束前建议使用更成熟的[Nickel](https://github.com/Nickel-Studio/Ni-Launcher)作为替代品。
+
 ## 主要特性
 
 - **世界各有位置** — 多个游戏目录与独立实例；Java、内存、窗口和启动参数可以跟随全局，也可以为单个实例覆盖。改名不会移动实例目录。
